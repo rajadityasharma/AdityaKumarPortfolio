@@ -119,6 +119,32 @@ a, a:hover {
   border-color: #fff;
 }
 
+.btn.btn-outline-pill.btn-custom-primary {
+  color: #fff;
+  border: 2px solid rgba(255, 255, 255, 0.5);
+  -webkit-transition: .3s all ease;
+  -o-transition: .3s all ease;
+  transition: .3s all ease;
+}
+
+.btn.btn-outline-pill.btn-custom-primary:hover, .btn.btn-outline-pill.btn-custom-light:active, .btn.btn-outline-pill.btn-custom-light:focus {
+  border-color: #f14e26;
+  color: #f14e26;
+}
+
+.btn.btn-outline-pill.btn-custom-bg-light {
+  color: #fff;
+  border: 2px solid rgba(255, 255, 255, 0.5);
+  -webkit-transition: .3s all ease;
+  -o-transition: .3s all ease;
+  transition: .3s all ease;
+}
+
+.btn.btn-outline-pill.btn-custom-bg-light:hover, .btn.btn-outline-pill.btn-custom-light:active, .btn.btn-outline-pill.btn-custom-light:focus {
+  border-color: white;
+  background-color: white;
+  color: #f14e26;
+}
 .btn.btn-bg-white--hover:hover {
   background-color: #fff;
   color: #000;
