@@ -1,925 +1,729 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-  <head>
-    <title>Aditya Kumar Patna</title>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <meta name="description" content="">
-    <meta name="keywords" content="html, css, javascript, jquery">
-    <meta name="author" content="">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Aditya Kumar | Portfolio</title>
+  <link rel="icon" type="image/png" href="image/Aditya-Kumar-Babhanpura.png">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+  <style>
+    html {
+      scroll-behavior: smooth;
+    }
+    .hero {
+      background: linear-gradient(to right, #0d6efd, #6c63ff);
+      color: white;
+      padding: 120px 0;
+      text-align: center;
+    }
+    .divider {
+      width: 80px;
+      height: 4px;
+      background: #0d6efd;
+      margin: 20px auto;
+    }
+    .service-card, .skill-bar {
+      border-radius: 10px;
+    }
+    .footer {
+      background: #0d6efd;
+      color: white;
+      padding: 20px 0;
+      text-align: center;
+    }
+    .stats {
+      background: #f8f9fa;
+      padding: 30px 0;
+    }
+    .card-img-top {
+    position: relative;
+    transition: 0.4s ease;
+  }
+  .card-img-top::after {
+    content: "";
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background: rgba(0, 0, 0, 0.3);
+    opacity: 0;
+    transition: opacity 0.4s ease;
+  }
+  .card:hover .card-img-top::after {
+    opacity: 1;
+  }
+  .card:hover {
+    transform: translateY(-10px) scale(1.02);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+    transition: all 0.4s ease;
+  }
+  .card {
+    transition: all 0.4s ease;
+  }
+  .stats .shadow-lg {
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+  }
+  .stats .shadow-lg:hover {
+    transform: translateY(-10px) scale(1.03);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
+  }
+  .resume-btn:hover {
+    background-color: #198754;
+    color: white;
+    border-color: #198754;
+  }
+    section {
+        scroll-margin-top: 80px; /* height of fixed navbar */
+    }
+  </style>
+  
+      <style>
+        .service-icon {
+          font-size: 36px;
+          color: #0d6efd;
+          margin-bottom: 15px;
+        }
+        .service-card {
+          border-radius: 15px;
+          padding: 25px;
+          background: #fff;
+          box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+          transition: transform 0.3s ease;
+        }
+        .service-card:hover {
+          transform: translateY(-8px);
+        }
+      </style>
+      <style>
+  section {
+    scroll-margin-top: 80px;
+  }
+  .stats .shadow-lg {
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+  }
+  .stats .shadow-lg:hover {
+    transform: translateY(-10px) scale(1.03);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
+  }
+  .resume-btn:hover {
+    background-color: #198754;
+    color: white;
+    border-color: #198754;
+  }
+</style>
 
-    <link rel="stylesheet" href="css/vendor/icomoon/style.css">
-    <link rel="stylesheet" href="css/vendor/owl.carousel.min.css">
-    <link rel="stylesheet" href="css/vendor/animate.min.css">
-    <link rel="stylesheet" href="css/vendor/aos.css">
-    <link rel="stylesheet" href="css/vendor/bootstrap.min.css">
-    <link rel="stylesheet" href="css/vendor/jquery.fancybox.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    
+      <style>
+        .skill-progress {
+          width: 150px;
+          height: 150px;
+          border-radius: 50%;
+          background: rgba(255, 255, 255, 0.6);
+          backdrop-filter: blur(10px);
+          -webkit-backdrop-filter: blur(10px);
+          position: relative;
+          margin: 20px auto;
+          box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          flex-direction: column;
+          transition: transform 0.4s ease;
+        }
+        .skill-progress:hover {
+          transform: scale(1.05);
+        }
+        .skill-progress::before {
+          content: "";
+          position: absolute;
+          top: 0; left: 0;
+          width: 100%; height: 100%;
+          border-radius: 50%;
+          background: conic-gradient(var(--color) var(--percent), rgba(255,255,255,0.3) var(--percent));
+          z-index: 1;
+        }
+        .skill-progress span {
+          z-index: 2;
+          font-size: 20px;
+          font-weight: bold;
+          color: #333;
+        }
+        .skill-label {
+          margin-top: 10px;
+          font-weight: 600;
+          color: #333;
+        }
+      </style>
 
-    <!-- Theme Style -->
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/side.css">
+      <!-- floating Contenet  -->
 
-  </head>
-  <body data-spy="scroll" data-target=".site-nav-target" data-offset="200">
+      <style>
+            .floating-contact {
+            position: fixed;
+            right: 20px;
+            top: 50%;
+            transform: translateY(-50%);
+            z-index: 999;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            }
 
-    <nav class="unslate_co--site-mobile-menu">
-      <div class="close-wrap d-flex">
-        <a href="#" class="d-flex ml-auto js-menu-toggle">
-          <span class="close-label">Close</span>
-          <div class="close-times">
-            <span class="bar1"></span>
-            <span class="bar2"></span>
-          </div>
-        </a>
+            .contact-bubble {
+            width: 45px;
+            height: 45px;
+            background-color: #ffffff;
+            border-radius: 50%;
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+            color: #333;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 20px;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            }
+
+            .contact-bubble:hover {
+            transform: scale(1.1);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+            }
+
+            .contact-bubble.email { color: #d93025; }
+            .contact-bubble.whatsapp { color: #25D366; }
+            .contact-bubble.sms { color: #1a73e8; }
+        </style>
+        <style>
+            .scroll-top-btn {
+            position: fixed;
+            bottom: 30px;
+            right: 25px;
+            width: 45px;
+            height: 45px;
+            font-size: 22px;
+            background: #ffffff;
+            border: 2px solid #0d6efd;
+            color: #0d6efd;
+            border-radius: 50%;
+            cursor: pointer;
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+            display: none;
+            align-items: center;
+            justify-content: center;
+            z-index: 1000;
+            transition: all 0.3s ease;
+            }
+
+            .scroll-top-btn:hover {
+            background: #0d6efd;
+            color: #fff;
+            }
+
+        </style>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
+</head>
+
+<body>
+  <!-- Start Section (Navbar + Hero) -->
+
+<header>
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg p-3 navbar-light bg-white shadow-sm fixed-top">
+    <div class="container">
+      <a class="navbar-brand fw-bold text-primary" href="#home">Aditya.</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link active" href="#home">🏠 Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#about">🙋 About</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#services">🛠 Services</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#skills">📊 Skills</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#projects">📁 Projects</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#contact">📬 Contact</a>
+          </li>
+        </ul>
       </div>
-      <div class="site-mobile-inner"></div>
-    </nav>
+    </div>
+  </nav>
+</header>
 
-
-    <div class="unslate_co--site-wrap">
-
-      <div class="unslate_co--site-inner">
-
-        <div class="lines-wrap">
-          <div class="lines-inner">
-            <div class="lines"></div>
-          </div>
+<!-- Hero Section -->
+<section id="home" class="d-flex align-items-center min-vh-100" style="background: linear-gradient(to top right, #e6faff, #ffffff); padding-top: 80px;">
+  <div class="container">
+    <div class="row align-items-center">
+      <div class="col-md-7" data-aos="fade-right">
+        <h1 class="display-4 fw-bold">👋 Hello, I'm <span class="text-primary">Aditya Kumar</span></h1>
+        <p class="lead mt-3">💻 A passionate <strong>Full Stack Web Developer</strong> who loves crafting creative and scalable web experiences. Let's build something amazing together!</p>
+        <div class="d-flex gap-3 mt-4">
+          <a href="#projects" class="btn btn-primary btn-lg shadow">🚀 View Projects</a>
+          <a href="#contact" class="btn btn-outline-primary btn-lg shadow">📩 Hire Me</a>
         </div>
-        <!-- END lines -->
-      
-      <nav class="unslate_co--site-nav site-nav-target">
-
-        <div class="container">
-        
-          <div class="row align-items-center justify-content-between text-left">
-            <div class="col-md-5 text-right">
-              <ul class="site-nav-ul js-clone-nav text-left d-none d-lg-inline-block">
-                <li class="has-children"><a href="#home-section" class="nav-link">Home</a></li>
-                <!-- <li><a href="#portfolio-section" class="nav-link">Portfolio</a></li> -->
-                <li><a href="#about-section" class="nav-link">About</a></li>
-                <li><a href="#services-section" class="nav-link">Services</a></li>
-              </ul>
-            </div>
-            <div class="site-logo pos-absolute">
-              <a href="index.html" class="unslate_co--site-logo">Aditya<span>.</span></a>
-            </div>
-            <div class="col-md-5 text-right text-lg-left">
-              <ul class="site-nav-ul js-clone-nav text-left d-none d-lg-inline-block">
-                <li><a href="#skills-section" class="nav-link">Skills</a></li>
-                <!-- <li><a href="#testimonial-section" class="nav-link">Testimonial</a></li> -->
-                <li><a href="#project" class="nav-link">Project</a></li>
-                <li><a href="#contact-section" class="nav-link">Contact</a></li>
-              </ul>
-
-              <ul class="site-nav-ul-none-onepage text-right d-inline-block d-lg-none">
-                <li><a href="#" class="js-menu-toggle">Menu</a></li>
-              </ul>
-
-            </div>
-          </div>
+        <div class="mt-4">
+          <p class="text-muted">✨ Creating beautiful, fast and responsive web apps with ❤️</p>
         </div>
-
-      </nav>
-      <!-- END nav -->
-
-      <div class="cover-v1 jarallax" style="background-image: url('images/Aditya-Kumar.png'); " id="home-section">
-        <div class="container">
-          <div class="row align-items-center">
-              
-            <div class="col-md-7 mx-auto text-center">
-              <h1 class="heading gsap-reveal-hero">Hello</h1>
-              <h2 class="subheading gsap-reveal-hero">This is <span class="text-primary"><a href="index.html">Aditya Kumar</a></span> A Full Stack Web Developer.</h2>
-            </div>
-
-          </div>
-        </div>
-
-
-        <a href="#portfolio-section" class="mouse-wrap smoothscroll">
-          <span class="mouse">
-            <span class="scroll"></span>
-          </span>
-          <span class="mouse-label">Scroll</span>
-        </a>
-
       </div>
-      <!-- END .cover-v1 -->
-
-      <!-- side pannel start -->
-  <div class="rightFixed-btns" data-aos="zoom-out-left">
-    <ul>
-      <li id="li">
-        <!-- <a href="https://wa.me/+917488584509?text=Please%20let%20me%20know%20more%20about%20your%20products%20and%20services!!"
-          target="_blank"> -->
-          <i class="fa-brands fa-whatsapp fa-beat" aria-hidden="true"></i>
-          <div class="rightFixed-btns__content" id="content">
-            <!-- <small>WhatsApp</small><br> -->
-            <a class="text-light" href="https://wa.me/+917488584509?text=Hello!%20Aditya,%20Please%20let%20me%20know%20more%20about%20your%20services!!" target="_blank">
-              <span>7488584509</span>
-            </a><br><br>
-            <a class="text-light" href="https://wa.me/+918986049246?text=Hello!%20Aditya,%20Please%20let%20me%20know%20more%20about%20your%20services!!" target="_blank">
-              <span>8986049246</span>
-            </a>
-          </div> 
-      </li>
-      <li id="li2" class="content2">
-          <i class="fa-solid fa-headset fa-beat"></i>
-          <div class="rightFixed-btns__content" id="content2">
-            <!-- <small>Enquiry</small><br> -->
-          <a class="text-light" href="#contact-section"><span> Enquiry Now </span></a>
-          </div>
-      </li>
-      <li id="li3">
-          <i class="fa fa-phone fa-beat" aria-hidden="true"></i>
-          <div class="rightFixed-btns__content" id="content3">
-            <!-- <small>Calling No.</small><br> -->
-            <a href="tel:7488584509" class="text-light"><span>7488584509</span></a><br><br>
-            <a href="tel:8986049246" class="text-light"><span>8986049246</span></a>
-          </div>
-      </li>
-    </ul>
+      <div class="col-md-5 text-center" data-aos="fade-left">
+        <img src="image/Aditya-Kumar-Babhanpura.png" alt="Hero Illustration" class="img-fluid animate__animated animate__fadeIn">
+      </div>
+    </div>
   </div>
-  <!-- side pannel end -->
+</section>
 
-
-      <!-- <div class="unslate_co--section" id="portfolio-section">
-        <div class="container">
-          
-          
-          <div class="relative"><div class="loader-portfolio-wrap"><div class="loader-portfolio"></div></div> </div>
-          <div id="portfolio-single-holder"></div>
-
-          <div class="portfolio-wrapper">
-
-            <div class="d-flex align-items-center mb-4 gsap-reveal gsap-reveal-filter">
-              <h2 class="mr-auto heading-h2"><span class="gsap-reveal">Portfolio</span></h2>
-
-              <a href="#" class="text-white js-filter d-inline-block d-lg-none">Filter</a>
-              
-              <div class="filter-wrap">
-                <div class="filter ml-auto" id="filters">
-                  <a href="#" class="active" data-filter="*">All</a>
-                  <a href="#" data-filter=".web">Web</a>
-                  <a href="#" data-filter=".branding">Branding</a>
-                  <a href="#" data-filter=".illustration">Illustration</a>
-                  <a href="#" data-filter=".packaging">Packaging</a>
-                </div>
-              </div>
-            </div>
-
-
-            
-            <div id="posts" class="row gutter-isotope-item">
-              <div class="item web branding col-sm-6 col-md-6 col-lg-4 isotope-mb-2">
-                <a href="portfolio-single-1.html" class="portfolio-item ajax-load-page isotope-item gsap-reveal-img" data-id="1">
-                    <div class="overlay">
-                      <span class="wrap-icon icon-link2"></span>
-                      <div class="portfolio-item-content">
-                        <h3>Shoe Rebranding</h3>
-                        <p>web, branding</p>
-                      </div>
-                    </div>
-                    <img src="images/Aditya-Kumar.png" class="lazyload  img-fluid" alt="Images" />
-                  </a>
-              </div>
-              <div class="item branding packaging illustration col-sm-6 col-md-6 col-lg-4 isotope-mb-2 ">
-                <a href="portfolio-single-3.html" class="portfolio-item ajax-load-page item-portrait isotope-item gsap-reveal-img" data-id="3">
-                    <div class="overlay">
-                      <span class="wrap-icon icon-link2"></span>
-                      <div class="portfolio-item-content">
-                        <h3>Reworking</h3>
-                        <p>branding, packaging, illustration</p>
-                      </div>
-                    </div>
-                    <img src="images/work_2_md.jpg" class="lazyload  img-fluid" alt="Images" />
-                  </a>
-              </div>
-
-              <div class="item branding packaging col-sm-6 col-md-6 col-lg-4 isotope-mb-2">
-                <a href="portfolio-single-4.html" class="portfolio-item isotope-item gsap-reveal-img ajax-load-page" data-id="4">
-                    <div class="overlay">
-                      <span class="wrap-icon icon-link2"></span>
-                      <div class="portfolio-item-content">
-                        <h3>Modern Building</h3>
-                        <p>branding, packaging</p>
-                      </div>
-                    </div>
-                    <img src="images/work_3_md.jpg" class="lazyload  img-fluid" alt="Images" />
-                  </a>
-              </div>
-
-              <div class="item web packaging col-sm-6 col-md-6 col-lg-4 isotope-mb-2">
-
-                <a href="images/work_4_full.jpg" class="portfolio-item isotope-item gsap-reveal-img" data-fancybox="gallery" data-caption="Watch">
-                    <div class="overlay">
-                      <span class="wrap-icon icon-photo2"></span>
-                      <div class="portfolio-item-content">
-                        <h3>Watch</h3>
-                        <p>web, packaging</p>
-                      </div>
-                    </div>
-                    <img src="images/work_4_full.jpg" class="lazyload  img-fluid" alt="Images" />
-                  </a>
-
-              </div>
-
-              <div class="item illustration packaging col-sm-6 col-md-6 col-lg-4 isotope-mb-2">
-                <a href="images/work_5_md.jpg" class="portfolio-item isotope-item gsap-reveal-img" data-fancybox="gallery" data-caption="Shoe Rebranding">
-                    <div class="overlay">
-                      <span class="wrap-icon icon-photo2"></span>
-                      <div class="portfolio-item-content">
-                        <h3>Shoe Rebranding</h3>
-                        <p>illustration, packaging</p>
-                      </div>
-                    </div>
-                    <img src="images/work_5_md.jpg" class="lazyload  img-fluid" alt="Images" />
-                  </a>
-              </div>
-
-              <div class="item web branding col-sm-6 col-md-6 col-lg-4 isotope-mb-2">
-                <a href="portfolio-single-2.html" class="portfolio-item ajax-load-page item-portrait isotope-item gsap-reveal-img" data-id="2">
-                    <div class="overlay">
-                      <span class="wrap-icon icon-link2"></span>
-                      <div class="portfolio-item-content">
-                        <h3>Reshape</h3>
-                        <p>web, branding</p>
-                      </div>
-                    </div>
-                    <img src="images/work_6_md.jpg" class="lazyload  img-fluid" alt="Images" />
-                  </a>
-              </div>
-
-              <div class="item branding packaging col-sm-6 col-md-6 col-lg-4 isotope-mb-2">
-                <a href="images/work_7_a_md.jpg" class="portfolio-item item-portrait isotope-item gsap-reveal-img " data-fancybox="gallery" data-caption="Modern Building">
-                    <div class="overlay">
-                      <span class="wrap-icon icon-photo2"></span>
-                      <div class="portfolio-item-content">
-                        <h3>Modern Building</h3>
-                        <p>branding, packaging</p>
-                      </div>
-                    </div>
-                    <img src="images/work_7_a_md.jpg" class="lazyload  img-fluid" alt="Images" />
-                  </a>
-              </div>
-
-              <div class="item web branding col-sm-6 col-md-6 col-lg-4 isotope-mb-2">
-                <a href="https://www.youtube.com/watch?v=mwtbEGNABWU" class="portfolio-item isotope-item gsap-reveal-img" data-fancybox="gallery" data-caption="Showreel 2019">
-                    <div class="overlay">
-                      <span class="wrap-icon icon-play_circle_filled"></span>
-                      <div class="portfolio-item-content">
-                        <h3>Showreel 2019</h3>
-                        <p>web, branding</p>
-                      </div>
-                    </div>
-                    <img src="images/work_8_md.jpg" class="lazyload  img-fluid" alt="Images" />
-                  </a>
-              </div>
-
-              <div class="item web illustration col-sm-6 col-md-6 col-lg-4 isotope-mb-2">
-                <a href="images/work_9_a_md.jpg" class="portfolio-item isotope-item gsap-reveal-img" data-fancybox="gallery" data-caption="Render Packaging">
-                    <div class="overlay">
-                      <span class="wrap-icon icon-photo2"></span>
-                      <div class="portfolio-item-content">
-                        <h3>Render Packaging</h3>
-                        <p>web, illustration</p>
-                      </div>
-                    </div>
-                    <img src="images/work_9_a_md.jpg" class="lazyload  img-fluid" alt="Images" />
-                  </a>
-              </div>
-
-            </div>
-            
-          </div>
-
-
-        </div>
-      </div> -->
-
-
-      <!-- <div class="unslate_co--section">
-        <div class="container">
-          <div class="owl-carousel logo-slider">
-            <div class="logo-v1 gsap-reveal">
-              <img src="images/logo-google.png" alt="Image" class="img-fluid">
-            </div>
-            <div class="logo-v1 gsap-reveal">
-              <img src="images/logo-puma.png" alt="Image" class="img-fluid">
-            </div>
-            <div class="logo-v1 gsap-reveal">
-              <img src="images/logo-paypal.png" alt="Image" class="img-fluid">
-            </div>
-            <div class="logo-v1 gsap-reveal">
-              <img src="images/logo-adobe.png" alt="Image" class="img-fluid">
-            </div>
-          </div>
-        </div>
-      </div> -->
-      <div class="unslate_co--section section-counter">
-        <div class="container">
-          <!-- <div class="section-heading-wrap text-center mb-5">
-            <h2 class="heading-h2 text-center divider"><span class="gsap-reveal">My Skills</span></h2>
-            <span class="gsap-reveal"><img src="images/divider.png" alt="divider" width="76"></span>
-          </div> -->
-
-          
-          <div class="row pt-5">
-            
-            <div class="col-6 col-sm-6 mb-5 mt-5 mb-lg-0 col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="300">
-              <div class="counter-v1 text-center">
-                <span class="number-wrap">
-                  <span class="append-text"><i class="fa-solid fa-briefcase"></i></span>
-                  <span class="number number-counter" data-number="3">0</span>
-                  
-                </span>
-                <span class="counter-label">Project Complete</span>
-              </div>
-            </div>
-
-            <div class="col-6 col-sm-6 mb-5 mt-5 mb-lg-0 col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="300">
-              <div class="counter-v1 text-center">
-                <span class="number-wrap">
-                  <span class="append-text"><i class="fa-regular fa-face-laugh-beam"></i></span>
-                  <span class="number number-counter" data-number="13">0</span>
-                 
-                </span>
-                <span class="counter-label">Happy Clients</span>
-              </div>
-            </div>
-
-            <div class="col-6 col-sm-6 mb-5 mt-5 mb-lg-0 col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="300">
-              <div class="counter-v1 text-center">
-                <span class="number-wrap">
-                  <span class="append-text"><i class="fa-solid fa-business-time"></i></span>
-                  <span class="number number-counter" data-number="21">0</span>
-                  
-                </span>
-                <span class="counter-label">Months experienced</span>
-              </div>
-            </div>
-          </div>
+<!-- Stats Section -->
+<section class="stats text-center py-5" style="background: linear-gradient(to top left, #f0faff, #ffffff);">
+  <div class="container">
+    <div class="row gy-4">
+      <div class="col-md-4" data-aos="zoom-in">
+        <div class="shadow-lg p-5 rounded-4 bg-white h-100">
+          <div class="display-6 text-primary">🎯</div>
+          <h3 class="fw-bold mt-3">3+</h3>
+          <p class="text-muted">Projects Completed</p>
         </div>
       </div>
-
-
-      <div class="unslate_co--section" id="about-section">
-        <div class="container">
-          
-          <div class="section-heading-wrap text-center mb-5">
-            <h2 class="heading-h2 text-center divider"><span class="gsap-reveal">About Me</span></h2>
-            <span class="gsap-reveal">
-            <img src="images/Highlighter.png" alt="divider" width="30%">
-            </span>
-          </div>
-          
-
-          <div class="row mt-5 justify-content-between">
-            <div class="col-lg-4 mb-5 mb-lg-0">
-              <figure class="dotted-bg gsap-reveal-img ">
-                <img src="images/Aditya-Kumar-Patna.jpg" alt="Image" class="img-fluid">
-              </figure>
-            </div>
-            <div class="col-lg-8 pr-lg-5">
-              <h3 class="mb-4 heading-h3"><span class="gsap-reveal">Get to Know Me</span></h3>
-              <p class="lead gsap-reveal">I'm <a href="#">Aditya Kumar</a>, a full stack web developer specializing in responsive, user-friendly web solutions. With expertise in front-end technologies like React and Angular and back-end development using Python and Django, I build scalable applications. I focus on delivering impactful web experiences through creativity, technical proficiency, and problem-solving.</p>
-              <div class="row">
-                <div class="col-lg-4">
-                  <ul>
-                    <i class="fa-regular fa-hand-point-right"></i> <strong>DOB :</strong> <span>2 Aug 2005</span><br>
-                    <i class="fa-regular fa-hand-point-right"></i> <strong>Age :</strong> <span>19</span><br>  
-                    <i class="fa-regular fa-hand-point-right"></i> <strong>City :</strong> <span>Patna, India</span><br>
-                    <i class="fa-regular fa-hand-point-right"></i> <strong>Freelance :</strong> <span>Available</span>
-                  </ul>
-                </div>
-                <div class="col-lg-8">
-                  <ul>
-                    <i class="fa-regular fa-hand-point-right"></i> <strong>Phone :</strong> <span><a href=" tel:7488584509" class="text-light">7488584509</a>, <a href="tel:8986049246" class="text-light">8986049246</a></span><br>
-                    <i class="fa-regular fa-hand-point-right"></i> <strong>Website :</strong> <span><a href="https://aditya-kumar-portfolio.onrender.com/" class="text-light">Aditya Kumar Patna</a></span><br>
-                    <i class="fa-regular fa-hand-point-right"></i> <strong>Degree :</strong> <span>Batchlor's</span><br>
-                    <i class="fa-regular fa-hand-point-right"></i> <strong>Email :</strong> <span><a href="mailto:adityasharmamama@gmail.com" class="text-light">adityasharmamama@gmail.com</a></span><br> 
-                  </ul>
-                </div>
-              </div>
-              <p class="gsap-reveal"><a href="images/svg/My-Resume.pdf" class="btn btn-outline-pill btn-custom-primary">Download my CV</a></p>
-            </div>
-          </div>
+      <div class="col-md-4" data-aos="zoom-in" data-aos-delay="100">
+        <div class="shadow-lg p-5 rounded-4 bg-white h-100">
+          <div class="display-6 text-success">😊</div>
+          <h3 class="fw-bold mt-3">13+</h3>
+          <p class="text-muted">Happy Clients</p>
         </div>
       </div>
-
-      <div class="unslate_co--section" id="services-section">
-        <div class="container">
-
-          <div class="section-heading-wrap text-center mb-5">
-            <h2 class="heading-h2 text-center divider"><span class="gsap-reveal">My Services</span></h2>
-            <span class="gsap-reveal"><img src="images/Highlighter.png" alt="divider" width="30%"></span>
-          </div>
-
-          <div class="row gutter-v3">
-            <div class="col-md-6 col-lg-4 mb-4">
-              <div class="feature-v1" data-aos="fade-up" data-aos-delay="100">
-                <div class="wrap-icon mb-3">
-                  <img src="images/Web-Application.png" alt="Image" width="45">
-                </div>
-                <h3>Web <br> Application</h3>
-                <p>Building responsive and dynamic websites, ensuring seamless performance and compatibility across devices and platforms. </p>
-              </div> 
-            </div>
-
-            <div class="col-md-6 col-lg-4 mb-4">
-              <div class="feature-v1" data-aos="fade-up" data-aos-delay="400">
-                <div class="wrap-icon mb-3">
-                  <img src="images/Web-Design.png" alt="Icon" width="45">
-                </div>
-                <h3>Web <br> Design</h3>
-                <p>Crafting visually appealing and user-friendly website interfaces, blending aesthetics with functionality to deliver exceptional user experiences. </p>
-              </div> 
-            </div>
-
-            <div class="col-md-6 col-lg-4 mb-4">
-              <div class="feature-v1" data-aos="fade-up" data-aos-delay="800">
-                <div class="wrap-icon mb-3">
-                  <img src="images/Web-Development.png" alt="Image" width="45">
-                </div>
-                <h3>Web <br> Development</h3>
-                <p>Building responsive and dynamic websites, ensuring seamless performance and compatibility across devices and platforms. </p>
-              </div> 
-            </div>
-
-            <!-- <div class="col-md-6 col-lg-4 mb-4">
-              <div class="feature-v1" data-aos="fade-up" data-aos-delay="200">
-                <div class="wrap-icon mb-3">
-                  <img src="images/svg/003-contact-book.svg" alt="Image" class="img-fluid" width="45">
-                </div>
-                <h3>User <br> Experience</h3>
-                <p>A small river named Duden flows by their place and supplies it with the necessary regelialia. </p>
-              </div> 
-            </div> -->
-
-            <!-- <div class="col-md-6 col-lg-4 mb-4">
-              <div class="feature-v1" data-aos="fade-up" data-aos-delay="100">
-                <div class="wrap-icon mb-3">
-                  <img src="images/svg/006-goal.svg" alt="Image" width="45">
-                </div>
-                <h3>WordPress <br> Solutions</h3>
-                <p>A small river named Duden flows by their place and supplies it with the necessary regelialia. </p>
-              </div> 
-            </div>
-            <div class="col-md-6 col-lg-4 mb-4">
-              <div class="feature-v1" data-aos="fade-up" data-aos-delay="200">
-                <div class="wrap-icon mb-3">
-                  <img src="images/svg/005-line-chart.svg" alt="Image" width="45">
-                </div>
-                <h3>Mobile <br> Applications</h3>
-                <p>A small river named Duden flows by their place and supplies it with the necessary regelialia. </p>
-              </div> 
-            </div> -->
-
-          </div>
+      <div class="col-md-4" data-aos="zoom-in" data-aos-delay="200">
+        <div class="shadow-lg p-5 rounded-4 bg-white h-100">
+          <div class="display-6 text-info">⏳</div>
+          <h3 class="fw-bold mt-3">21+</h3>
+          <p class="text-muted">Months Experience</p>
         </div>
       </div>
-
-      <div class="unslate_co--section section-counter" id="skills-section">
-        <div class="container">
-          <div class="section-heading-wrap text-center mb-5">
-            <h2 class="heading-h2 text-center divider"><span class="gsap-reveal">My Skills</span></h2>
-            <span class="gsap-reveal"><img src="images/Highlighter.png" alt="divider" width="30%"></span>
-          </div>
-
-          
-          <div class="row pt-5">
-            <div class="col-6 col-sm-6 mb-5 mt-5 mb-lg-0 col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="200">
-              <div class="counter-v1 text-center">
-                <span class="number-wrap">
-                  <span class="number number-counter" data-number="50">0</span>
-                  <span class="append-text">%</span>
-                </span>
-                <span class="counter-label">C</span>
-              </div>
-            </div>
-            <div class="col-6 col-sm-6 mb-5 mt-5 mb-lg-0 col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="0">
-              <div class="counter-v1 text-center">
-                <span class="number-wrap">
-                  <span class="number number-counter" data-number="55">0</span>
-                  <span class="append-text">%</span>
-                </span>
-                <span class="counter-label">Python</span>
-              </div>
-            </div>
-            <div class="col-6 col-sm-6 mb-5 mt-5 mb-lg-0 col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="200">
-              <div class="counter-v1 text-center">
-                <span class="number-wrap">
-                  <span class="number number-counter" data-number="51">0</span>
-                  <span class="append-text">%</span>
-                </span>
-                <span class="counter-label">Django</span>
-              </div>
-            </div>
-            <div class="col-6 col-sm-6 mb-5 mt-5 mb-lg-0 col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="100">
-              <div class="counter-v1 text-center">
-                <span class="number-wrap">
-                  <span class="number number-counter" data-number="90">0</span>
-                  <span class="append-text">%</span>
-                </span>
-                <span class="counter-label">HTML</span>
-              </div>
-            </div>
-            <div class="col-6 col-sm-6 mb-5 mt-5 mb-lg-0 col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="100">
-              <div class="counter-v1 text-center">
-                <span class="number-wrap">
-                  <span class="number number-counter" data-number="85">0</span>
-                  <span class="append-text">%</span>
-                </span>
-                <span class="counter-label">CSS</span>
-              </div>
-            </div>
-            <div class="col-6 col-sm-6 mb-5 mt-5 mb-lg-0 col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="200">
-              <div class="counter-v1 text-center">
-                <span class="number-wrap">
-                  <span class="number number-counter" data-number="90">0</span>
-                  <span class="append-text">%</span>
-                </span>
-                <span class="counter-label">Bootstrap</span>
-              </div>
-            </div>
-            <div class="col-6 col-sm-6 mb-5 mt-5 mb-lg-0 col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="200">
-              <div class="counter-v1 text-center">
-                <span class="number-wrap">
-                  <span class="number number-counter" data-number="44">0</span>
-                  <span class="append-text">%</span>
-                </span>
-                <span class="counter-label">React Js</span>
-              </div>
-            </div>
-            <div class="col-6 col-sm-6 mb-5 mt-5 mb-lg-0 col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="200">
-              <div class="counter-v1 text-center">
-                <span class="number-wrap">
-                  <span class="number number-counter" data-number="58">0</span>
-                  <span class="append-text">%</span>
-                </span>
-                <span class="counter-label">Java Script</span>
-              </div>
-            </div>
-            <div class="col-6 col-sm-6 mb-5 mt-5 mb-lg-0 col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="200">
-              <div class="counter-v1 text-center">
-                <span class="number-wrap">
-                  <span class="number number-counter" data-number="48">0</span>
-                  <span class="append-text">%</span>
-                </span>
-                <span class="counter-label">jQuery</span>
-              </div>
-            </div>
-            <div class="col-6 col-sm-6 mb-5 mt-5 mb-lg-0 col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="200">
-              <div class="counter-v1 text-center">
-                <span class="number-wrap">
-                  <span class="number number-counter" data-number="59">0</span>
-                  <span class="append-text">%</span>
-                </span>
-                <span class="counter-label">MySQL</span>
-              </div>
-            </div>
-            <div class="col-6 col-sm-6 mb-5 mt-5 mb-lg-0 col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="300">
-              <div class="counter-v1 text-center">
-                <span class="number-wrap">
-                  <span class="number number-counter" data-number="91">0</span>
-                  <span class="append-text">%</span>
-                </span>
-                <span class="counter-label">Canva</span>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <!-- END .counter -->
-      <!-- Have a project -->
-      <!-- <div>
-        <div class="d-flex testimonial-v1">
-          <div class="testimonial-inner-bg">
-            <div class="col-lg-7 text-lg-left"> -->
-            <!-- <span class="quote">&ldquo;</span> -->
-            <!-- <h3>Have a project on your mind.</h3>
-            <blockquote>
-              Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right and supplies it with the necessary regelialia. It is a paradisematic country, in which roasted parts of sentences fly into your mouth.
-            </blockquote>
-            </div>
-
-            <div class=" col-lg-5 ">
-              <img src="images/Addd.png" style=" width: 50%;" alt="Image">
-              <h3>Aditya Kumar</h3> -->
-              <!-- <span class="d-block position">Product Designer @Shopify</span> -->
-            <!-- </div>
-          </div>
-
-        </div>
-      </div> -->
-      <!-- Have a project end  -->
-
-      <!-- project -->
-      <div class="unslate_co--section" id="about-section">
-        <div class="container col-lg-12" style="background-color: brown;">
-          
-          <!-- <div class="section-heading-wrap text-center mb-5">
-            <h2 class="heading-h2 text-center divider"><span class="gsap-reveal">About Me</span></h2>
-            <span class="gsap-reveal">
-            <img src="images/divider.png" alt="divider" width="76">
-            </span>
-          </div> -->
-          
-
-          <div class="row mt-5 justify-content-between">
-            <div class="col-lg-4 mb-lg-0">
-              <figure class="">
-                <img src="images/Aditya-Kumar-Babhanpura.png" alt="Image" class="img-fluid">
-              </figure>
-            </div>
-            <div class="col-lg-7 pr-lg-5 mt-5">
-              <!-- <h3 class="mb-4 heading-h3"><span class="gsap-reveal">Get to Know Me</span></h3>
-              <p class="lead gsap-reveal">I'm <a href="#">Aditya Kumar</a>, a full stack web developer specializing in responsive, user-friendly web solutions. With expertise in front-end technologies like React and Angular and back-end development using Python and Django, I build scalable applications. I focus on delivering impactful web experiences through creativity, technical proficiency, and problem-solving.</p> -->
-              <div class="col-lg-12 text-lg-left">
-                 <!-- <span class="quote">&ldquo;</span> -->
-                <h3>Have a project on your mind.</h3>
-                <blockquote>
-                  Let’s collaborate to transform your vision into reality.
-                  Together, we’ll create something truly exceptional !                
-                </blockquote>
-                <p class="gsap-reveal"><a href="#contact-section" class="btn btn-outline-pill btn-custom-bg-light">Contect Me</a></p>
-                </div>
-                <!-- <div class="col-lg-8">
-                  <ul>
-                    <i class="fa-regular fa-hand-point-right"></i> <strong>Phone :</strong> <span>7488584509, 8986049246</span><br>
-                    <i class="fa-regular fa-hand-point-right"></i> <strong>Website :</strong> <span>www.example.com</span><br>
-                    <i class="fa-regular fa-hand-point-right"></i> <strong>Degree :</strong> <span>Batchlor's</span><br>
-                    <i class="fa-regular fa-hand-point-right"></i> <strong>Email :</strong> <span>adityasharmamama@gmail.com</span><br> 
-                  </ul>
-                </div>
-              </div> -->
-              <!-- <p class="gsap-reveal"><a href="#" class="btn btn-outline-pill btn-custom-light">Download my CV</a></p> -->
-            </div>
-          </div>
-        </div>
-      </div>
-      <!-- Project -->
-
-      <!-- blog -->
-      <div class="unslate_co--section" id="project">
-        <div class="container">
-          <div class="section-heading-wrap text-center mb-5">
-            <h2 class="heading-h2 text-center divider"><span class="gsap-reveal">My Project</span></h2>
-            <span class="gsap-reveal"><img src="images/Highlighter.png" alt="divider" width="30%"></span>
-          </div>
-
-          
-          <div class="row gutter-v4 align-items-stretch">
-            <div class="col-sm-6 col-md-6 col-lg-6 blog-post-entry" data-aos="fade-right" data-aos-delay="500">
-
-              <a href="https://krishco.com/" class="grid-item blog-item w-100 h-100">
-                <div class="overlay">
-                  <div class="portfolio-item-content">
-                    <h3>Krishco Engineers (p) Ltd.</h3>
-                    <p class="post-meta"><span class="small"></span>Visit Now</p>
-                  </div>
-                </div>
-                <img src="images/Krishco-Engineer-(p)-Ltd..png" class="lazyload" alt="Image" />
-              </a>
-
-
-            </div>
-            <div class="col-sm-6 col-md-6 col-lg-6 blog-post-entry" data-aos="fade-left" data-aos-delay="800">
-              <a href="https://raysrenewalsolar.com/" class="grid-item blog-item w-100 h-100">
-                <div class="overlay">
-                  <div class="portfolio-item-content">
-                    <h3>Rays Renewal Solar Energy (p) Ltd.</h3>
-                    <p class="post-meta"><span class="small"></span>Visit Now</p>
-                  </div>
-                </div>
-                <img src="images/Rays-Renewal-Solar-Energy-(p)-ltd..png" class="lazyload" alt="Image" />
-              </a>
-            </div>
-
-
-            <!-- <div class="col-sm-6 col-md-6 col-lg-4 blog-post-entry" data-aos="fade-up" data-aos-delay="0">
-
-              <a href="blog-single.html" class="grid-item blog-item w-100 h-100">
-                <div class="overlay">
-                  <div class="portfolio-item-content">
-                    <h3>A Mounteering Guide For Beginners</h3>
-                    <p class="post-meta">By Joefrey <span class="small">&bullet;</span> 5 mins read</p>
-                  </div>
-                </div>
-                <img src="images/post_3.jpg" class="lazyload" alt="Image" />
-              </a>
-
-
-            </div>
-            <div class="col-sm-6 col-md-6 col-lg-4 blog-post-entry" data-aos="fade-up" data-aos-delay="100">
-              <a href="blog-single.html" class="grid-item blog-item w-100 h-100">
-                <div class="overlay">
-                  <div class="portfolio-item-content">
-                    <h3>A Mounteering Guide For Beginners</h3>
-                    <p class="post-meta">By Joefrey <span class="small">&bullet;</span> 5 mins read</p>
-                  </div>
-                </div>
-                <img src="images/post_4.jpg" class="lazyload" alt="Image" />
-              </a>
-            </div>
-
-            <div class="col-sm-6 col-md-6 col-lg-4 blog-post-entry" data-aos="fade-up" data-aos-delay="200">
-              <a href="blog-single.html" class="grid-item blog-item w-100 h-100">
-                <div class="overlay">
-                  <div class="portfolio-item-content">
-                    <h3>A Mounteering Guide For Beginners</h3>
-                    <p class="post-meta">By Joefrey <span class="small">&bullet;</span> 5 mins read</p>
-                  </div>
-                </div>
-                <img src="images/post_5.jpg" class="lazyload" alt="Image" />
-              </a>
-            </div> -->
-
-
-          </div>
-
-        </div>
-      </div>
-      <!-- END blog posts -->
-
-      <div class="unslate_co--section" id="testimonial-section">
-        <div class="container">
-          <div class="section-heading-wrap text-center mb-5">
-            <h2 class="heading-h2 text-center divider"><span class="gsap-reveal">My Happy Clients</span></h2>
-            <span class="gsap-reveal"><img src="images/Highlighter.png" alt="divider" width="30%"></span>
-          </div>
-        </div>
-
-        <div class="owl-carousel testimonial-slider" data-aos="fade-up">
-          <div>
-            <div class="testimonial-v1">
-              <div class="testimonial-inner-bg">
-                <span class="quote">&ldquo;</span>
-                <blockquote>
-                  Collaborating with Aditya was an absolute pleasure. His professionalism, promptness, and dedication to delivering exceptional results were evident throughout our project. Aditya's enthusiasm for every facet of development truly stands out. If you're seeking to elevate your website and elevate your brand, Aditya is the ideal partner.
-                </blockquote>
-              </div>
-              
-              <div class="testimonial-author-info">
-                <img src="images/Sankar-Prakash.jpg" alt="Image">
-                <h3>Mr. Shankar Prakash</h3>
-                <span class="d-block position">Chief National Sales Manager</span>
-              </div>
-
-            </div>
-          </div>
-          <div>
-            <div class="testimonial-v1">
-              <div class="testimonial-inner-bg">
-                <span class="quote">&ldquo;</span>
-                <blockquote>
-                  Collaborating with Aditya was an absolute pleasure. His professionalism, promptness, and dedication to delivering exceptional results were evident throughout our project. Aditya's enthusiasm for every facet of development truly stands out. If you're seeking to elevate your website and elevate your brand, Aditya is the ideal partner.
-                </blockquote>
-              </div>
-              
-              <div class="testimonial-author-info">
-                <img src="images/Saurav-Kumar.jpg" alt="Image">
-                <h3>Mr. Saurav Kumar</h3>
-                <span class="d-block position">Web Developer</span>
-              </div>
-
-            </div>
-          </div>
-          <div>
-            <div class="testimonial-v1">
-              <div class="testimonial-inner-bg">
-                <span class="quote">&ldquo;</span>
-                <blockquote>
-                  Collaborating with Aditya was an absolute pleasure. His professionalism, promptness, and dedication to delivering exceptional results were evident throughout our project. Aditya's enthusiasm for every facet of development truly stands out. If you're seeking to elevate your website and elevate your brand, Aditya is the ideal partner.
-                </blockquote>
-              </div>
-              
-              <div class="testimonial-author-info">
-                <img src="images/Ankit-Kumar.jpg" alt="Image">
-                <h3>Mr. Ankit Kumar</h3>
-                <span class="d-block position">Web Developer</span>
-              </div>
-
-            </div>
-          </div>
-        </div>
-      </div>
-      <!-- END testimonial -->
-
-
-      <div class="unslate_co--section" id="contact-section">
-        <div class="container">
-          <div class="section-heading-wrap text-center mb-5">
-            <h2 class="heading-h2 text-center divider"><span class="gsap-reveal">Get In Touch</span></h2>
-            <span class="gsap-reveal"><img src="images/Highlighter.png" alt="divider" width="30%"></span>
-          </div>
-
-
-          <div class="row justify-content-between">
-            
-            <div class="col-md-6">
-              <form method="post" class="form-outline-style-v1" id="contactForm">
-                <div class="form-group row mb-0">
-                  <div class="col-lg-6 form-group gsap-reveal">
-                    <label for="name">Name</label>
-                    <input name="name" type="text" class="form-control" id="name">
-                  </div>
-                  <div class="col-lg-6 form-group gsap-reveal">
-                    <label for="email">Email</label>
-                    <input name="email" type="email" class="form-control" id="email">
-                  </div>
-                  <div class="col-lg-12 form-group gsap-reveal">
-                    <label for="message">Write your message...</label>
-                    <textarea name="message" id="message" cols="30" rows="7" class="form-control"></textarea>
-                  </div>
-                </div>
-                <div class="form-group row gsap-reveal">
-                    <div class="col-md-12 d-flex align-items-center">
-                      <input type="submit" class="btn btn-outline-pill btn-custom-primary mr-3" value="Send Message">
-                      <span class="submitting"></span>
-                    </div>
-                  </div>
-              </form>
-              <div id="form-message-warning" class="mt-4"></div> 
-              <div id="form-message-success">
-                Your message was sent, thank you!
-              </div>
-
-            </div>
-
-            <div class="col-md-4">
-              <div class="contact-info-v1">
-                <div class="gsap-reveal d-block">
-                  <span class="d-block contact-info-label">Email</span>
-                  <a href="mailto:adityasharmamama@gmail.com" class="contact-info-val">adityasharmamama@gmail.com</a>
-                </div>
-                <div class="gsap-reveal d-block">
-                  <span class="d-block contact-info-label">Phone</span>
-                  <a href="tel:7488584509" class="contact-info-val">+91 748 8584 509</a>, 
-                  <a href="tel:8986049246" class="contact-info-val">+91 898 6049 246</a>
-                </div>
-                <div class="gsap-reveal d-block">
-                  <span class="d-block contact-info-label">Address</span>
-                  <address class="contact-info-val">Patna 801505 Bihar
-                     <br> India</address>
-                </div>
-              </div>
-            </div>
-
-          </div>
-        </div>
-      </div>
-      </div> <!-- END .unslate_co-site-inner -->
-
-      <footer class="unslate_co--footer unslate_co--section">
-        <div class="container">
-          <div class="row justify-content-center">
-            <div class="col-md-7">
-              
-              <div class="footer-site-logo"><a href="index.html">Aditya<span>.</span></a></div>
-
-              <ul class="footer-site-social">
-                <li><a href="https://www.facebook.com/adityakumar.sharma.211?mibextid=ZbWKwL"><i class="fa-brands fa-facebook text-primary"></i> Facebook</a></li>
-                <li><a href="https://x.com/AdiyaSharma211?t=afQQ2KAA8K5KYkRQTkMQAw&s=08"><i class="fa-brands fa-x-twitter text-primary"></i> Twitter</a></li>
-                <li><a href="https://www.instagram.com/invites/contact/?igsh=10vutqjs01kg2&utm_content=3w0zwvs"><i class="fa-brands fa-instagram text-primary"></i> Instagram</a></li>
-                <li><a href="https://www.linkedin.com/in/aditya-kumar-7488584509-aditya?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"><i class="fa-brands fa-linkedin text-primary"></i> LinkedIn</a></li>
-                <li><a href="https://github.com/rajadityasharma "><i class="fa-brands fa-github text-primary"></i> GitHub</a></li>
-                <li><a href="https://www.youtube.com/@raj_aditya_sharma"><i class="fa-brands fa-youtube text-primary"></i> YouTube</a></li>
-              </ul>
-
-              <p class="site-copyright">
-                
-                <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-                Copyright &copy;
-                <script>
-                  document.write(new Date().getFullYear());
-                </script> All rights reserved || This template is made by <a href="index.html" target="_blank">Aditya Kumar  <i class="fa-regular fa-heart text-primary"></i></a>
-                <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-              
-              </p>
-
-            </div>
-          </div>
-        </div>
-      </footer>
-
- <!-- Back to Top -->
- <!-- <a href="#" class="btn btn-primary back-to-top bottomFixed-btns"><i class="fa-solid fa-arrow-up"></i></a> -->
-<!-- Back to Top End -->
-      
     </div>
+  </div>
+</section>
 
-    
-    <!-- Loader -->
-    <div id="unslate_co--overlayer"></div>
-    <div class="site-loader-wrap">
-      <div class="site-loader"></div>
+<!-- Floating Contact Sidebar -->
+<div class="floating-contact">
+  <a href="mailto:adityasharmamama@gmail.com" target="_blank" class="contact-bubble email"><i class="bi bi-envelope-fill"></i></a>
+  <a href="https://wa.me/917488584509" target="_blank" class="contact-bubble whatsapp"><i class="bi bi-whatsapp"></i></a>
+  <a href="sms:+917488584509" class="contact-bubble sms"><i class="bi bi-chat-dots-fill"></i></a>
+</div>
+
+  <!-- About Me -->
+  <!-- About Me Section -->
+<section id="about" class="py-5" style="background: linear-gradient(to bottom right, #14de913a, #ffffff);">
+  <div class="container">
+    <h2 class="text-center mb-5" data-aos="fade-up">About Me</h2>
+    <div class="row align-items-center">
+      <div class="col-md-5 text-center" data-aos="fade-right">
+        <img src="image/Aditya-Kumar-Patna.webp" class="img-fluid rounded-4 shadow-lg" alt="Aditya Kumar">
+      </div>
+      <div class="col-md-7" data-aos="fade-left">
+        <h3 class="fw-bold">Get to Know Me</h3>
+        <p class="lead">I'm <strong>Aditya Kumar</strong>, a full stack web developer specializing in responsive, user-friendly web solutions. With expertise in front-end technologies like <strong>React</strong>, <strong>Bootstrap</strong>, and back-end using <strong>Python</strong> and <strong>Django</strong>, I build scalable, creative, and impactful digital experiences.</p>
+        <div class="row g-3 mt-4">
+          <div class="col-sm-6">
+            <strong>DOB:</strong> 2 Aug 2005
+          </div>
+          <div class="col-sm-6">
+            <strong>Age:</strong> <span id="calculated-age"></span>
+          </div>
+          <div class="col-sm-6">
+            <strong>City:</strong> Patna, India
+          </div>
+          <div class="col-sm-6">
+            <strong>Freelance:</strong> Available
+          </div>
+          <div class="col-sm-6">
+            <strong>Phone:</strong> <a href="tel:7488584509" class="text-decoration-none">7488584509</a> ,<a href="tel:8986049246" class="text-decoration-none">8986049246</a> 
+          </div>
+          <div class="col-sm-6">
+            <strong>Website:</strong> <a href="" class="text-decoration-none">Aditya Kumar Patna</a>
+          </div>
+          <div class="col-sm-6">
+            <strong>Degree:</strong> Bachelor's
+          </div>
+          <div class="col-sm-6">
+            <strong>Email:</strong> <a href="mailto:adityasharmamama@gmail.com" class="text-decoration-none"> adityasharmamama@gmail.com</a>
+          </div>
+          <div class="col-sm-6">
+            <a href="image/My-Resume.pdf" download class="btn btn-outline-primary btn-lg rounded-pill shadow">📄 Download Resume</a>
+          </div>
+        </div>
+      </div>
     </div>
+  </div>
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+      const dob = new Date("2005-08-02");
+      const today = new Date();
+      let age = today.getFullYear() - dob.getFullYear();
+      const m = today.getMonth() - dob.getMonth();
+      if (m < 0 || (m === 0 && today.getDate() < dob.getDate())) {
+        age--;
+      }
+      document.getElementById("calculated-age").textContent = age + " years";
+    });
+  </script>
+</section>
 
-    <script src="js/scripts-dist.js"></script>
-    <script src="js/main.js"></script>
 
-  </body>
+  <!-- Services -->
+  <section id="services" class="py-5 mt-2">
+  <div class="container">
+    <h2 class="text-center">My Services</h2>
+    <div class="divider"></div>
+    <div class="row g-4">
+
+      <div class="col-md-4" data-aos="zoom-in">
+        <div class="service-card text-center">
+          <i class="fas fa-laptop-code service-icon"></i>
+          <h5 class="fw-bold">Web Application Development</h5>
+          <p>I build high-performance, scalable, and secure web applications tailored to your business needs using modern tech stacks like Django, React, and REST APIs.</p>
+        </div>
+      </div>
+
+      <div class="col-md-4" data-aos="zoom-in" data-aos-delay="100">
+        <div class="service-card text-center">
+          <i class="fas fa-paint-brush service-icon"></i>
+          <h5 class="fw-bold">UI/UX Design</h5>
+          <p>Crafting intuitive and elegant user interfaces with a strong focus on user experience, responsiveness, and accessibility using Figma and Canva.</p>
+        </div>
+      </div>
+
+      <div class="col-md-4" data-aos="zoom-in" data-aos-delay="200">
+        <div class="service-card text-center">
+          <i class="fas fa-mobile-alt service-icon"></i>
+          <h5 class="fw-bold">Responsive Web Design</h5>
+          <p>Ensuring your website looks great on all devices with mobile-first designs using Bootstrap 5, media queries, and clean layout strategies.</p>
+        </div>
+      </div>
+
+      <div class="col-md-4" data-aos="zoom-in" data-aos-delay="300">
+        <div class="service-card text-center">
+          <i class="fas fa-code service-icon"></i>
+          <h5 class="fw-bold">Front-end Development</h5>
+          <p>Interactive, well-structured interfaces using HTML5, CSS3, JavaScript, and frameworks like React and jQuery for fast, engaging UIs.</p>
+        </div>
+      </div>
+
+      <div class="col-md-4" data-aos="zoom-in" data-aos-delay="400">
+        <div class="service-card text-center">
+          <i class="fas fa-database service-icon"></i>
+          <h5 class="fw-bold">Back-end Integration</h5>
+          <p>Database integration with MySQL, authentication systems, admin panels, and custom API development for complete web solutions.</p>
+        </div>
+      </div>
+
+      <div class="col-md-4" data-aos="zoom-in" data-aos-delay="500">
+        <div class="service-card text-center">
+          <i class="fas fa-rocket service-icon"></i>
+          <h5 class="fw-bold">Portfolio & Branding</h5>
+          <p>Helping individuals and brands establish a digital identity through personalized portfolio designs, branding, and SEO-friendly landing pages.</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+  <!-- Skills -->
+<!-- Skills -->
+<section id="skills" class="py-5" style="background: linear-gradient(to bottom right, #e0f7ff, #ffffff);">
+  <div class="container">
+    <h2 class="text-center mb-5" data-aos="fade-down">My Skills</h2>
+    <div class="row justify-content-center">
+
+      <!-- Skill Item -->
+      <div class="col-6 col-md-3 text-center" data-aos="zoom-in">
+        <div class="skill-progress" style="--percent:90%; --color:#e44d26">
+          <span>HTML<br>90%</span>
+        </div>
+        <div class="skill-label">HTML</div>
+      </div>
+
+      <div class="col-6 col-md-3 text-center" data-aos="zoom-in" data-aos-delay="100">
+        <div class="skill-progress" style="--percent:85%; --color:#264de4">
+          <span>CSS<br>85%</span>
+        </div>
+        <div class="skill-label">CSS</div>
+      </div>
+
+      <div class="col-6 col-md-3 text-center" data-aos="zoom-in" data-aos-delay="200">
+        <div class="skill-progress" style="--percent:90%; --color:#563d7c">
+          <span>Bootstrap<br>90%</span>
+        </div>
+        <div class="skill-label">Bootstrap</div>
+      </div>
+
+      <div class="col-6 col-md-3 text-center" data-aos="zoom-in" data-aos-delay="300">
+        <div class="skill-progress" style="--percent:58%; --color:#f0db4f">
+          <span>JavaScript<br>58%</span>
+        </div>
+        <div class="skill-label">JavaScript</div>
+      </div>
+
+      <div class="col-6 col-md-3 text-center" data-aos="zoom-in" data-aos-delay="400">
+        <div class="skill-progress" style="--percent:44%; --color:#61dbfb">
+          <span>React.js<br>44%</span>
+        </div>
+        <div class="skill-label">React.js</div>
+      </div>
+
+      <div class="col-6 col-md-3 text-center" data-aos="zoom-in" data-aos-delay="500">
+        <div class="skill-progress" style="--percent:55%; --color:#306998">
+          <span>Python<br>55%</span>
+        </div>
+        <div class="skill-label">Python</div>
+      </div>
+
+      <div class="col-6 col-md-3 text-center" data-aos="zoom-in" data-aos-delay="600">
+        <div class="skill-progress" style="--percent:51%; --color:#092e20">
+          <span>Django<br>51%</span>
+        </div>
+        <div class="skill-label">Django</div>
+      </div>
+
+      <div class="col-6 col-md-3 text-center" data-aos="zoom-in" data-aos-delay="700">
+        <div class="skill-progress" style="--percent:48%; --color:#0769ad">
+          <span>jQuery<br>48%</span>
+        </div>
+        <div class="skill-label">jQuery</div>
+      </div>
+
+      <div class="col-6 col-md-3 text-center" data-aos="zoom-in" data-aos-delay="800">
+        <div class="skill-progress" style="--percent:50%; --color:#555555">
+          <span>C<br>50%</span>
+        </div>
+        <div class="skill-label">C</div>
+      </div>
+
+      <div class="col-6 col-md-3 text-center" data-aos="zoom-in" data-aos-delay="900">
+        <div class="skill-progress" style="--percent:59%; --color:#00758f">
+          <span>MySQL<br>59%</span>
+        </div>
+        <div class="skill-label">MySQL</div>
+      </div>
+
+      <div class="col-6 col-md-3 text-center" data-aos="zoom-in" data-aos-delay="1000">
+        <div class="skill-progress" style="--percent:91%; --color:#00c4cc">
+          <span>Canva<br>91%</span>
+        </div>
+        <div class="skill-label">Canva</div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- Projects Section -->
+<section id="projects" class="py-5" style="background: linear-gradient(to bottom right, #f8fdff, #ffffff);">
+  <div class="container">
+    <div class="text-center mb-5">
+      <h2 class="fw-bold">📁 My Projects</h2>
+      <p class="text-muted">Some recent works that I have completed</p>
+    </div>
+    <div class="row g-4">
+      <div class="col-md-6 col-lg-4" data-aos="fade-up">
+        <div class="card shadow-sm h-100">
+          <img src="image/Krishco-Engineer-(p)-Ltd.webp" class="card-img-top" alt="Project 1">
+          <div class="card-body">
+            <h5 class="card-title">Krishco Engineers Pvt. Ltd.</h5>
+            <p class="card-text">A corporate website built with HTML, CSS, JS & Bootstrap for a real industrial client.</p>
+            <a href="https://krishco.com/" class="btn btn-outline-primary btn-sm">🔗 Visit</a>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="100">
+        <div class="card shadow-sm h-100">
+          <img src="image/Rays-Renewal-Solar-Energy-(p)-ltd.webp" class="card-img-top" alt="Project 2">
+          <div class="card-body">
+            <h5 class="card-title">Rays Renewal Solar Energy</h5>
+            <p class="card-text">A solar company portfolio website with responsive and clean layout design.</p>
+            <a href="https://www.raysrenewalsolar.com/" class="btn btn-outline-primary btn-sm">🔗 Visit</a>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="200">
+        <div class="card shadow-sm h-100">
+          <img src="image/ToolMitra.png" class="card-img-top" alt="Project 3">
+          <div class="card-body">
+            <h5 class="card-title">ToolMitra – Multi Tool App</h5>
+            <p class="card-text">An all-in-one web tool app built using Django & JavaScript with image/PDF tools.</p>
+            <a href="#projects" class="btn btn-outline-primary btn-sm">🔗 Comming Soon</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Contact Section -->
+<section id="contact" class="py-5" style="background: linear-gradient(to top right, #e6faff, #ffffff);">
+  <div class="container">
+    <div class="text-center mb-5">
+      <h2 class="fw-bold">📬 Get In Touch</h2>
+      <p class="text-muted">Connect with me through any of the platforms below</p>
+    </div>
+    <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
+      <div class="col">
+        <div class="card h-100 shadow-sm">
+          <div class="card-body text-center">
+            <i class="bi bi-telephone-fill text-primary fs-4"></i>
+            <p class="mt-2 mb-0"><strong>Phone</strong></p>
+            <p class="text-muted small"><a href="tel:7488584509" class="text-decoration-none">+91 7488584509</a><br><a href="tel:8986049246" class="text-decoration-none">+91 8986049246</a></p>
+          </div>
+        </div>
+      </div>
+      <div class="col">
+        <div class="card h-100 shadow-sm">
+          <div class="card-body text-center">
+            <i class="bi bi-envelope-fill text-danger fs-4"></i>
+            <p class="mt-2 mb-0"><strong>Email</strong></p>
+            <p class="text-muted small"><a href="mailto:adityasharmamama@gmail.com" class="text-decoration-none">adityasharmamama@gmail.com</a></p>
+          </div>
+        </div>
+      </div>
+      <div class="col">
+        <div class="card h-100 shadow-sm">
+          <div class="card-body text-center">
+            <i class="bi bi-whatsapp text-success fs-4"></i>
+            <p class="mt-2 mb-0"><strong>WhatsApp</strong></p>
+            <p class="text-muted small"><a href="https://wa.me/+917488584509?text=Hello!%20Aditya,%20Please%20let%20me%20know%20more%20about%20your%20services!!" target="_blank" class="text-decoration-none">+91 7488584509</a><br><a href="https://wa.me/+918986049246?text=Hello!%20Aditya,%20Please%20let%20me%20know%20more%20about%20your%20services!!" target="_blank" class="text-decoration-none">+91 8986049246</a></p>
+          </div>
+        </div>
+      </div>
+      <div class="col">
+        <div class="card h-100 shadow-sm">
+          <div class="card-body text-center">
+            <i class="bi bi-house text-info fs-4"></i>
+            <p class="mt-2 mb-0"><strong>Address</strong></p>
+            <p class="text-muted small">Patna, 801505, Bihar <br> India</p>
+          </div>
+        </div>
+      </div>
+      <div class="col">
+        <div class="card h-100 shadow-sm">
+          <div class="card-body text-center">
+            <i class="bi bi-instagram text-warning fs-4"></i>
+            <p class="mt-2 mb-0"><strong>Instagram</strong></p>
+            <p class="text-muted small"><a class="text-decoration-none" href="https://www.instagram.com/invites/contact/?igsh=10vutqjs01kg2&utm_content=3w0zwvs" target="_blank">Aditya Sharma</a></p>
+          </div>
+        </div>
+      </div>
+      <div class="col">
+        <div class="card h-100 shadow-sm">
+          <div class="card-body text-center">
+            <i class="bi bi-facebook text-primary fs-4"></i>
+            <p class="mt-2 mb-0"><strong>Facebook</strong></p>
+            <p class="text-muted small"><a class="text-decoration-none" href="https://www.facebook.com/adityakumar.sharma.211?mibextid=ZbWKwL" target="_blank">Aditya Sharma</a></p>
+          </div>
+        </div>
+      </div>
+      <div class="col">
+        <div class="card h-100 shadow-sm">
+          <div class="card-body text-center">
+            <strong class="bg-dark px-2 py-1 text-white rounded">X</strong>
+            <p class="mt-2 mb-0"><strong>X (Twitter)</strong></p>
+            <p class="text-muted small"><a class="text-decoration-none" href="https://x.com/AdiyaSharma211?t=afQQ2KAA8K5KYkRQTkMQAw&s=08" target="_blank">Aditya Sharma</a></p>
+          </div>
+        </div>
+      </div>
+      <div class="col">
+        <div class="card h-100 shadow-sm">
+          <div class="card-body text-center">
+            <i class="bi bi-linkedin text-info fs-4"></i>
+            <p class="mt-2 mb-0"><strong>LinkedIn</strong></p>
+            <p class="text-muted small"><a class="text-decoration-none" href="https://www.linkedin.com/in/aditya-kumar-7488584509-aditya?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank">Aditya Kumar </a></p>
+          </div>
+        </div>
+      </div>
+      <div class="col">
+        <div class="card h-100 shadow-sm">
+          <div class="card-body text-center">
+            <i class="bi bi-github text-dark fs-4"></i>
+            <p class="mt-2 mb-0"><strong>Github</strong></p>
+            <p class="text-muted small"><a href="https://github.com/rajadityasharma" class="text-decoration-none" target="_blank">Aditya Kumar</a></p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+  <!-- Footer -->
+ <footer class="bg-light text-center text-muted py-4">
+    <div class="container">
+        <p class="mb-0">&copy; <span id="current-year"></span> All rights reserved || This template is made by <strong>Aditya Kumar</strong></p>
+    </div>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+        document.getElementById("current-year").textContent = new Date().getFullYear();
+        });
+    </script>
+  </footer>
+  <!-- Scroll to Top Button -->
+    <button id="scrollToTopBtn" class="scroll-top-btn">
+    <i class="bi bi-arrow-up-short"></i>
+    </button>
+
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    AOS.init();
+  </script>
+  <script>
+  const sections = document.querySelectorAll("section[id]");
+  const navLinks = document.querySelectorAll(".navbar-nav .nav-link");
+
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      const id = entry.target.getAttribute("id");
+      const link = document.querySelector(`.nav-link[href="#${id}"]`);
+
+      if (entry.isIntersecting) {
+        navLinks.forEach(nav => nav.classList.remove("active"));
+        if (link) link.classList.add("active");
+      }
+    });
+  }, {
+    threshold: 0.6
+  });
+
+  sections.forEach(section => {
+    observer.observe(section);
+  });
+</script>
+<script>
+  // Show/Hide button on scroll
+  window.onscroll = function () {
+    const btn = document.getElementById("scrollToTopBtn");
+    if (document.body.scrollTop > 200 || document.documentElement.scrollTop > 200) {
+      btn.style.display = "flex";
+    } else {
+      btn.style.display = "none";
+    }
+  };
+
+  // Scroll to top function
+  document.getElementById("scrollToTopBtn").onclick = function () {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
+</script>
+
+
+</body>
 </html>
