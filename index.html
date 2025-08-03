@@ -17,42 +17,215 @@
 <body>
   <!-- Start Section (Navbar + Hero) -->
 
-<header>
-  <!-- Navbar -->
-  <nav class="navbar navbar-expand-lg p-3 navbar-light bg-white shadow-sm fixed-top">
-    <div class="container">
-      <a class="navbar-brand fw-bold text-primary" href="#home">Aditya.</a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
-        <ul class="navbar-nav">
-          <li class="nav-item">
-            <a class="nav-link active" href="#home">🏠 Home</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#about">🙋 About</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#services">🛠 Services</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#skills">📊 Skills</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#projects">📁 Projects</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#contact">📬 Contact</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="https://github.com/rajadityasharma"><i class="bi bi-github text-dark fs-6"></i> Github</a>
-          </li>
-        </ul>
+  <header>
+    <!-- Enhanced Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top shadow-sm" style="background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%) !important;">
+      <div class="container">
+        <!-- Logo/Brand with animation -->
+        <a class="navbar-brand fw-bold" href="#home" style="font-size: 1.5rem;">
+          <span class="text-gradient" style="background: linear-gradient(90deg, #3b82f6, #8b5cf6); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">Aditya</span>
+          <span class="text-primary">.</span>
+        </a>
+        
+        <!-- Mobile Toggle Button -->
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        
+        <!-- Navbar Links -->
+        <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+          <ul class="navbar-nav align-items-center">
+            <li class="nav-item">
+              <a class="nav-link position-relative px-3 active" href="#home">
+                <i class="bi bi-house-door-fill d-lg-none me-2"></i>
+                <span class="d-none d-lg-inline">Home</span>
+                <span class="nav-link-underline"></span>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link position-relative px-3" href="#about">
+                <i class="bi bi-person-fill d-lg-none me-2"></i>
+                <span class="d-none d-lg-inline">About</span>
+                <span class="nav-link-underline"></span>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link position-relative px-3" href="#services">
+                <i class="bi bi-tools d-lg-none me-2"></i>
+                <span class="d-none d-lg-inline">Services</span>
+                <span class="nav-link-underline"></span>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link position-relative px-3" href="#skills">
+                <i class="bi bi-bar-chart-line-fill d-lg-none me-2"></i>
+                <span class="d-none d-lg-inline">Skills</span>
+                <span class="nav-link-underline"></span>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link position-relative px-3" href="#projects">
+                <i class="bi bi-folder-fill d-lg-none me-2"></i>
+                <span class="d-none d-lg-inline">Projects</span>
+                <span class="nav-link-underline"></span>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link position-relative px-3" href="#contact">
+                <i class="bi bi-envelope-fill d-lg-none me-2"></i>
+                <span class="d-none d-lg-inline">Contact</span>
+                <span class="nav-link-underline"></span>
+              </a>
+            </li>
+            <li class="nav-item ms-lg-3">
+              <a class="btn btn-outline-light btn-sm rounded-pill px-3 d-flex align-items-center" href="https://github.com/rajadityasharma" target="_blank">
+                <i class="bi bi-github me-1"></i>
+                <span class="d-none d-md-inline">GitHub</span>
+              </a>
+            </li>
+            <li class="nav-item ms-lg-2">
+              <a class="btn btn-primary btn-sm rounded-pill px-3 d-flex align-items-center" href="#contact">
+                <i class="bi bi-send-fill me-1"></i>
+                <span class="d-none d-md-inline">Hire Me</span>
+              </a>
+            </li>
+          </ul>
+        </div>
       </div>
-    </div>
-  </nav>
-</header>
+    </nav>
+  </header>
+  
+  <style>
+    /* Navbar Styles */
+    .navbar {
+      transition: all 0.3s ease;
+      padding-top: 0.5rem;
+      padding-bottom: 0.5rem;
+    }
+    
+    .navbar.scrolled {
+      background: rgba(15, 23, 42, 0.95) !important;
+      backdrop-filter: blur(10px);
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+      padding-top: 0.3rem;
+      padding-bottom: 0.3rem;
+    }
+    
+    .nav-link {
+      color: rgba(255, 255, 255, 0.8) !important;
+      font-weight: 500;
+      transition: all 0.3s ease;
+      margin: 0 0.1rem;
+    }
+    
+    .nav-link:hover,
+    .nav-link.active {
+      color: white !important;
+    }
+    
+    .nav-link.active {
+      font-weight: 600;
+    }
+    
+    .nav-link-underline {
+      position: absolute;
+      bottom: 0;
+      left: 15%;
+      width: 70%;
+      height: 2px;
+      background: linear-gradient(90deg, #3b82f6, #8b5cf6);
+      transform: scaleX(0);
+      transform-origin: center;
+      transition: transform 0.3s ease;
+    }
+    
+    .nav-link:hover .nav-link-underline,
+    .nav-link.active .nav-link-underline {
+      transform: scaleX(1);
+    }
+    
+    .btn-outline-light {
+      border-color: rgba(255, 255, 255, 0.3);
+    }
+    
+    .btn-outline-light:hover {
+      background: rgb(255, 255, 255);
+    }
+    
+    /* Mobile menu adjustments */
+    @media (max-width: 991.98px) {
+      .navbar-collapse {
+        background: rgba(15, 23, 42, 0.98);
+        padding: 1rem;
+        margin-top: 0.5rem;
+        border-radius: 0.5rem;
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+      }
+      
+      .nav-item {
+        margin: 0.3rem 0;
+      }
+      
+      .nav-link {
+        padding: 0.5rem 1rem;
+      }
+    }
+    
+    /* Smooth scrolling */
+    html {
+      scroll-behavior: smooth;
+    }
+  </style>
+  
+  <script>
+    // Navbar scroll effect
+    document.addEventListener('DOMContentLoaded', function() {
+      const navbar = document.querySelector('.navbar');
+      
+      window.addEventListener('scroll', function() {
+        if (window.scrollY > 50) {
+          navbar.classList.add('scrolled');
+        } else {
+          navbar.classList.remove('scrolled');
+        }
+      });
+      
+      // Close mobile menu when clicking a link
+      const navLinks = document.querySelectorAll('.navbar-nav .nav-link');
+      const navbarCollapse = document.querySelector('.navbar-collapse');
+      
+      navLinks.forEach(link => {
+        link.addEventListener('click', () => {
+          if (navbarCollapse.classList.contains('show')) {
+            const bsCollapse = new bootstrap.Collapse(navbarCollapse);
+            bsCollapse.hide();
+          }
+        });
+      });
+      
+      // Update active nav link on click
+      navLinks.forEach(link => {
+        link.addEventListener('click', function() {
+          navLinks.forEach(navLink => navLink.classList.remove('active'));
+          this.classList.add('active');
+        });
+      });
+      
+      // Smooth scroll with offset for fixed navbar
+      document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function(e) {
+          e.preventDefault();
+          const target = document.querySelector(this.getAttribute('href'));
+          if (target) {
+            window.scrollTo({
+              top: target.offsetTop - 70,
+              behavior: 'smooth'
+            });
+          }
+        });
+      });
+    });
+  </script>
 
 <!-- Hero Section -->
 <section id="home" class="d-flex align-items-center min-vh-100 position-relative overflow-hidden" style="background: linear-gradient(135deg, #f0f9ff 0%, #e6f4ff 50%, #f0f7ff 100%); padding-top: 80px;">
@@ -1024,7 +1197,7 @@
 </style>
 
 <!-- Skills Section -->
-<section id="skills" class="py-6">
+<section id="skills" class="skills-section py-6">
   <div class="container">
     <div class="section-header">
       <h2 class="display-4 fw-bold mb-3 position-relative d-inline-block">
@@ -1603,7 +1776,7 @@
   <div class="container position-relative z-index-1">
     <div class="text-center mb-6" data-aos="fade-up">
       <h2 class="display-4 fw-bold mb-3 position-relative d-inline-block">
-        <span class="me-2">📁</span> My Projects
+         My Projects
         <span class="position-absolute bottom-0 start-0 w-100" style="height: 4px; background: linear-gradient(90deg, #3b82f6, #8b5cf6); transform: scaleX(0); transform-origin: left; animation: underlineGrow 1s ease-out 0.5s forwards;"></span>
       </h2>
       <p class="lead text-muted max-w-800 mx-auto">Explore my collection of professional work and creative solutions</p>
@@ -2193,28 +2366,6 @@
   <script>
     AOS.init();
   </script>
-  <script>
-  const sections = document.querySelectorAll("section[id]");
-  const navLinks = document.querySelectorAll(".navbar-nav .nav-link");
-
-  const observer = new IntersectionObserver(entries => {
-    entries.forEach(entry => {
-      const id = entry.target.getAttribute("id");
-      const link = document.querySelector(`.nav-link[href="#${id}"]`);
-
-      if (entry.isIntersecting) {
-        navLinks.forEach(nav => nav.classList.remove("active"));
-        if (link) link.classList.add("active");
-      }
-    });
-  }, {
-    threshold: 0.6
-  });
-
-  sections.forEach(section => {
-    observer.observe(section);
-  });
-</script>
 <script>
   // Show/Hide button on scroll
   window.onscroll = function () {
@@ -2235,4 +2386,3 @@
 
 </body>
 </html>
-
