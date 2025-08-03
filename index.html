@@ -9,218 +9,8 @@
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
-  <style>
-    html {
-      scroll-behavior: smooth;
-    }
-    .hero {
-      background: linear-gradient(to right, #0d6efd, #6c63ff);
-      color: white;
-      padding: 120px 0;
-      text-align: center;
-    }
-    .divider {
-      width: 80px;
-      height: 4px;
-      background: #0d6efd;
-      margin: 20px auto;
-    }
-    .service-card, .skill-bar {
-      border-radius: 10px;
-    }
-    .footer {
-      background: #0d6efd;
-      color: white;
-      padding: 20px 0;
-      text-align: center;
-    }
-    .stats {
-      background: #f8f9fa;
-      padding: 30px 0;
-    }
-    .card-img-top {
-    position: relative;
-    transition: 0.4s ease;
-  }
-  .card-img-top::after {
-    content: "";
-    position: absolute;
-    top: 0; left: 0;
-    width: 100%; height: 100%;
-    background: rgba(0, 0, 0, 0.3);
-    opacity: 0;
-    transition: opacity 0.4s ease;
-  }
-  .card:hover .card-img-top::after {
-    opacity: 1;
-  }
-  .card:hover {
-    transform: translateY(-10px) scale(1.02);
-    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
-    transition: all 0.4s ease;
-  }
-  .card {
-    transition: all 0.4s ease;
-  }
-  .stats .shadow-lg {
-    transition: transform 0.4s ease, box-shadow 0.4s ease;
-  }
-  .stats .shadow-lg:hover {
-    transform: translateY(-10px) scale(1.03);
-    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
-  }
-  .resume-btn:hover {
-    background-color: #198754;
-    color: white;
-    border-color: #198754;
-  }
-    section {
-        scroll-margin-top: 80px; /* height of fixed navbar */
-    }
-  </style>
-  
-      <style>
-        .service-icon {
-          font-size: 36px;
-          color: #0d6efd;
-          margin-bottom: 15px;
-        }
-        .service-card {
-          border-radius: 15px;
-          padding: 25px;
-          background: #fff;
-          box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
-          transition: transform 0.3s ease;
-        }
-        .service-card:hover {
-          transform: translateY(-8px);
-        }
-      </style>
-      <style>
-  section {
-    scroll-margin-top: 80px;
-  }
-  .stats .shadow-lg {
-    transition: transform 0.4s ease, box-shadow 0.4s ease;
-  }
-  .stats .shadow-lg:hover {
-    transform: translateY(-10px) scale(1.03);
-    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
-  }
-  .resume-btn:hover {
-    background-color: #198754;
-    color: white;
-    border-color: #198754;
-  }
-</style>
 
-      <style>
-        .skill-progress {
-          width: 150px;
-          height: 150px;
-          border-radius: 50%;
-          background: rgba(255, 255, 255, 0.6);
-          backdrop-filter: blur(10px);
-          -webkit-backdrop-filter: blur(10px);
-          position: relative;
-          margin: 20px auto;
-          box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          flex-direction: column;
-          transition: transform 0.4s ease;
-        }
-        .skill-progress:hover {
-          transform: scale(1.05);
-        }
-        .skill-progress::before {
-          content: "";
-          position: absolute;
-          top: 0; left: 0;
-          width: 100%; height: 100%;
-          border-radius: 50%;
-          background: conic-gradient(var(--color) var(--percent), rgba(255,255,255,0.3) var(--percent));
-          z-index: 1;
-        }
-        .skill-progress span {
-          z-index: 2;
-          font-size: 20px;
-          font-weight: bold;
-          color: #333;
-        }
-        .skill-label {
-          margin-top: 10px;
-          font-weight: 600;
-          color: #333;
-        }
-      </style>
-
-      <!-- floating Contenet  -->
-
-      <style>
-            .floating-contact {
-            position: fixed;
-            right: 20px;
-            top: 50%;
-            transform: translateY(-50%);
-            z-index: 999;
-            display: flex;
-            flex-direction: column;
-            gap: 15px;
-            }
-
-            .contact-bubble {
-            width: 45px;
-            height: 45px;
-            background-color: #ffffff;
-            border-radius: 50%;
-            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
-            color: #333;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 20px;
-            transition: all 0.3s ease;
-            text-decoration: none;
-            }
-
-            .contact-bubble:hover {
-            transform: scale(1.1);
-            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
-            }
-
-            .contact-bubble.email { color: #d93025; }
-            .contact-bubble.whatsapp { color: #25D366; }
-            .contact-bubble.sms { color: #1a73e8; }
-        </style>
-        <style>
-            .scroll-top-btn {
-            position: fixed;
-            bottom: 30px;
-            right: 25px;
-            width: 45px;
-            height: 45px;
-            font-size: 22px;
-            background: #ffffff;
-            border: 2px solid #0d6efd;
-            color: #0d6efd;
-            border-radius: 50%;
-            cursor: pointer;
-            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
-            display: none;
-            align-items: center;
-            justify-content: center;
-            z-index: 1000;
-            transition: all 0.3s ease;
-            }
-
-            .scroll-top-btn:hover {
-            background: #0d6efd;
-            color: #fff;
-            }
-
-        </style>
+        
 <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
 </head>
 
@@ -265,109 +55,675 @@
 </header>
 
 <!-- Hero Section -->
-<section id="home" class="d-flex align-items-center min-vh-100" style="background: linear-gradient(to top right, #e6faff, #ffffff); padding-top: 80px;">
-  <div class="container">
+<section id="home" class="d-flex align-items-center min-vh-100 position-relative overflow-hidden" style="background: linear-gradient(135deg, #f0f9ff 0%, #e6f4ff 50%, #f0f7ff 100%); padding-top: 80px;">
+  <!-- Animated background elements -->
+  <div class="position-absolute top-0 start-0 w-100 h-100">
+    <div class="position-absolute top-0 start-0 w-100 h-100" style="background: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiPjxkZWZzPjxwYXR0ZXJuIGlkPSJwYXR0ZXJuIiB3aWR0aD0iNDAiIGhlaWdodD0iNDAiIHBhdHRlcm5Vbml0cz0idXNlclNwYWNlT25Vc2UiIHBhdHRlcm5UcmFuc2Zvcm09InJvdGF0ZSg0NSkiPjxyZWN0IHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgZmlsbD0icmdiYSgyMDQsIDIyOCwgMjU1LCAwLjA1KSIvPjwvcGF0dGVybj48L2RlZnM+PHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgZmlsbD0idXJsKCNwYXR0ZXJuKSIvPjwvc3ZnPg==')"></div>
+    <div class="position-absolute bottom-0 end-0" style="width: 300px; height: 300px; background: radial-gradient(circle, rgba(100,200,255,0.2) 0%, rgba(255,255,255,0) 70%);"></div>
+  </div>
+
+  <div class="container position-relative z-index-1">
     <div class="row align-items-center">
-      <div class="col-md-7" data-aos="fade-right">
-        <h1 class="display-4 fw-bold">👋 Hello, I'm <span class="text-primary">Aditya Kumar</span></h1>
-        <p class="lead mt-3">💻 A passionate <strong>Full Stack Web Developer</strong> who loves crafting creative and scalable web experiences. Let's build something amazing together!</p>
-        <div class="d-flex gap-3 mt-4">
-          <a href="#projects" class="btn btn-primary btn-lg shadow">🚀 View Projects</a>
-          <a href="#contact" class="btn btn-outline-primary btn-lg shadow">📩 Hire Me</a>
+      <div class="col-lg-7 col-md-6" data-aos="fade-right" data-aos-delay="100">
+        <h1 class="display-3 fw-bold mb-4">
+          <span class="wave-animation">👋</span> Hello, I'm 
+          <span class="text-primary position-relative">
+            <span class="position-relative">Aditya Kumar</span>
+            <span class="position-absolute bottom-0 start-0 w-100" style="height: 4px; background: linear-gradient(90deg, #3b82f6, #8b5cf6); transform: scaleX(0); transform-origin: left; animation: underlineGrow 1s ease-out 0.5s forwards;"></span>
+          </span>
+        </h1>
+        
+        <div class="typewriter-container mb-4">
+          <p class="lead fw-normal text-dark" style="font-size: 1.25rem;">
+            💻 A passionate <strong class="text-gradient">Full Stack Web Developer</strong> who loves crafting <span class="typing-text"></span>
+          </p>
         </div>
-        <div class="mt-4">
-          <p class="text-muted">✨ Creating beautiful, fast and responsive web apps with ❤️</p>
+        
+        <div class="d-flex flex-wrap gap-3 mt-4">
+          <a href="#projects" class="btn btn-primary btn-lg shadow-sm px-4 py-3 d-flex align-items-center" style="border-radius: 12px; transition: all 0.3s ease;">
+            <span class="me-2">🚀</span> View Projects
+            <span class="ms-2 arrow-animate">→</span>
+          </a>
+          <a href="#contact" class="btn btn-outline-primary btn-lg shadow-sm px-4 py-3 d-flex align-items-center" style="border-radius: 12px; transition: all 0.3s ease;">
+            <span class="me-2">📩</span> Hire Me
+          </a>
+        </div>
+        
+        <div class="mt-5">
+          <p class="text-muted mb-3">✨ Tech I work with:</p>
+          <div class="d-flex flex-wrap gap-3 tech-stack">
+            <span class="badge bg-light text-dark p-2 shadow-sm">React</span>
+            <span class="badge bg-light text-dark p-2 shadow-sm">Node.js</span>
+            <span class="badge bg-light text-dark p-2 shadow-sm">MongoDB</span>
+            <span class="badge bg-light text-dark p-2 shadow-sm">Express</span>
+            <span class="badge bg-light text-dark p-2 shadow-sm">JavaScript</span>
+            <span class="badge bg-light text-dark p-2 shadow-sm">TypeScript</span>
+          </div>
         </div>
       </div>
-      <div class="col-md-5 text-center" data-aos="fade-left">
-        <img src="image/Aditya-Kumar-Babhanpura.png" alt="Hero Illustration" class="img-fluid animate__animated animate__fadeIn">
+      
+      <div class="col-lg-5 col-md-6 text-center" data-aos="fade-left" data-aos-delay="200">
+        <div class="position-relative" style="max-width: 400px; margin: 0 auto;">
+          <img src="image/Aditya-Kumar-Babhanpura.png" alt="Aditya Kumar" class="img-fluid rounded-4 shadow-lg animate__animated animate__fadeIn" style="border: 8px solid white; transform: perspective(1000px) rotateY(-10deg);">
+          <div class="position-absolute top-0 start-0 w-100 h-100 rounded-4" style="background: linear-gradient(45deg, rgba(59,130,246,0.2), rgba(139,92,246,0.2)); z-index: -1; transform: translate(15px, 15px) perspective(1000px) rotateY(-10deg);"></div>
+        </div>
       </div>
     </div>
   </div>
+
+  <style>
+    @keyframes underlineGrow {
+      from { transform: scaleX(0); }
+      to { transform: scaleX(1); }
+    }
+    @keyframes wave {
+      0% { transform: rotate(0deg); }
+      10% { transform: rotate(14deg); }
+      20% { transform: rotate(-8deg); }
+      30% { transform: rotate(14deg); }
+      40% { transform: rotate(-4deg); }
+      50% { transform: rotate(10deg); }
+      60% { transform: rotate(0deg); }
+      100% { transform: rotate(0deg); }
+    }
+    .wave-animation {
+      display: inline-block;
+      animation: wave 2s infinite;
+      transform-origin: 70% 70%;
+    }
+    .text-gradient {
+      background: linear-gradient(90deg, #3b82f6, #8b5cf6);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+    .arrow-animate {
+      display: inline-block;
+      transition: transform 0.3s ease;
+    }
+    a:hover .arrow-animate {
+      transform: translateX(5px);
+    }
+    .tech-stack .badge {
+      transition: all 0.3s ease;
+    }
+    .tech-stack .badge:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    }
+  </style>
+
+  <script>
+    // Typing animation
+    document.addEventListener('DOMContentLoaded', function() {
+      const phrases = [
+        "creative web experiences",
+        "scalable applications",
+        "responsive designs",
+        "user-friendly interfaces",
+        "innovative solutions"
+      ];
+      const typingElement = document.querySelector('.typing-text');
+      let phraseIndex = 0;
+      let charIndex = 0;
+      let isDeleting = false;
+      let isEnd = false;
+      
+      function typeWriter() {
+        const currentPhrase = phrases[phraseIndex];
+        
+        if (isDeleting) {
+          typingElement.textContent = currentPhrase.substring(0, charIndex - 1);
+          charIndex--;
+        } else {
+          typingElement.textContent = currentPhrase.substring(0, charIndex + 1);
+          charIndex++;
+        }
+        
+        if (!isDeleting && charIndex === currentPhrase.length) {
+          isEnd = true;
+          setTimeout(typeWriter, 1500);
+        } else if (isDeleting && charIndex === 0) {
+          isDeleting = false;
+          phraseIndex = (phraseIndex + 1) % phrases.length;
+          setTimeout(typeWriter, 500);
+        } else {
+          const speed = isDeleting ? 50 : 100;
+          if (isEnd) {
+            setTimeout(() => {
+              isEnd = false;
+              isDeleting = true;
+              typeWriter();
+            }, speed);
+          } else {
+            setTimeout(typeWriter, speed);
+          }
+        }
+      }
+      
+      setTimeout(typeWriter, 1000);
+    });
+  </script>
 </section>
 
 <!-- Stats Section -->
-<section class="stats text-center py-5" style="background: linear-gradient(to top left, #f0faff, #ffffff);">
-  <div class="container">
+<section class="stats text-center py-6 position-relative overflow-hidden" style="background: linear-gradient(135deg, #f5fbff 0%, #f0f9ff 100%);">
+  <!-- Decorative elements -->
+  <div class="position-absolute top-0 start-0 w-100 h-100">
+    <div class="position-absolute top-0 end-0" style="width: 200px; height: 200px; background: radial-gradient(circle, rgba(56, 182, 255, 0.15) 0%, rgba(255,255,255,0) 70%);"></div>
+    <div class="position-absolute bottom-0 start-0" style="width: 300px; height: 300px; background: radial-gradient(circle, rgba(100, 108, 255, 0.1) 0%, rgba(255,255,255,0) 70%);"></div>
+  </div>
+
+  <div class="container position-relative z-index-1">
+    <div class="row justify-content-center mb-5" data-aos="fade-up">
+      <div class="col-lg-8">
+        <h2 class="display-5 fw-bold mb-3">My Journey in Numbers</h2>
+        <p class="lead text-muted">Quantifying my passion for development through measurable achievements</p>
+      </div>
+    </div>
+    
     <div class="row gy-4">
       <div class="col-md-4" data-aos="zoom-in">
-        <div class="shadow-lg p-5 rounded-4 bg-white h-100">
-          <div class="display-6 text-primary">🎯</div>
-          <h3 class="fw-bold mt-3">3+</h3>
-          <p class="text-muted">Projects Completed</p>
+        <div class="card-stat shadow-lg p-4 p-lg-5 rounded-4 bg-white h-100 transition-all">
+          <div class="stat-icon mb-3">
+            <div class="display-4 text-primary emoji-animate">🎯</div>
+          </div>
+          <h3 class="fw-bold mt-2 counter" data-target="3">0</h3>
+          <p class="text-muted mb-0">Projects Completed</p>
+          <div class="progress mt-3 mx-auto" style="height: 4px; width: 60px;">
+            <div class="progress-bar bg-primary" role="progressbar" style="width: 0%" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+          </div>
         </div>
       </div>
+      
       <div class="col-md-4" data-aos="zoom-in" data-aos-delay="100">
-        <div class="shadow-lg p-5 rounded-4 bg-white h-100">
-          <div class="display-6 text-success">😊</div>
-          <h3 class="fw-bold mt-3">13+</h3>
-          <p class="text-muted">Happy Clients</p>
+        <div class="card-stat shadow-lg p-4 p-lg-5 rounded-4 bg-white h-100 transition-all">
+          <div class="stat-icon mb-3">
+            <div class="display-4 text-success emoji-animate">😊</div>
+          </div>
+          <h3 class="fw-bold mt-2 counter" data-target="13">0</h3>
+          <p class="text-muted mb-0">Happy Clients</p>
+          <div class="progress mt-3 mx-auto" style="height: 4px; width: 60px;">
+            <div class="progress-bar bg-success" role="progressbar" style="width: 0%" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+          </div>
         </div>
       </div>
+      
       <div class="col-md-4" data-aos="zoom-in" data-aos-delay="200">
-        <div class="shadow-lg p-5 rounded-4 bg-white h-100">
-          <div class="display-6 text-info">⏳</div>
-          <h3 class="fw-bold mt-3">21+</h3>
-          <p class="text-muted">Months Experience</p>
+        <div class="card-stat shadow-lg p-4 p-lg-5 rounded-4 bg-white h-100 transition-all">
+          <div class="stat-icon mb-3">
+            <div class="display-4 text-info emoji-animate">⏳</div>
+          </div>
+          <h3 class="fw-bold mt-2 counter" data-target="21">0</h3>
+          <p class="text-muted mb-0">Months Experience</p>
+          <div class="progress mt-3 mx-auto" style="height: 4px; width: 60px;">
+            <div class="progress-bar bg-info" role="progressbar" style="width: 0%" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+          </div>
         </div>
       </div>
     </div>
   </div>
+
+  <style>
+    .card-stat {
+      transition: all 0.3s ease;
+      border: 1px solid rgba(0,0,0,0.05);
+    }
+    .card-stat:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 15px 30px rgba(0,0,0,0.1) !important;
+    }
+    .emoji-animate {
+      display: inline-block;
+      transition: all 0.3s ease;
+    }
+    .card-stat:hover .emoji-animate {
+      transform: scale(1.2) rotate(10deg);
+    }
+    .progress-bar {
+      transition: width 2s ease-in-out;
+    }
+    .transition-all {
+      transition: all 0.3s ease;
+    }
+    .z-index-1 {
+      z-index: 1;
+    }
+    .py-6 {
+      padding-top: 5rem;
+      padding-bottom: 5rem;
+    }
+  </style>
+
+  <script>
+    // Counter animation
+    document.addEventListener('DOMContentLoaded', function() {
+      const counters = document.querySelectorAll('.counter');
+      const speed = 200;
+      
+      function animateCounters() {
+        counters.forEach(counter => {
+          const target = +counter.getAttribute('data-target');
+          const count = +counter.innerText;
+          const increment = target / speed;
+          
+          if (count < target) {
+            counter.innerText = Math.ceil(count + increment);
+            setTimeout(animateCounters, 1);
+          } else {
+            counter.innerText = target + '+';
+          }
+        });
+        
+        // Animate progress bars
+        document.querySelectorAll('.progress-bar').forEach(bar => {
+          bar.style.width = '100%';
+        });
+      }
+      
+      // Start animation when section is in view
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            animateCounters();
+            observer.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.5 });
+      
+      observer.observe(document.querySelector('.stats'));
+    });
+  </script>
 </section>
 
 <!-- Floating Contact Sidebar -->
-<div class="floating-contact">
-  <a href="mailto:adityasharmamama@gmail.com" target="_blank" class="contact-bubble email"><i class="bi bi-envelope-fill"></i></a>
-  <a href="https://wa.me/+917488584509?text=Hello!%20Aditya,%20Please%20let%20me%20know%20more%20about%20your%20services!!" target="_blank" class="contact-bubble whatsapp"><i class="bi bi-whatsapp"></i></a>
-  <a href="sms:+917488584509" class="contact-bubble sms"><i class="bi bi-chat-dots-fill"></i></a>
+<div class="floating-contact-container">
+  <!-- Main toggle button -->
+  <button class="contact-toggle-btn">
+    <i class="bi bi-chat-fill"></i>
+    <span class="notification-badge"></span>
+  </button>
+
+  <!-- Contact options -->
+  <div class="contact-options">
+    <a href="mailto:adityasharmamama@gmail.com" target="_blank" class="contact-option email" data-tooltip="Email Me">
+      <i class="bi bi-envelope-fill"></i>
+    </a>
+    
+    <a href="https://wa.me/+917488584509?text=Hello!%20Aditya,%20Please%20let%20me%20know%20more%20about%20your%20services!!" target="_blank" class="contact-option whatsapp" data-tooltip="WhatsApp">
+      <i class="bi bi-whatsapp"></i>
+    </a>
+    
+    <a href="sms:+917488584509" class="contact-option sms" data-tooltip="Text Message">
+      <i class="bi bi-chat-dots-fill"></i>
+    </a>
+  </div>
 </div>
 
-  <!-- About Me -->
+<style>
+  .floating-contact-container {
+    position: fixed;
+    bottom: 90px;
+    right: 30px;
+    z-index: 9999;
+    display: flex;
+    flex-direction: column-reverse;
+    gap: 15px;
+    align-items: flex-end;
+  }
+
+  /* Main toggle button */
+  .contact-toggle-btn {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #3b82f6, #8b5cf6);
+    color: white;
+    border: none;
+    box-shadow: 0 4px 20px rgba(59, 130, 246, 0.3);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+    font-size: 1.5rem;
+  }
+
+  .contact-toggle-btn:hover {
+    transform: scale(1.1);
+    box-shadow: 0 6px 25px rgba(59, 130, 246, 0.4);
+  }
+
+  .contact-toggle-btn.active {
+    transform: rotate(45deg);
+  }
+
+  /* Notification badge */
+  .notification-badge {
+    position: absolute;
+    top: -5px;
+    right: -5px;
+    width: 20px;
+    height: 20px;
+    background-color: #ef4444;
+    border-radius: 50%;
+    border: 2px solid white;
+    animation: pulse 2s infinite;
+  }
+
+  @keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+    100% { transform: scale(1); }
+  }
+
+  /* Contact options */
+  .contact-options {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    transition: all 0.4s ease;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(20px);
+  }
+
+  .contact-options.active {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+  }
+
+  /* Individual contact buttons */
+  .contact-option {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    box-shadow: 0 3px 15px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    position: relative;
+    font-size: 1.3rem;
+    transform: scale(0);
+    transition: transform 0.3s ease, background 0.3s ease;
+  }
+
+  .contact-options.active .contact-option {
+    transform: scale(1);
+  }
+
+  .contact-option.email {
+    background: #ea4335;
+    transition-delay: 0.1s;
+  }
+
+  .contact-option.whatsapp {
+    background: #25d366;
+    transition-delay: 0.2s;
+  }
+
+  .contact-option.sms {
+    background: #3b82f6;
+    transition-delay: 0.3s;
+  }
+
+  .contact-option:hover {
+    transform: scale(1.1) !important;
+  }
+
+  /* Tooltip */
+  .contact-option::after {
+    content: attr(data-tooltip);
+    position: absolute;
+    right: 60px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: #333;
+    color: white;
+    padding: 5px 10px;
+    border-radius: 4px;
+    font-size: 0.8rem;
+    white-space: nowrap;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+  }
+
+  .contact-option:hover::after {
+    opacity: 1;
+    visibility: visible;
+    right: 65px;
+  }
+
+  /* Responsive adjustments */
+  @media (max-width: 768px) {
+    .floating-contact-container {
+      bottom: 20px;
+      right: 20px;
+    }
+    
+    .contact-toggle-btn {
+      width: 50px;
+      height: 50px;
+      font-size: 1.3rem;
+    }
+    
+    .contact-option {
+      width: 45px;
+      height: 45px;
+      font-size: 1.1rem;
+    }
+  }
+</style>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    const toggleBtn = document.querySelector('.contact-toggle-btn');
+    const contactOptions = document.querySelector('.contact-options');
+    const notificationBadge = document.querySelector('.notification-badge');
+    
+    // Toggle contact options
+    toggleBtn.addEventListener('click', function() {
+      this.classList.toggle('active');
+      contactOptions.classList.toggle('active');
+      
+      // Hide notification badge after first interaction
+      notificationBadge.style.display = 'none';
+    });
+    
+    // Close when clicking outside
+    document.addEventListener('click', function(e) {
+      if (!e.target.closest('.floating-contact-container')) {
+        toggleBtn.classList.remove('active');
+        contactOptions.classList.remove('active');
+      }
+    });
+    
+    // Add animation to buttons when clicked
+    const contactButtons = document.querySelectorAll('.contact-option');
+    contactButtons.forEach(button => {
+      button.addEventListener('click', function() {
+        this.style.transform = 'scale(0.9)';
+        setTimeout(() => {
+          this.style.transform = 'scale(1.1)';
+        }, 100);
+      });
+    });
+  });
+</script>
+
   <!-- About Me Section -->
-<section id="about" class="py-5" style="background: linear-gradient(to bottom right, #14de913a, #ffffff);">
-  <div class="container">
-    <h2 class="text-center mb-5" data-aos="fade-up">About Me</h2>
-    <div class="row align-items-center">
-      <div class="col-md-5 text-center" data-aos="fade-right">
-        <img src="image/Aditya-Kumar-Patna.webp" class="img-fluid rounded-4 shadow-lg" alt="Aditya Kumar">
+<section id="about" class="py-6 position-relative overflow-hidden" style="background: linear-gradient(135deg, rgba(20, 222, 145, 0.15) 0%, rgba(255, 255, 255, 1) 100%);">
+  <!-- Decorative elements -->
+  <div class="position-absolute top-0 start-0 w-100 h-100">
+    <div class="position-absolute bottom-0 end-0" style="width: 300px; height: 300px; background: radial-gradient(circle, rgba(20, 222, 145, 0.1) 0%, rgba(255,255,255,0) 70%);"></div>
+    <div class="position-absolute top-0 start-0" style="width: 200px; height: 200px; background: radial-gradient(circle, rgba(100, 108, 255, 0.05) 0%, rgba(255,255,255,0) 70%);"></div>
+  </div>
+
+  <div class="container position-relative z-index-1">
+    <div class="text-center mb-6" data-aos="fade-up">
+      <h2 class="display-4 fw-bold mb-3 position-relative d-inline-block">
+        About Me
+        <span class="position-absolute bottom-0 start-0 w-100" style="height: 4px; background: linear-gradient(90deg, #14de91, #0d6efd); transform: scaleX(0); transform-origin: left; animation: underlineGrow 1s ease-out 0.5s forwards;"></span>
+      </h2>
+      <p class="lead text-muted max-w-800 mx-auto">Discover more about my journey, skills, and professional background</p>
+    </div>
+
+    <div class="row align-items-center g-5">
+      <div class="col-lg-5 text-center" data-aos="fade-right">
+        <div class="position-relative" style="max-width: 400px; margin: 0 auto;">
+          <img src="image/Aditya-Kumar-Patna.webp" class="img-fluid rounded-4 shadow-lg" alt="Aditya Kumar" style="border: 8px solid white; transform: perspective(1000px) rotateY(-5deg);">
+          <div class="position-absolute top-0 start-0 w-100 h-100 rounded-4" style="background: linear-gradient(45deg, rgba(20, 222, 145, 0.2), rgba(13, 110, 253, 0.2)); z-index: -1; transform: translate(15px, 15px) perspective(1000px) rotateY(-5deg);"></div>
+        </div>
       </div>
-      <div class="col-md-7" data-aos="fade-left">
-        <h3 class="fw-bold">Get to Know Me</h3>
-        <p class="lead">I'm <strong>Aditya Kumar</strong>, a full stack web developer specializing in responsive, user-friendly web solutions. With expertise in front-end technologies like <strong>React</strong>, <strong>Bootstrap</strong>, and back-end using <strong>Python</strong> and <strong>Django</strong>, I build scalable, creative, and impactful digital experiences.</p>
-        <div class="row g-3 mt-4">
-          <div class="col-sm-6">
-            <strong>DOB:</strong> 2 Aug 2005
+      
+      <div class="col-lg-7" data-aos="fade-left">
+        <h3 class="fw-bold mb-4">Get to Know Me</h3>
+        <div class="about-content bg-white p-4 p-lg-5 rounded-4 shadow-sm">
+          <p class="lead mb-4">I'm <strong class="text-gradient">Aditya Kumar</strong>, a passionate full stack web developer specializing in responsive, user-friendly web solutions. With expertise in front-end technologies like <strong>React</strong>, <strong>Bootstrap</strong>, and back-end using <strong>Python</strong> and <strong>Django</strong>, I build scalable, creative, and impactful digital experiences.</p>
+          
+          <div class="row g-3 gx-4">
+            <div class="col-sm-6">
+              <div class="d-flex align-items-center mb-3">
+                <div class="me-3 text-primary">
+                  <i class="bi bi-calendar-event-fill fs-5"></i>
+                </div>
+                <div>
+                  <strong>DOB:</strong> 2 Aug 2005
+                </div>
+              </div>
+            </div>
+            <div class="col-sm-6">
+              <div class="d-flex align-items-center mb-3">
+                <div class="me-3 text-primary">
+                  <i class="bi bi-person-vcard-fill fs-5"></i>
+                </div>
+                <div>
+                  <strong>Age:</strong> <span id="calculated-age" class="fw-bold"></span>
+                </div>
+              </div>
+            </div>
+            <div class="col-sm-6">
+              <div class="d-flex align-items-center mb-3">
+                <div class="me-3 text-primary">
+                  <i class="bi bi-geo-alt-fill fs-5"></i>
+                </div>
+                <div>
+                  <strong>City:</strong> Patna, India
+                </div>
+              </div>
+            </div>
+            <div class="col-sm-6">
+              <div class="d-flex align-items-center mb-3">
+                <div class="me-3 text-primary">
+                  <i class="bi bi-briefcase-fill fs-5"></i>
+                </div>
+                <div>
+                  <strong>Freelance:</strong> <span class="badge bg-success bg-opacity-10 text-success">Available</span>
+                </div>
+              </div>
+            </div>
+            <div class="col-sm-6">
+              <div class="d-flex align-items-center mb-3">
+                <div class="me-3 text-primary">
+                  <i class="bi bi-telephone-fill fs-5"></i>
+                </div>
+                <div>
+                  <strong>Phone:</strong> 
+                  <a href="tel:7488584509" class="text-decoration-none ms-1">7488584509</a>,
+                  <a href="tel:8986049246" class="text-decoration-none">8986049246</a>
+                </div>
+              </div>
+            </div>
+            <div class="col-sm-6">
+              <div class="d-flex align-items-center mb-3">
+                <div class="me-3 text-primary">
+                  <i class="bi bi-globe fs-5"></i>
+                </div>
+                <div>
+                  <strong>Website:</strong> 
+                  <a href="#" class="text-decoration-none ms-1">Aditya Kumar Patna</a>
+                </div>
+              </div>
+            </div>
+            <div class="col-sm-6">
+              <div class="d-flex align-items-center mb-3">
+                <div class="me-3 text-primary">
+                  <i class="bi bi-mortarboard-fill fs-5"></i>
+                </div>
+                <div>
+                  <strong>Degree:</strong> Bachelor's
+                </div>
+              </div>
+            </div>
+            <div class="col-sm-6">
+              <div class="d-flex align-items-center mb-3">
+                <div class="me-3 text-primary">
+                  <i class="bi bi-envelope-fill fs-5"></i>
+                </div>
+                <div>
+                  <strong>Email:</strong> 
+                  <a href="mailto:adityasharmamama@gmail.com" class="text-decoration-none ms-1">adityasharmamama@gmail.com</a>
+                </div>
+              </div>
+            </div>
           </div>
-          <div class="col-sm-6">
-            <strong>Age:</strong> <span id="calculated-age"></span>
-          </div>
-          <div class="col-sm-6">
-            <strong>City:</strong> Patna, India
-          </div>
-          <div class="col-sm-6">
-            <strong>Freelance:</strong> Available
-          </div>
-          <div class="col-sm-6">
-            <strong>Phone:</strong> <a href="tel:7488584509" class="text-decoration-none">7488584509</a> ,<a href="tel:8986049246" class="text-decoration-none">8986049246</a> 
-          </div>
-          <div class="col-sm-6">
-            <strong>Website:</strong> <a href="" class="text-decoration-none">Aditya Kumar Patna</a>
-          </div>
-          <div class="col-sm-6">
-            <strong>Degree:</strong> Bachelor's
-          </div>
-          <div class="col-sm-6">
-            <strong>Email:</strong> <a href="mailto:adityasharmamama@gmail.com" class="text-decoration-none"> adityasharmamama@gmail.com</a>
-          </div>
-          <div class="col-sm-6">
-            <a href="image/My-Resume.pdf" download class="btn btn-outline-primary btn-lg rounded-pill shadow">📄 Download Resume</a>
+          
+          <div class="mt-4 pt-3">
+            <a href="image/My-Resume.pdf" download class="btn btn-primary btn-lg rounded-pill shadow-sm px-4 py-3 d-inline-flex align-items-center">
+              <i class="bi bi-download me-2"></i> Download Resume
+            </a>
+            <a href="#contact" class="btn btn-outline-primary btn-lg rounded-pill shadow-sm px-4 py-3 d-inline-flex align-items-center ms-3">
+              <i class="bi bi-chat-left-text me-2"></i> Contact Me
+            </a>
           </div>
         </div>
       </div>
     </div>
   </div>
+
+  <style>
+    @keyframes underlineGrow {
+      from { transform: scaleX(0); }
+      to { transform: scaleX(1); }
+    }
+    .text-gradient {
+      background: linear-gradient(90deg, #14de91, #0d6efd);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+    .about-content {
+      transition: all 0.3s ease;
+      border: 1px solid rgba(0,0,0,0.05);
+    }
+    .about-content:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 30px rgba(0,0,0,0.1) !important;
+    }
+    .max-w-800 {
+      max-width: 800px;
+    }
+    .py-6 {
+      padding-top: 5rem;
+      padding-bottom: 5rem;
+    }
+    .z-index-1 {
+      z-index: 1;
+    }
+    a:hover {
+      text-decoration: underline !important;
+    }
+  </style>
+
   <script>
     document.addEventListener("DOMContentLoaded", function() {
+      // Calculate age
       const dob = new Date("2005-08-02");
       const today = new Date();
       let age = today.getFullYear() - dob.getFullYear();
@@ -376,207 +732,1061 @@
         age--;
       }
       document.getElementById("calculated-age").textContent = age + " years";
+      
+      // Add animation to download button
+      const downloadBtn = document.querySelector('[download]');
+      downloadBtn.addEventListener('click', function() {
+        this.innerHTML = '<i class="bi bi-check-circle me-2"></i> Resume Downloaded!';
+        setTimeout(() => {
+          this.innerHTML = '<i class="bi bi-download me-2"></i> Download Resume';
+        }, 2000);
+      });
     });
   </script>
 </section>
 
 
-  <!-- Services -->
-  <section id="services" class="py-5 mt-2">
+<!-- Services Section -->
+<section id="services" class="services-section py-6">
   <div class="container">
-    <h2 class="text-center">My Services</h2>
-    <div class="divider"></div>
-    <div class="row g-4">
+    <div class="section-header">
+      <h2 class="display-4 fw-bold mb-3 position-relative d-inline-block">
+        My Services
+        <span class="position-absolute bottom-0 start-0 w-100" style="height: 4px; background: linear-gradient(90deg, #14de91, #0d6efd); transform: scaleX(0); transform-origin: left; animation: underlineGrow 1s ease-out 0.5s forwards;"></span>
+      </h2>      
+      <p class="section-subtitle">What I Offer</p>
+    </div>
 
-      <div class="col-md-4" data-aos="zoom-in">
-        <div class="service-card text-center">
-          <i class="fas fa-laptop-code service-icon"></i>
-          <h5 class="fw-bold">Web Application Development</h5>
-          <p>I build high-performance, scalable, and secure web applications tailored to your business needs using modern tech stacks like Django, React, and REST APIs.</p>
+    <div class="services-grid">
+      <!-- Web Development -->
+      <div class="service-card" data-aos="zoom-in">
+        <div class="card-inner">
+          <div class="card-icon">
+            <i class="fas fa-laptop-code"></i>
+          </div>
+          <div class="card-content">
+            <h3>Web Application Development</h3>
+            <p>I build high-performance, scalable, and secure web applications tailored to your business needs using modern tech stacks like Django, React, and REST APIs.</p>
+          </div>
+          <div class="card-hover"></div>
+          <div class="card-border"></div>
         </div>
       </div>
 
-      <div class="col-md-4" data-aos="zoom-in" data-aos-delay="100">
-        <div class="service-card text-center">
-          <i class="fas fa-paint-brush service-icon"></i>
-          <h5 class="fw-bold">UI/UX Design</h5>
-          <p>Crafting intuitive and elegant user interfaces with a strong focus on user experience, responsiveness, and accessibility using Figma and Canva.</p>
+      <!-- UI/UX Design -->
+      <div class="service-card" data-aos="zoom-in" data-aos-delay="100">
+        <div class="card-inner">
+          <div class="card-icon">
+            <i class="fas fa-paint-brush"></i>
+          </div>
+          <div class="card-content">
+            <h3>UI/UX Design</h3>
+            <p>Crafting intuitive and elegant user interfaces with a strong focus on user experience, responsiveness, and accessibility using Figma and Canva.</p>
+          </div>
+          <div class="card-hover"></div>
+          <div class="card-border"></div>
         </div>
       </div>
 
-      <div class="col-md-4" data-aos="zoom-in" data-aos-delay="200">
-        <div class="service-card text-center">
-          <i class="fas fa-mobile-alt service-icon"></i>
-          <h5 class="fw-bold">Responsive Web Design</h5>
-          <p>Ensuring your website looks great on all devices with mobile-first designs using Bootstrap 5, media queries, and clean layout strategies.</p>
+      <!-- Responsive Design -->
+      <div class="service-card" data-aos="zoom-in" data-aos-delay="200">
+        <div class="card-inner">
+          <div class="card-icon">
+            <i class="fas fa-mobile-alt"></i>
+          </div>
+          <div class="card-content">
+            <h3>Responsive Web Design</h3>
+            <p>Ensuring your website looks great on all devices with mobile-first designs using Bootstrap 5, media queries, and clean layout strategies.</p>
+          </div>
+          <div class="card-hover"></div>
+          <div class="card-border"></div>
         </div>
       </div>
 
-      <div class="col-md-4" data-aos="zoom-in" data-aos-delay="300">
-        <div class="service-card text-center">
-          <i class="fas fa-code service-icon"></i>
-          <h5 class="fw-bold">Front-end Development</h5>
-          <p>Interactive, well-structured interfaces using HTML5, CSS3, JavaScript, and frameworks like React and jQuery for fast, engaging UIs.</p>
+      <!-- Front-end Development -->
+      <div class="service-card" data-aos="zoom-in" data-aos-delay="300">
+        <div class="card-inner">
+          <div class="card-icon">
+            <i class="fas fa-code"></i>
+          </div>
+          <div class="card-content">
+            <h3>Front-end Development</h3>
+            <p>Interactive, well-structured interfaces using HTML5, CSS3, JavaScript, and frameworks like React and jQuery for fast, engaging UIs.</p>
+          </div>
+          <div class="card-hover"></div>
+          <div class="card-border"></div>
         </div>
       </div>
 
-      <div class="col-md-4" data-aos="zoom-in" data-aos-delay="400">
-        <div class="service-card text-center">
-          <i class="fas fa-database service-icon"></i>
-          <h5 class="fw-bold">Back-end Integration</h5>
-          <p>Database integration with MySQL, authentication systems, admin panels, and custom API development for complete web solutions.</p>
+      <!-- Back-end Integration -->
+      <div class="service-card" data-aos="zoom-in" data-aos-delay="400">
+        <div class="card-inner">
+          <div class="card-icon">
+            <i class="fas fa-database"></i>
+          </div>
+          <div class="card-content">
+            <h3>Back-end Integration</h3>
+            <p>Database integration with MySQL, authentication systems, admin panels, and custom API development for complete web solutions.</p>
+          </div>
+          <div class="card-hover"></div>
+          <div class="card-border"></div>
         </div>
       </div>
 
-      <div class="col-md-4" data-aos="zoom-in" data-aos-delay="500">
-        <div class="service-card text-center">
-          <i class="fas fa-rocket service-icon"></i>
-          <h5 class="fw-bold">Portfolio & Branding</h5>
-          <p>Helping individuals and brands establish a digital identity through personalized portfolio designs, branding, and SEO-friendly landing pages.</p>
+      <!-- Portfolio & Branding -->
+      <div class="service-card" data-aos="zoom-in" data-aos-delay="500">
+        <div class="card-inner">
+          <div class="card-icon">
+            <i class="fas fa-rocket"></i>
+          </div>
+          <div class="card-content">
+            <h3>Portfolio & Branding</h3>
+            <p>Helping individuals and brands establish a digital identity through personalized portfolio designs, branding, and SEO-friendly landing pages.</p>
+          </div>
+          <div class="card-hover"></div>
+          <div class="card-border"></div>
         </div>
       </div>
-
     </div>
   </div>
 </section>
 
+<style>
+  /* Services Section */
+  .services-section {
+    background: #f8f9fa;
+    position: relative;
+    overflow: hidden;
+  }
 
-  <!-- Skills -->
-<!-- Skills -->
-<section id="skills" class="py-5" style="background: linear-gradient(to bottom right, #e0f7ff, #ffffff);">
+  .section-header {
+    text-align: center;
+    margin-bottom: 60px;
+  }
+
+  .text-stroke {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 3.5rem;
+    font-weight: 800;
+    color: transparent;
+    -webkit-text-stroke: 2px #2c3e50;
+    text-stroke: 2px #2c3e50;
+    letter-spacing: 3px;
+    position: relative;
+    display: inline-block;
+  }
+
+  .text-stroke::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 4px;
+    background: linear-gradient(90deg, #3498db, #2ecc71);
+    border-radius: 2px;
+  }
+
+  .section-subtitle {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.2rem;
+    color: #7f8c8d;
+    margin-top: 15px;
+    letter-spacing: 2px;
+  }
+
+  /* Services Grid */
+  .services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+    gap: 30px;
+  }
+
+  /* Service Card */
+  .service-card {
+    perspective: 1000px;
+    height: 100%;
+  }
+
+  .card-inner {
+    position: relative;
+    background: white;
+    border-radius: 15px;
+    padding: 40px 30px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+    transition: all 0.6s cubic-bezier(0.25, 0.8, 0.25, 1);
+    transform-style: preserve-3d;
+    height: 100%;
+    overflow: hidden;
+  }
+
+  .service-card:hover .card-inner {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
+  }
+
+  .card-hover {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, rgba(52, 152, 219, 0.1) 0%, rgba(46, 204, 113, 0.1) 100%);
+    opacity: 0;
+    transition: opacity 0.4s ease;
+    z-index: 0;
+  }
+
+  .service-card:hover .card-hover {
+    opacity: 1;
+  }
+
+  .card-border {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background: linear-gradient(90deg, #3498db, #2ecc71);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.4s ease;
+  }
+
+  .service-card:hover .card-border {
+    transform: scaleX(1);
+  }
+
+  /* Card Icon */
+  .card-icon {
+    text-align: center;
+    margin-bottom: 25px;
+    position: relative;
+    z-index: 1;
+  }
+
+  .card-icon i {
+    font-size: 3.5rem;
+    color: #3498db;
+    transition: all 0.4s ease;
+  }
+
+  .service-card:hover .card-icon i {
+    transform: scale(1.1);
+    color: #2ecc71;
+  }
+
+  /* Card Content */
+  .card-content {
+    position: relative;
+    z-index: 1;
+    text-align: center;
+  }
+
+  .card-content h3 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #2c3e50;
+    margin-bottom: 15px;
+  }
+
+  .card-content p {
+    font-family: 'Open Sans', sans-serif;
+    color: #7f8c8d;
+    line-height: 1.6;
+  }
+
+  /* Different Icon Colors */
+  .service-card:nth-child(1) .card-icon i { color: #E44D26; }
+  .service-card:nth-child(2) .card-icon i { color: #9B59B6; }
+  .service-card:nth-child(3) .card-icon i { color: #3498DB; }
+  .service-card:nth-child(4) .card-icon i { color: #F1C40F; }
+  .service-card:nth-child(5) .card-icon i { color: #E74C3C; }
+  .service-card:nth-child(6) .card-icon i { color: #2ECC71; }
+
+  /* Responsive */
+  @media (max-width: 992px) {
+    .services-grid {
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    }
+  }
+
+  @media (max-width: 768px) {
+    .text-stroke {
+      font-size: 2.5rem;
+    }
+    
+    .services-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>
+
+<!-- Skills Section -->
+<section id="skills" class="skills-section">
   <div class="container">
-    <h2 class="text-center mb-5" data-aos="fade-down">My Skills</h2>
-    <div class="row justify-content-center">
+    <div class="section-header">
+      <h2 class="display-4 fw-bold mb-3 position-relative d-inline-block">
+        My Skill
+        <span class="position-absolute bottom-0 start-0 w-100" style="height: 4px; background: linear-gradient(90deg, #3b82f6, #8b5cf6); transform: scaleX(0); transform-origin: left; animation: underlineGrow 1s ease-out 0.5s forwards;"></span>
+      </h2>
+      <p class="section-subtitle">Professional Competencies</p>
+    </div>
 
-      <!-- Skill Item -->
-      <div class="col-6 col-md-3 text-center" data-aos="zoom-in">
-        <div class="skill-progress" style="--percent:90%; --color:#e44d26">
-          <span>HTML<br>90%</span>
+    <div class="skills-container">
+      <!-- HTML -->
+      <div class="skill-item" data-percent="90">
+        <div class="skill-inner">
+          <div class="skill-icon">
+            <i class="fab fa-html5"></i>
+          </div>
+          <div class="skill-progress">
+            <svg class="progress-ring" viewBox="0 0 100 100">
+              <circle class="progress-ring-bg" cx="50" cy="50" r="45" />
+              <circle class="progress-ring-fill" cx="50" cy="50" r="45" />
+            </svg>
+            <div class="progress-text">90%</div>
+          </div>
+          <div class="skill-info">
+            <h3>HTML5</h3>
+            <div class="skill-bar">
+              <div class="bar-fill"></div>
+            </div>
+          </div>
+          <div class="skill-hover"></div>
         </div>
-        <div class="skill-label">HTML</div>
       </div>
 
-      <div class="col-6 col-md-3 text-center" data-aos="zoom-in" data-aos-delay="100">
-        <div class="skill-progress" style="--percent:85%; --color:#264de4">
-          <span>CSS<br>85%</span>
+      <!-- CSS -->
+      <div class="skill-item" data-percent="85">
+        <div class="skill-inner">
+          <div class="skill-icon">
+            <i class="fab fa-css3-alt"></i>
+          </div>
+          <div class="skill-progress">
+            <svg class="progress-ring" viewBox="0 0 100 100">
+              <circle class="progress-ring-bg" cx="50" cy="50" r="45" />
+              <circle class="progress-ring-fill" cx="50" cy="50" r="45" />
+            </svg>
+            <div class="progress-text">85%</div>
+          </div>
+          <div class="skill-info">
+            <h3>CSS3</h3>
+            <div class="skill-bar">
+              <div class="bar-fill"></div>
+            </div>
+          </div>
+          <div class="skill-hover"></div>
         </div>
-        <div class="skill-label">CSS</div>
       </div>
 
-      <div class="col-6 col-md-3 text-center" data-aos="zoom-in" data-aos-delay="200">
-        <div class="skill-progress" style="--percent:90%; --color:#563d7c">
-          <span>Bootstrap<br>90%</span>
+      <!-- JavaScript -->
+      <div class="skill-item" data-percent="58">
+        <div class="skill-inner">
+          <div class="skill-icon">
+            <i class="fab fa-js-square"></i>
+          </div>
+          <div class="skill-progress">
+            <svg class="progress-ring" viewBox="0 0 100 100">
+              <circle class="progress-ring-bg" cx="50" cy="50" r="45" />
+              <circle class="progress-ring-fill" cx="50" cy="50" r="45" />
+            </svg>
+            <div class="progress-text">58%</div>
+          </div>
+          <div class="skill-info">
+            <h3>JavaScript</h3>
+            <div class="skill-bar">
+              <div class="bar-fill"></div>
+            </div>
+          </div>
+          <div class="skill-hover"></div>
         </div>
-        <div class="skill-label">Bootstrap</div>
       </div>
 
-      <div class="col-6 col-md-3 text-center" data-aos="zoom-in" data-aos-delay="300">
-        <div class="skill-progress" style="--percent:58%; --color:#f0db4f">
-          <span>JavaScript<br>58%</span>
+      <!-- React -->
+      <div class="skill-item" data-percent="44">
+        <div class="skill-inner">
+          <div class="skill-icon">
+            <i class="fab fa-react"></i>
+          </div>
+          <div class="skill-progress">
+            <svg class="progress-ring" viewBox="0 0 100 100">
+              <circle class="progress-ring-bg" cx="50" cy="50" r="45" />
+              <circle class="progress-ring-fill" cx="50" cy="50" r="45" />
+            </svg>
+            <div class="progress-text">44%</div>
+          </div>
+          <div class="skill-info">
+            <h3>React.js</h3>
+            <div class="skill-bar">
+              <div class="bar-fill"></div>
+            </div>
+          </div>
+          <div class="skill-hover"></div>
         </div>
-        <div class="skill-label">JavaScript</div>
       </div>
 
-      <div class="col-6 col-md-3 text-center" data-aos="zoom-in" data-aos-delay="400">
-        <div class="skill-progress" style="--percent:44%; --color:#61dbfb">
-          <span>React.js<br>44%</span>
+      <!-- Python -->
+      <div class="skill-item" data-percent="55">
+        <div class="skill-inner">
+          <div class="skill-icon">
+            <i class="fab fa-python"></i>
+          </div>
+          <div class="skill-progress">
+            <svg class="progress-ring" viewBox="0 0 100 100">
+              <circle class="progress-ring-bg" cx="50" cy="50" r="45" />
+              <circle class="progress-ring-fill" cx="50" cy="50" r="45" />
+            </svg>
+            <div class="progress-text">55%</div>
+          </div>
+          <div class="skill-info">
+            <h3>Python</h3>
+            <div class="skill-bar">
+              <div class="bar-fill"></div>
+            </div>
+          </div>
+          <div class="skill-hover"></div>
         </div>
-        <div class="skill-label">React.js</div>
       </div>
 
-      <div class="col-6 col-md-3 text-center" data-aos="zoom-in" data-aos-delay="500">
-        <div class="skill-progress" style="--percent:55%; --color:#306998">
-          <span>Python<br>55%</span>
+      <!-- Python -->
+      <div class="skill-item" data-percent="90">
+        <div class="skill-inner">
+          <div class="skill-icon">
+            <i class="fab fa-bootstrap"></i>
+          </div>
+          <div class="skill-progress">
+            <svg class="progress-ring" viewBox="0 0 100 100">
+              <circle class="progress-ring-bg" cx="50" cy="50" r="45" />
+              <circle class="progress-ring-fill" cx="50" cy="50" r="45" />
+            </svg>
+            <div class="progress-text">90%</div>
+          </div>
+          <div class="skill-info">
+            <h3>Bootstrap</h3>
+            <div class="skill-bar">
+              <div class="bar-fill"></div>
+            </div>
+          </div>
+          <div class="skill-hover"></div>
         </div>
-        <div class="skill-label">Python</div>
       </div>
 
-      <div class="col-6 col-md-3 text-center" data-aos="zoom-in" data-aos-delay="600">
-        <div class="skill-progress" style="--percent:51%; --color:#092e20">
-          <span>Django<br>51%</span>
+
+      <!-- Django -->
+      <div class="skill-item" data-percent="51">
+        <div class="skill-inner">
+          <div class="skill-icon">
+            <i class="fs-2"><strong>dj</strong></i>
+          </div>
+          <div class="skill-progress">
+            <svg class="progress-ring" viewBox="0 0 100 100">
+              <circle class="progress-ring-bg" cx="50" cy="50" r="45" />
+              <circle class="progress-ring-fill" cx="50" cy="50" r="45" />
+            </svg>
+            <div class="progress-text">51%</div>
+          </div>
+          <div class="skill-info">
+            <h3>Django</h3>
+            <div class="skill-bar">
+              <div class="bar-fill"></div>
+            </div>
+          </div>
+          <div class="skill-hover"></div>
         </div>
-        <div class="skill-label">Django</div>
+      </div>
+      
+      <!-- J Query -->
+      <div class="skill-item" data-percent="48">
+        <div class="skill-inner">
+          <div class="skill-icon">
+            <i class="bg-primary text-white rounded fs-4" style="padding-left: 15px; padding-top: 15px; padding-right: 5px;"><strong>JQ</strong></i>
+          </div>
+          <div class="skill-progress">
+            <svg class="progress-ring" viewBox="0 0 100 100">
+              <circle class="progress-ring-bg" cx="50" cy="50" r="45" />
+              <circle class="progress-ring-fill" cx="50" cy="50" r="45" />
+            </svg>
+            <div class="progress-text">48%</div>
+          </div>
+          <div class="skill-info">
+            <h3>J Query</h3>
+            <div class="skill-bar">
+              <div class="bar-fill"></div>
+            </div>
+          </div>
+          <div class="skill-hover"></div>
+        </div>
       </div>
 
-      <div class="col-6 col-md-3 text-center" data-aos="zoom-in" data-aos-delay="700">
-        <div class="skill-progress" style="--percent:48%; --color:#0769ad">
-          <span>jQuery<br>48%</span>
+      <!-- C -->
+      <div class="skill-item" data-percent="50">
+        <div class="skill-inner">
+          <div class="skill-icon ">
+            <i class="fs-2"><strong>C</strong></i>        
+          </div>
+          <div class="skill-progress">
+            <svg class="progress-ring" viewBox="0 0 100 100">
+              <circle class="progress-ring-bg" cx="50" cy="50" r="45" />
+              <circle class="progress-ring-fill" cx="50" cy="50" r="45" />
+            </svg>
+            <div class="progress-text">50%</div>
+          </div>
+          <div class="skill-info">
+            <h3>C Lang.</h3>
+            <div class="skill-bar">
+              <div class="bar-fill"></div>
+            </div>
+          </div>
+          <div class="skill-hover"></div>
         </div>
-        <div class="skill-label">jQuery</div>
       </div>
 
-      <div class="col-6 col-md-3 text-center" data-aos="zoom-in" data-aos-delay="800">
-        <div class="skill-progress" style="--percent:50%; --color:#555555">
-          <span>C<br>50%</span>
+
+      <!-- My SQL -->
+      <div class="skill-item" data-percent="59">
+        <div class="skill-inner">
+          <div class="skill-icon ">
+            <i class="fas fa-database"></i>       
+          </div>
+          <div class="skill-progress">
+            <svg class="progress-ring" viewBox="0 0 100 100">
+              <circle class="progress-ring-bg" cx="50" cy="50" r="45" />
+              <circle class="progress-ring-fill" cx="50" cy="50" r="45" />
+            </svg>
+            <div class="progress-text">59%</div>
+          </div>
+          <div class="skill-info">
+            <h3>My SQL</h3>
+            <div class="skill-bar">
+              <div class="bar-fill"></div>
+            </div>
+          </div>
+          <div class="skill-hover"></div>
         </div>
-        <div class="skill-label">C</div>
       </div>
 
-      <div class="col-6 col-md-3 text-center" data-aos="zoom-in" data-aos-delay="900">
-        <div class="skill-progress" style="--percent:59%; --color:#00758f">
-          <span>MySQL<br>59%</span>
+
+      <!-- Canva -->
+      <div class="skill-item" data-percent="91">
+        <div class="skill-inner">
+          <div class="skill-icon ">
+           <img src="https://static.canva.com/web/images/8439b51bb7a19f6e65ce1064bc37c197.svg" alt="" role="presentation">       
+          </div>
+          <div class="skill-progress">
+            <svg class="progress-ring" viewBox="0 0 100 100">
+              <circle class="progress-ring-bg" cx="50" cy="50" r="45" />
+              <circle class="progress-ring-fill" cx="50" cy="50" r="45" />
+            </svg>
+            <div class="progress-text">91%</div>
+          </div>
+          <div class="skill-info">
+            <h3>Canva</h3>
+            <div class="skill-bar">
+              <div class="bar-fill"></div>
+            </div>
+          </div>
+          <div class="skill-hover"></div>
         </div>
-        <div class="skill-label">MySQL</div>
       </div>
 
-      <div class="col-6 col-md-3 text-center" data-aos="zoom-in" data-aos-delay="1000">
-        <div class="skill-progress" style="--percent:91%; --color:#00c4cc">
-          <span>Canva<br>91%</span>
-        </div>
-        <div class="skill-label">Canva</div>
-      </div>
-
+      <!-- Add more skills as needed -->
     </div>
   </div>
 </section>
+
+<style>
+  /* Base Styles */
+  .skills-section {
+    padding: 80px 0;
+    background: #f8f9fa;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+  }
+
+  /* Header Styles */
+  .section-header {
+    text-align: center;
+    margin-bottom: 60px;
+  }
+
+  .text-stroke {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 3.5rem;
+    font-weight: 800;
+    color: transparent;
+    -webkit-text-stroke: 2px #2c3e50;
+    text-stroke: 2px #2c3e50;
+    letter-spacing: 3px;
+    position: relative;
+    display: inline-block;
+  }
+
+  .text-stroke::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 4px;
+    background: linear-gradient(90deg, #3498db, #2ecc71);
+    border-radius: 2px;
+  }
+
+  .section-subtitle {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.2rem;
+    color: #7f8c8d;
+    margin-top: 15px;
+    letter-spacing: 2px;
+  }
+
+  /* Skills Grid */
+  .skills-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 30px;
+  }
+
+  /* Skill Item */
+  .skill-item {
+    perspective: 1000px;
+  }
+
+  .skill-inner {
+    position: relative;
+    background: white;
+    border-radius: 15px;
+    padding: 30px 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+    transition: all 0.6s cubic-bezier(0.25, 0.8, 0.25, 1);
+    transform-style: preserve-3d;
+    height: 100%;
+    overflow: hidden;
+  }
+
+  .skill-item:hover .skill-inner {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
+  }
+
+  .skill-hover {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, rgba(52, 152, 219, 0.1) 0%, rgba(46, 204, 113, 0.1) 100%);
+    opacity: 0;
+    transition: opacity 0.4s ease;
+    z-index: 0;
+  }
+
+  .skill-item:hover .skill-hover {
+    opacity: 1;
+  }
+
+  /* Skill Icon */
+  .skill-icon {
+    text-align: center;
+    margin-bottom: 20px;
+    position: relative;
+    z-index: 1;
+  }
+
+  .skill-icon i {
+    font-size: 3.5rem;
+    color: #2c3e50;
+    transition: all 0.4s ease;
+  }
+
+  .skill-item:hover .skill-icon i {
+    transform: scale(1.1);
+  }
+
+  /* HTML Color */
+  .skill-item:nth-child(1) .skill-icon i { color: #E44D26; }
+  .skill-item:nth-child(2) .skill-icon i { color: #264DE4; }
+  .skill-item:nth-child(3) .skill-icon i { color: #F0DB4F; }
+  .skill-item:nth-child(4) .skill-icon i { color: #61DBFB; }
+  .skill-item:nth-child(5) .skill-icon i { color: #306998; }
+  .skill-item:nth-child(6) .skill-icon i { color: #98308f; }
+  .skill-item:nth-child(7) .skill-icon i { color: #19be6e; }
+  .skill-item:nth-child(8) .skill-icon i { color: #264DE4; }
+  .skill-item:nth-child(9) .skill-icon i { color: #074704; }
+  .skill-item:nth-child(10) .skill-icon i { color: #88085f; }
+  .skill-item:nth-child(11) .skill-icon i { color: #264DE4; }
+
+  /* Progress Ring */
+  .skill-progress {
+    position: relative;
+    width: 120px;
+    height: 120px;
+    margin: 0 auto 20px;
+  }
+
+  .progress-ring {
+    width: 100%;
+    height: 100%;
+    transform: rotate(-90deg);
+  }
+
+  .progress-ring-bg {
+    fill: none;
+    stroke: #f0f3f6;
+    stroke-width: 8;
+    stroke-linecap: round;
+  }
+
+  .progress-ring-fill {
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 8;
+    stroke-linecap: round;
+    stroke-dasharray: 283;
+    stroke-dashoffset: 283;
+    transition: stroke-dashoffset 1.5s ease-out;
+  }
+
+  /* Set colors for each skill */
+  .skill-item:nth-child(1) .progress-ring-fill { color: #E44D26; }
+  .skill-item:nth-child(2) .progress-ring-fill { color: #264DE4; }
+  .skill-item:nth-child(3) .progress-ring-fill { color: #F0DB4F; }
+  .skill-item:nth-child(4) .progress-ring-fill { color: #61DBFB; }
+  .skill-item:nth-child(5) .progress-ring-fill { color: #306998; }
+  .skill-item:nth-child(6) .progress-ring-fill { color: #98308f; }
+  .skill-item:nth-child(7) .progress-ring-fill { color: #19be6e; }
+  .skill-item:nth-child(8) .progress-ring-fill { color: #264DE4; }
+  .skill-item:nth-child(9) .progress-ring-fill { color: #074704; }
+  .skill-item:nth-child(10) .progress-ring-fill { color: #88085f; }
+  .skill-item:nth-child(11) .progress-ring-fill { color: #264DE4; }
+
+  .progress-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: #2c3e50;
+  }
+
+  /* Skill Info */
+  .skill-info {
+    text-align: center;
+    position: relative;
+    z-index: 1;
+  }
+
+  .skill-info h3 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: #2c3e50;
+    margin-bottom: 15px;
+  }
+
+  .skill-bar {
+    height: 6px;
+    background: #f0f3f6;
+    border-radius: 3px;
+    overflow: hidden;
+  }
+
+  .bar-fill {
+    height: 100%;
+    width: 0;
+    border-radius: 3px;
+    transition: width 1.5s ease-out;
+  }
+
+  /* Set colors for bar fill */
+  .skill-item:nth-child(1) .bar-fill { background: #E44D26; }
+  .skill-item:nth-child(2) .bar-fill { background: #264DE4; }
+  .skill-item:nth-child(3) .bar-fill { background: #F0DB4F; }
+  .skill-item:nth-child(4) .bar-fill { background: #61DBFB; }
+  .skill-item:nth-child(5) .bar-fill { background: #306998; }
+  .skill-item:nth-child(6) .bar-fill { background: #98308f; }
+  .skill-item:nth-child(7) .bar-fill { background: #19be6e; }
+  .skill-item:nth-child(8) .bar-fill { background: #264DE4; }
+  .skill-item:nth-child(9) .bar-fill { background: #074704; }
+  .skill-item:nth-child(10) .bar-fill { background: #88085f; }
+  .skill-item:nth-child(11) .bar-fill { background: #264DE4; }
+
+  /* Animations */
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  /* Responsive */
+  @media (max-width: 768px) {
+    .skills-container {
+      grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+    }
+    
+    .text-stroke {
+      font-size: 2.5rem;
+    }
+    
+    .skill-progress {
+      width: 100px;
+      height: 100px;
+    }
+  }
+</style>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    // Animate skills when they come into view
+    const skillItems = document.querySelectorAll('.skill-item');
+    
+    const animateSkills = () => {
+      skillItems.forEach(item => {
+        const percent = parseInt(item.getAttribute('data-percent'));
+        const fill = item.querySelector('.progress-ring-fill');
+        const barFill = item.querySelector('.bar-fill');
+        const progressText = item.querySelector('.progress-text');
+        
+        // Calculate dash offset
+        const circumference = 283;
+        const offset = circumference - (percent / 100) * circumference;
+        
+        // Animate circle
+        fill.style.strokeDashoffset = offset;
+        
+        // Animate bar
+        barFill.style.width = `${percent}%`;
+        
+        // Animate percentage counter
+        let current = 0;
+        const interval = setInterval(() => {
+          current++;
+          progressText.textContent = `${current}%`;
+          if (current >= percent) clearInterval(interval);
+        }, 1500 / percent);
+      });
+    };
+
+    // Intersection Observer
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          animateSkills();
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.1 });
+
+    observer.observe(document.querySelector('.skills-section'));
+  });
+</script>
+
 
 <!-- Projects Section -->
-<section id="projects" class="py-5" style="background: linear-gradient(to bottom right, #f8fdff, #ffffff);">
-  <div class="container">
-    <div class="text-center mb-5">
-      <h2 class="fw-bold">📁 My Projects</h2>
-      <p class="text-muted">Some recent works that I have completed</p>
+<section id="projects" class="py-6 position-relative overflow-hidden" style="background: linear-gradient(135deg, #f8fdff 0%, #ffffff 100%);">
+  <!-- Decorative elements -->
+  <div class="position-absolute top-0 start-0 w-100 h-100">
+    <div class="position-absolute top-0 end-0" style="width: 200px; height: 200px; background: radial-gradient(circle, rgba(56, 182, 255, 0.1) 0%, rgba(255,255,255,0) 70%);"></div>
+    <div class="position-absolute bottom-0 start-0" style="width: 300px; height: 300px; background: radial-gradient(circle, rgba(100, 108, 255, 0.05) 0%, rgba(255,255,255,0) 70%);"></div>
+  </div>
+
+  <div class="container position-relative z-index-1">
+    <div class="text-center mb-6" data-aos="fade-up">
+      <h2 class="display-4 fw-bold mb-3 position-relative d-inline-block">
+        <span class="me-2">📁</span> My Projects
+        <span class="position-absolute bottom-0 start-0 w-100" style="height: 4px; background: linear-gradient(90deg, #3b82f6, #8b5cf6); transform: scaleX(0); transform-origin: left; animation: underlineGrow 1s ease-out 0.5s forwards;"></span>
+      </h2>
+      <p class="lead text-muted max-w-800 mx-auto">Explore my collection of professional work and creative solutions</p>
     </div>
+
     <div class="row g-4">
+      <!-- Project 1 -->
       <div class="col-md-6 col-lg-4" data-aos="fade-up">
-        <div class="card shadow-sm h-100">
-          <img src="image/Krishco-Engineer-(p)-Ltd.webp" class="card-img-top" alt="Project 1">
+        <div class="project-card card shadow-sm h-100 overflow-hidden border-0">
+          <div class="project-img-container overflow-hidden">
+            <img src="image/Krishco-Engineer-(p)-Ltd.webp" class="card-img-top project-img" alt="Krishco Engineers Pvt. Ltd.">
+            <div class="project-overlay d-flex align-items-center justify-content-center">
+              <a href="https://krishco.com/" target="_blank" class="btn btn-primary btn-lg rounded-pill px-4">View Project</a>
+            </div>
+          </div>
           <div class="card-body">
-            <h5 class="card-title">Krishco Engineers Pvt. Ltd.</h5>
-            <p class="card-text">A corporate website built with HTML, CSS, JS & Bootstrap for a real industrial client.</p>
-            <a href="https://krishco.com/" class="btn btn-outline-primary btn-sm">🔗 Visit</a>
+            <div class="d-flex justify-content-between align-items-start mb-3">
+              <h5 class="card-title fw-bold mb-0">Krishco Engineers Pvt. Ltd.</h5>
+              <span class="badge bg-primary bg-opacity-10 text-primary">Corporate</span>
+            </div>
+            <p class="card-text text-muted">A professional corporate website built with modern web technologies for an industrial client, featuring responsive design and optimized performance.</p>
+            <div class="d-flex flex-wrap gap-2 mt-3">
+              <span class="tech-tag">HTML5</span>
+              <span class="tech-tag">CSS3</span>
+              <span class="tech-tag">JavaScript</span>
+              <span class="tech-tag">Bootstrap</span>
+            </div>
           </div>
         </div>
       </div>
+
+      <!-- Project 2 -->
       <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="100">
-        <div class="card shadow-sm h-100">
-          <img src="image/Rays-Renewal-Solar-Energy-(p)-ltd.webp" class="card-img-top" alt="Project 2">
+        <div class="project-card card shadow-sm h-100 overflow-hidden border-0">
+          <div class="project-img-container overflow-hidden">
+            <img src="image/Rays-Renewal-Solar-Energy-(p)-ltd.webp" class="card-img-top project-img" alt="Rays Renewal Solar Energy">
+            <div class="project-overlay d-flex align-items-center justify-content-center">
+              <a href="https://www.raysrenewalsolar.com/" target="_blank" class="btn btn-primary btn-lg rounded-pill px-4">View Project</a>
+            </div>
+          </div>
           <div class="card-body">
-            <h5 class="card-title">Rays Renewal Solar Energy</h5>
-            <p class="card-text">A solar company portfolio website with responsive and clean layout design.</p>
-            <a href="https://www.raysrenewalsolar.com/" class="btn btn-outline-primary btn-sm">🔗 Visit</a>
+            <div class="d-flex justify-content-between align-items-start mb-3">
+              <h5 class="card-title fw-bold mb-0">Rays Renewal Solar Energy</h5>
+              <span class="badge bg-success bg-opacity-10 text-primary">Corporate</span>
+            </div>
+            <p class="card-text text-muted">A clean, modern portfolio website for a solar energy company with responsive design and intuitive navigation to showcase their services.</p>
+            <div class="d-flex flex-wrap gap-2 mt-3">
+              <span class="tech-tag">HTML5</span>
+              <span class="tech-tag">CSS3</span>
+              <span class="tech-tag">JavaScript</span>
+              <span class="tech-tag">Bootstrap</span>
+            </div>
           </div>
         </div>
       </div>
+
+      <!-- Project 3 -->
       <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="200">
-        <div class="card shadow-sm h-100">
-          <img src="image/ToolMitra.png" class="card-img-top" alt="Project 3">
+        <div class="project-card card shadow-sm h-100 overflow-hidden border-0">
+          <div class="project-img-container overflow-hidden">
+            <img src="image/ToolMitra.png" class="card-img-top project-img" alt="ToolMitra – Multi Tool App">
+            <div class="project-overlay d-flex align-items-center justify-content-center">
+              <div class="coming-soon-badge">Coming Soon</div>
+            </div>
+          </div>
           <div class="card-body">
-            <h5 class="card-title">ToolMitra – Multi Tool App</h5>
-            <p class="card-text">An all-in-one web tool app built using Django & JavaScript with image/PDF tools.</p>
-            <a href="#projects" class="btn btn-outline-primary btn-sm">🔗 Comming Soon</a>
+            <div class="d-flex justify-content-between align-items-start mb-3">
+              <h5 class="card-title fw-bold mb-0">ToolMitra – Multi Tool App</h5>
+              <span class="badge bg-info bg-opacity-10 text-success">Web App</span>
+            </div>
+            <p class="card-text text-muted">An all-in-one web application featuring various tools for image and PDF processing, built with Django backend and JavaScript frontend.</p>
+            <div class="d-flex flex-wrap gap-2 mt-3">
+              <span class="tech-tag">Django</span>
+              <span class="tech-tag">Python</span>
+              <span class="tech-tag">JavaScript</span>
+              <span class="tech-tag">HTML/CSS</span>
+            </div>
           </div>
         </div>
       </div>
+    </div>
+
+    <div class="text-center mt-5" data-aos="fade-up">
+      <a href="#contact" class="btn btn-outline-primary btn-lg px-4 py-3">
+        <i class="bi bi-chat-left-text me-2"></i> Interested in my work? Let's talk
+      </a>
     </div>
   </div>
+
+  <style>
+    @keyframes underlineGrow {
+      from { transform: scaleX(0); }
+      to { transform: scaleX(1); }
+    }
+    
+    .project-card {
+      transition: all 0.3s ease;
+      border-radius: 12px;
+    }
+    
+    .project-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 15px 30px rgba(0,0,0,0.1) !important;
+    }
+    
+    .project-img-container {
+      position: relative;
+      height: 200px;
+    }
+    
+    .project-img {
+      height: 100%;
+      width: 100%;
+      object-fit: cover;
+      transition: all 0.5s ease;
+    }
+    
+    .project-overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0,0,0,0.7);
+      opacity: 0;
+      transition: all 0.3s ease;
+    }
+    
+    .project-card:hover .project-overlay {
+      opacity: 1;
+    }
+    
+    .project-card:hover .project-img {
+      transform: scale(1.1);
+    }
+    
+    .tech-tag {
+      background: rgba(59, 130, 246, 0.1);
+      color: #3b82f6;
+      padding: 3px 10px;
+      border-radius: 20px;
+      font-size: 0.8rem;
+      transition: all 0.3s ease;
+    }
+    
+    .tech-tag:hover {
+      background: rgba(59, 130, 246, 0.2);
+      transform: translateY(-2px);
+    }
+    
+    .coming-soon-badge {
+      background: rgba(255, 193, 7, 0.2);
+      color: #ffc107;
+      padding: 8px 20px;
+      border-radius: 20px;
+      font-weight: 600;
+      font-size: 1rem;
+    }
+    
+    .max-w-800 {
+      max-width: 800px;
+    }
+    
+    .py-6 {
+      padding-top: 5rem;
+      padding-bottom: 5rem;
+    }
+    
+    .z-index-1 {
+      z-index: 1;
+    }
+  </style>
 </section>
 
 <!-- Contact Section -->
 <section id="contact" class="py-5" style="background: linear-gradient(to top right, #e6faff, #ffffff);">
   <div class="container">
     <div class="text-center mb-5">
-      <h2 class="fw-bold">📬 Get In Touch</h2>
+      <h2 class="display-4 fw-bold mb-3 position-relative d-inline-block">
+        Get In Touch
+        <span class="position-absolute bottom-0 start-0 w-100" style="height: 4px; background: linear-gradient(90deg, #3b82f6, #8b5cf6); transform: scaleX(0); transform-origin: left; animation: underlineGrow 1s ease-out 0.5s forwards;"></span>
+      </h2>
       <p class="text-muted">Connect with me through any of the platforms below</p>
     </div>
     <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
@@ -678,9 +1888,121 @@
     </script>
   </footer>
   <!-- Scroll to Top Button -->
-    <button id="scrollToTopBtn" class="scroll-top-btn">
-    <i class="bi bi-arrow-up-short"></i>
-    </button>
+<button id="scrollToTopBtn" class="scroll-top-btn" aria-label="Scroll to top">
+  <i class="bi bi-arrow-up-short"></i>
+</button>
+
+<style>
+  .scroll-top-btn {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #3b82f6, #8b5cf6);
+    color: white;
+    border: none;
+    box-shadow: 0 4px 20px rgba(59, 130, 246, 0.3);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(20px);
+    z-index: 999;
+    font-size: 1.5rem;
+  }
+
+  .scroll-top-btn.visible {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+  }
+
+  .scroll-top-btn:hover {
+    transform: translateY(-5px) scale(1.1);
+    box-shadow: 0 6px 25px rgba(59, 130, 246, 0.4);
+  }
+
+  .scroll-top-btn:active {
+    transform: scale(0.95);
+  }
+
+  /* Animation when scrolling up */
+  @keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {transform: translateY(0);}
+    40% {transform: translateY(-10px);}
+    60% {transform: translateY(-5px);}
+  }
+
+  .scroll-top-btn.scrolling-up {
+    animation: bounce 1.5s ease infinite;
+  }
+
+  /* Responsive adjustments */
+  @media (max-width: 768px) {
+    .scroll-top-btn {
+      bottom: 20px;
+      right: 20px;
+      width: 45px;
+      height: 45px;
+      font-size: 1.3rem;
+    }
+  }
+</style>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    const scrollToTopBtn = document.getElementById('scrollToTopBtn');
+    let isScrollingUp = false;
+    let lastScrollPosition = window.pageYOffset;
+
+    // Show/hide button based on scroll position
+    window.addEventListener('scroll', function() {
+      const currentScrollPosition = window.pageYOffset;
+      
+      // Detect scroll direction
+      if (currentScrollPosition < lastScrollPosition) {
+        isScrollingUp = true;
+      } else {
+        isScrollingUp = false;
+      }
+      lastScrollPosition = currentScrollPosition;
+
+      // Show button after scrolling down 300px
+      if (window.pageYOffset > 300) {
+        scrollToTopBtn.classList.add('visible');
+        
+        // Add special effect when user is scrolling up
+        if (isScrollingUp) {
+          scrollToTopBtn.classList.add('scrolling-up');
+        } else {
+          scrollToTopBtn.classList.remove('scrolling-up');
+        }
+      } else {
+        scrollToTopBtn.classList.remove('visible');
+        scrollToTopBtn.classList.remove('scrolling-up');
+      }
+    });
+
+    // Smooth scroll to top
+    scrollToTopBtn.addEventListener('click', function() {
+      window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+      });
+      
+      // Add click animation
+      this.style.transform = 'scale(0.9)';
+      setTimeout(() => {
+        this.style.transform = 'scale(1)';
+      }, 100);
+    });
+  });
+</script>
 
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
