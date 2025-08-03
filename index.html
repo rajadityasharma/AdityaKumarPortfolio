@@ -573,16 +573,15 @@
       </h2>
       <p class="lead text-muted max-w-800 mx-auto">Discover more about my journey, skills, and professional background</p>
     </div>
-
+    <hr>
     <div class="row align-items-center g-5">
-      <div class="col-lg-5 text-center" data-aos="fade-right">
+      <div class="col-lg-4 text-center" data-aos="fade-right">
         <div class="position-relative" style="max-width: 400px; margin: 0 auto;">
           <img src="image/Aditya-Kumar-Patna.webp" class="img-fluid rounded-4 shadow-lg" alt="Aditya Kumar" style="border: 8px solid white; transform: perspective(1000px) rotateY(-5deg);">
           <div class="position-absolute top-0 start-0 w-100 h-100 rounded-4" style="background: linear-gradient(45deg, rgba(20, 222, 145, 0.2), rgba(13, 110, 253, 0.2)); z-index: -1; transform: translate(15px, 15px) perspective(1000px) rotateY(-5deg);"></div>
         </div>
       </div>
-      
-      <div class="col-lg-7" data-aos="fade-left">
+      <div class="col-lg-8" data-aos="fade-left">
         <h3 class="fw-bold mb-4">Get to Know Me</h3>
         <div class="about-content bg-white p-4 p-lg-5 rounded-4 shadow-sm">
           <p class="lead mb-4">I'm <strong class="text-gradient">Aditya Kumar</strong>, a passionate full stack web developer specializing in responsive, user-friendly web solutions. With expertise in front-end technologies like <strong>React</strong>, <strong>Bootstrap</strong>, and back-end using <strong>Python</strong> and <strong>Django</strong>, I build scalable, creative, and impactful digital experiences.</p>
@@ -674,12 +673,12 @@
             </div>
           </div>
           
-          <div class="mt-4 pt-3">
-            <a href="image/My-Resume.pdf" download class="btn btn-primary btn-lg rounded-pill shadow-sm px-4 py-3 d-inline-flex align-items-center">
-              <i class="bi bi-download me-2"></i> Download Resume
+          <div class="d-flex flex-wrap gap-3 mt-4">
+            <a href="#projects" class="btn btn-primary btn-lg shadow-sm px-4 py-3 d-flex align-items-center" style="border-radius: 52px; transition: all 0.3s ease;">
+              <span class="me-2"><i class="bi bi-download me-2"></i></span> Download Resume
             </a>
-            <a href="#contact" class="btn btn-outline-primary btn-lg rounded-pill shadow-sm px-4 py-3 d-inline-flex align-items-center ms-3">
-              <i class="bi bi-chat-left-text me-2"></i> Contact Me
+            <a href="#contact" class="btn btn-outline-primary btn-lg shadow-sm px-4 py-3 d-flex align-items-center" style="border-radius: 52px; transition: all 0.3s ease;">
+              <span class="me-2"><i class="bi bi-chat-left-text me-2"></i></span> Contact Me
             </a>
           </div>
         </div>
@@ -1025,7 +1024,7 @@
 </style>
 
 <!-- Skills Section -->
-<section id="skills" class="skills-section">
+<section id="skills" class="py-6">
   <div class="container">
     <div class="section-header">
       <h2 class="display-4 fw-bold mb-3 position-relative d-inline-block">
@@ -1783,100 +1782,281 @@
 </section>
 
 <!-- Contact Section -->
-<section id="contact" class="py-5" style="background: linear-gradient(to top right, #e6faff, #ffffff);">
+<section id="contact" class="py-6" style="background: linear-gradient(135deg, #f5fdff 0%, #e6f4ff 100%);">
   <div class="container">
     <div class="text-center mb-5">
       <h2 class="display-4 fw-bold mb-3 position-relative d-inline-block">
         Get In Touch
-        <span class="position-absolute bottom-0 start-0 w-100" style="height: 4px; background: linear-gradient(90deg, #3b82f6, #8b5cf6); transform: scaleX(0); transform-origin: left; animation: underlineGrow 1s ease-out 0.5s forwards;"></span>
+        <span class="position-absolute bottom-0 start-0 w-100" style="height: 4px; background: linear-gradient(90deg, #3b82f6, #8b5cf6); transform: scaleX(0); transform-origin: left; animation: underlineGrow 0.8s cubic-bezier(0.65, 0, 0.35, 1) 0.3s forwards;"></span>
       </h2>
-      <p class="text-muted">Connect with me through any of the platforms below</p>
+      <p class="lead text-muted mb-4">I'd love to hear from you! Reach out through any platform below</p>
+      <div class="d-flex justify-content-center gap-3">
+        <a href="#contact-form" class="btn btn-primary btn-lg px-4 rounded-pill shadow-sm">
+          <i class="bi bi-send-fill me-2"></i>Send Message
+        </a>
+        <a href="tel:+917488584509" class="btn btn-outline-primary btn-lg px-4 rounded-pill">
+          <i class="bi bi-telephone-outbound-fill me-2"></i>Call Now
+        </a>
+      </div>
     </div>
-    <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
-      <div class="col" data-aos="zoom-in" data-aos-delay="100">
-        <div class="card h-100 shadow-sm">
-          <div class="card-body text-center">
-            <i class="bi bi-telephone-fill text-primary fs-4"></i>
-            <p class="mt-2 mb-0"><strong>Phone</strong></p>
-            <p class="text-muted small"><a href="tel:7488584509" class="text-decoration-none">+91 7488584509</a><br><a href="tel:8986049246" class="text-decoration-none">+91 8986049246</a></p>
+    
+    <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4 mb-5">
+      <!-- Phone Card -->
+      <div class="col" data-aos="fade-up" data-aos-delay="100">
+        <div class="card h-100 shadow-sm border-0 hover-effect">
+          <div class="card-body text-center p-4">
+            <div class="icon-wrapper bg-primary bg-opacity-10 rounded-circle d-inline-flex align-items-center justify-content-center mb-3" style="width: 60px; height: 60px;">
+              <i class="bi bi-telephone-fill text-primary fs-4"></i>
+            </div>
+            <h5 class="fw-bold mb-3">Phone</h5>
+            <div class="d-flex flex-column gap-2">
+              <a href="tel:7488584509" class="btn btn-outline-primary btn-sm rounded-pill">
+                <i class="bi bi-telephone me-1"></i> +91 7488584509
+              </a>
+              <a href="tel:8986049246" class="btn btn-outline-primary btn-sm rounded-pill">
+                <i class="bi bi-telephone me-1"></i> +91 8986049246
+              </a>
+            </div>
           </div>
         </div>
       </div>
-      <div class="col" data-aos="zoom-in" data-aos-delay="200">
-        <div class="card h-100 shadow-sm">
-          <div class="card-body text-center">
-            <i class="bi bi-envelope-fill text-danger fs-4"></i>
-            <p class="mt-2 mb-0"><strong>Email</strong></p>
-            <p class="text-muted small"><a href="mailto:adityasharmamama@gmail.com" class="text-decoration-none">adityasharmamama@gmail.com</a></p>
+      
+      <!-- Email Card -->
+      <div class="col" data-aos="fade-up" data-aos-delay="150">
+        <div class="card h-100 shadow-sm border-0 hover-effect">
+          <div class="card-body text-center p-4">
+            <div class="icon-wrapper bg-danger bg-opacity-10 rounded-circle d-inline-flex align-items-center justify-content-center mb-3" style="width: 60px; height: 60px;">
+              <i class="bi bi-envelope-fill text-danger fs-4"></i>
+            </div>
+            <h5 class="fw-bold mb-3">Email</h5>
+            <a href="mailto:adityasharmamama@gmail.com" class="btn btn-outline-danger btn-sm rounded-pill">
+              <i class="bi bi-envelope me-1"></i> adityasharmamama@gmail.com
+            </a>
           </div>
         </div>
       </div>
-      <div class="col" data-aos="zoom-in" data-aos-delay="300">
-        <div class="card h-100 shadow-sm">
-          <div class="card-body text-center">
-            <i class="bi bi-whatsapp text-success fs-4"></i>
-            <p class="mt-2 mb-0"><strong>WhatsApp</strong></p>
-            <p class="text-muted small"><a href="https://wa.me/+917488584509?text=Hello!%20Aditya,%20Please%20let%20me%20know%20more%20about%20your%20services!!" target="_blank" class="text-decoration-none">+91 7488584509</a><br><a href="https://wa.me/+918986049246?text=Hello!%20Aditya,%20Please%20let%20me%20know%20more%20about%20your%20services!!" target="_blank" class="text-decoration-none">+91 8986049246</a></p>
+      
+      <!-- WhatsApp Card -->
+      <div class="col" data-aos="fade-up" data-aos-delay="200">
+        <div class="card h-100 shadow-sm border-0 hover-effect">
+          <div class="card-body text-center p-4">
+            <div class="icon-wrapper bg-success bg-opacity-10 rounded-circle d-inline-flex align-items-center justify-content-center mb-3" style="width: 60px; height: 60px;">
+              <i class="bi bi-whatsapp text-success fs-4"></i>
+            </div>
+            <h5 class="fw-bold mb-3">WhatsApp</h5>
+            <div class="d-flex flex-column gap-2">
+              <a href="https://wa.me/+917488584509?text=Hello!%20Aditya,%20Please%20let%20me%20know%20more%20about%20your%20services!!" target="_blank" class="btn btn-outline-success btn-sm rounded-pill">
+                <i class="bi bi-whatsapp me-1"></i> +91 7488584509
+              </a>
+              <a href="https://wa.me/+918986049246?text=Hello!%20Aditya,%20Please%20let%20me%20know%20more%20about%20your%20services!!" target="_blank" class="btn btn-outline-success btn-sm rounded-pill">
+                <i class="bi bi-whatsapp me-1"></i> +91 8986049246
+              </a>
+            </div>
           </div>
         </div>
       </div>
-      <div class="col" data-aos="zoom-in" data-aos-delay="400">
-        <div class="card h-100 shadow-sm">
-          <div class="card-body text-center">
-            <i class="bi bi-house text-info fs-4"></i>
-            <p class="mt-2 mb-0"><strong>Address</strong></p>
-            <p class="text-muted small">Patna, 801505, Bihar <br> India</p>
+      
+      <!-- Address Card -->
+      <div class="col" data-aos="fade-up" data-aos-delay="250">
+        <div class="card h-100 shadow-sm border-0 hover-effect">
+          <div class="card-body text-center p-4">
+            <div class="icon-wrapper bg-info bg-opacity-10 rounded-circle d-inline-flex align-items-center justify-content-center mb-3" style="width: 60px; height: 60px;">
+              <i class="bi bi-geo-alt-fill text-info fs-4"></i>
+            </div>
+            <h5 class="fw-bold mb-3">Location</h5>
+            <div class="bg-light p-3 rounded">
+              <p class="mb-0 small">
+                <i class="bi bi-building me-1"></i> Patna, 801505<br>
+                <i class="bi bi-geo me-1"></i> Bihar, India
+              </p>
+            </div>
+            <a href="https://maps.google.com/?q=Patna,801505,Bihar,India" target="_blank" class="btn btn-sm btn-outline-info mt-3 rounded-pill">
+              <i class="bi bi-map me-1"></i> View on Map
+            </a>
           </div>
         </div>
       </div>
-      <div class="col" data-aos="zoom-in" data-aos-delay="500">
-        <div class="card h-100 shadow-sm">
-          <div class="card-body text-center">
-            <i class="bi bi-instagram text-warning fs-4"></i>
-            <p class="mt-2 mb-0"><strong>Instagram</strong></p>
-            <p class="text-muted small"><a class="text-decoration-none" href="https://www.instagram.com/invites/contact/?igsh=10vutqjs01kg2&utm_content=3w0zwvs" target="_blank">Aditya Sharma</a></p>
+      
+      <!-- Social Media Cards -->
+      <div class="col" data-aos="fade-up" data-aos-delay="300">
+        <div class="card h-100 shadow-sm border-0 hover-effect">
+          <div class="card-body text-center p-4">
+            <div class="icon-wrapper bg-instagram-gradient rounded-circle d-inline-flex align-items-center justify-content-center mb-3" style="width: 60px; height: 60px;">
+              <i class="bi bi-instagram text-white fs-4"></i>
+            </div>
+            <h5 class="fw-bold mb-3">Instagram</h5>
+            <a href="https://www.instagram.com/invites/contact/?igsh=10vutqjs01kg2&utm_content=3w0zwvs" target="_blank" class="btn btn-instagram-gradient text-white btn-sm rounded-pill">
+              <i class="bi bi-instagram me-1"></i> @AdityaSharma
+            </a>
           </div>
         </div>
       </div>
-      <div class="col" data-aos="zoom-in" data-aos-delay="600">
-        <div class="card h-100 shadow-sm">
-          <div class="card-body text-center">
-            <i class="bi bi-facebook text-primary fs-4"></i>
-            <p class="mt-2 mb-0"><strong>Facebook</strong></p>
-            <p class="text-muted small"><a class="text-decoration-none" href="https://www.facebook.com/adityakumar.sharma.211?mibextid=ZbWKwL" target="_blank">Aditya Sharma</a></p>
+      
+      <div class="col" data-aos="fade-up" data-aos-delay="350">
+        <div class="card h-100 shadow-sm border-0 hover-effect">
+          <div class="card-body text-center p-4">
+            <div class="icon-wrapper bg-primary bg-opacity-10 rounded-circle d-inline-flex align-items-center justify-content-center mb-3" style="width: 60px; height: 60px;">
+              <i class="bi bi-facebook text-primary fs-4"></i>
+            </div>
+            <h5 class="fw-bold mb-3">Facebook</h5>
+            <a href="https://www.facebook.com/adityakumar.sharma.211?mibextid=ZbWKwL" target="_blank" class="btn btn-outline-primary btn-sm rounded-pill">
+              <i class="bi bi-facebook me-1"></i> Aditya Sharma
+            </a>
           </div>
         </div>
       </div>
-      <div class="col" data-aos="zoom-in" data-aos-delay="700">
-        <div class="card h-100 shadow-sm">
-          <div class="card-body text-center">
-            <strong class="bg-dark px-2 py-1 text-white rounded">X</strong>
-            <p class="mt-2 mb-0"><strong>X (Twitter)</strong></p>
-            <p class="text-muted small"><a class="text-decoration-none" href="https://x.com/AdiyaSharma211?t=afQQ2KAA8K5KYkRQTkMQAw&s=08" target="_blank">Aditya Sharma</a></p>
+      
+      <div class="col" data-aos="fade-up" data-aos-delay="400">
+        <div class="card h-100 shadow-sm border-0 hover-effect">
+          <div class="card-body text-center p-4">
+            <div class="icon-wrapper bg-dark bg-opacity-10 rounded-circle d-inline-flex align-items-center justify-content-center mb-3" style="width: 60px; height: 60px;">
+              <strong class="text-dark fs-4">X</strong>
+            </div>
+            <h5 class="fw-bold mb-3">Twitter (X)</h5>
+            <a href="https://x.com/AdiyaSharma211?t=afQQ2KAA8K5KYkRQTkMQAw&s=08" target="_blank" class="btn btn-outline-dark btn-sm rounded-pill">
+              <i class="bi bi-twitter-x me-1"></i> @AdityaSharma
+            </a>
           </div>
         </div>
       </div>
-      <div class="col" data-aos="zoom-in" data-aos-delay="800">
-        <div class="card h-100 shadow-sm">
-          <div class="card-body text-center">
-            <i class="bi bi-linkedin text-info fs-4"></i>
-            <p class="mt-2 mb-0"><strong>LinkedIn</strong></p>
-            <p class="text-muted small"><a class="text-decoration-none" href="https://www.linkedin.com/in/aditya-kumar-7488584509-aditya?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank">Aditya Kumar </a></p>
+      
+      <div class="col" data-aos="fade-up" data-aos-delay="450">
+        <div class="card h-100 shadow-sm border-0 hover-effect">
+          <div class="card-body text-center p-4">
+            <div class="icon-wrapper bg-linkedin-gradient rounded-circle d-inline-flex align-items-center justify-content-center mb-3" style="width: 60px; height: 60px;">
+              <i class="bi bi-linkedin text-white fs-4"></i>
+            </div>
+            <h5 class="fw-bold mb-3">LinkedIn</h5>
+            <a href="https://www.linkedin.com/in/aditya-kumar-7488584509-aditya?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank" class="btn btn-linkedin-gradient text-white btn-sm rounded-pill">
+              <i class="bi bi-linkedin me-1"></i> Aditya Kumar
+            </a>
           </div>
         </div>
       </div>
-      <div class="col" data-aos="zoom-in" data-aos-delay="900">
-        <div class="card h-100 shadow-sm">
-          <div class="card-body text-center">
-            <i class="bi bi-github text-dark fs-4"></i>
-            <p class="mt-2 mb-0"><strong>Github</strong></p>
-            <p class="text-muted small"><a href="https://github.com/rajadityasharma" class="text-decoration-none" target="_blank">Aditya Kumar</a></p>
+      
+      <div class="col" data-aos="fade-up" data-aos-delay="500">
+        <div class="card h-100 shadow-sm border-0 hover-effect">
+          <div class="card-body text-center p-4">
+            <div class="icon-wrapper bg-dark bg-opacity-10 rounded-circle d-inline-flex align-items-center justify-content-center mb-3" style="width: 60px; height: 60px;">
+              <i class="bi bi-github text-dark fs-4"></i>
+            </div>
+            <h5 class="fw-bold mb-3">GitHub</h5>
+            <a href="https://github.com/rajadityasharma" target="_blank" class="btn btn-outline-dark btn-sm rounded-pill">
+              <i class="bi bi-github me-1"></i> rajadityasharma
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Contact Form Section -->
+    <div class="row justify-content-center mt-5" id="contact-form">
+      <div class="col-lg-8">
+        <div class="card shadow-lg border-0">
+          <div class="card-body p-5">
+            <h3 class="text-center mb-4 fw-bold">Send Me a Message</h3>
+            <form id="whatsapp-form">
+              <div class="row g-3">
+                <div class="col-md-6">
+                  <div class="form-floating">
+                    <input type="text" class="form-control" id="name" placeholder="Your Name" required>
+                    <label for="name">Your Name</label>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="form-floating">
+                    <input type="email" class="form-control" id="email" placeholder="Your Email" required>
+                    <label for="email">Your Email</label>
+                  </div>
+                </div>
+                <div class="col-12">
+                  <div class="form-floating">
+                    <input type="text" class="form-control" id="subject" placeholder="Subject" required>
+                    <label for="subject">Subject</label>
+                  </div>
+                </div>
+                <div class="col-12">
+                  <div class="form-floating">
+                    <textarea class="form-control" placeholder="Your Message" id="message" style="height: 150px" required></textarea>
+                    <label for="message">Your Message</label>
+                  </div>
+                </div>
+                <div class="col-12 text-center">
+                  <button type="submit" class="btn btn-primary btn-lg px-5 rounded-pill">
+                    <i class="bi bi-send-fill me-2"></i>Send Message
+                  </button>
+                </div>
+              </div>
+            </form>
+            
+            <script>
+              document.getElementById("whatsapp-form").addEventListener("submit", function (e) {
+                e.preventDefault();
+            
+                // Get form values
+                const name = document.getElementById("name").value.trim();
+                const email = document.getElementById("email").value.trim();
+                const subject = document.getElementById("subject").value.trim();
+                const message = document.getElementById("message").value.trim();
+            
+                // WhatsApp message content
+                const whatsappMessage = `*New Form Submission*%0A%0A👤 *Name:* ${name}%0A📧 *Email:* ${email}%0A📌 *Subject:* ${subject}%0A📝 *Message:* ${message}`;
+            
+                // Replace with your phone number (with country code)
+                const phoneNumber = "917488584509"; // +91 included
+            
+                // Open WhatsApp with pre-filled message
+                window.open(`https://wa.me/${phoneNumber}?text=${whatsappMessage}`, "_blank");
+              });
+            </script>
+            
           </div>
         </div>
       </div>
     </div>
   </div>
 </section>
+
+<style>
+  /* Custom Styles */
+  .hover-effect {
+    transition: all 0.3s ease;
+    border-radius: 12px;
+  }
+  .hover-effect:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1) !important;
+  }
+  
+  .icon-wrapper {
+    transition: all 0.3s ease;
+  }
+  .card:hover .icon-wrapper {
+    transform: scale(1.1);
+  }
+  
+  @keyframes underlineGrow {
+    to { transform: scaleX(1); }
+  }
+  
+  .bg-instagram-gradient {
+    background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888);
+  }
+  
+  .btn-instagram-gradient {
+    background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888);
+    border: none;
+  }
+  
+  .bg-linkedin-gradient {
+    background: linear-gradient(45deg, #0077b5, #00a0dc);
+  }
+  
+  .btn-linkedin-gradient {
+    background: linear-gradient(45deg, #0077b5, #00a0dc);
+    border: none;
+  }
+</style>
 
 
   <!-- Footer -->
