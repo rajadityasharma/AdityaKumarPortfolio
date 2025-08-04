@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://aditya-kumar-portfolio.onrender.com/sitemap.xml
