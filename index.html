@@ -376,12 +376,12 @@
       position: fixed;
       width: 28px;
       height: 28px;
-      background: radial-gradient(circle, #1a5fb4 0%, #0d2e5e 100%);
+      background: radial-gradient(circle, #1a5fb4be 0%, #15d62bbb 100%);
       border-radius: 50%;
       pointer-events: none;
       z-index: 19999;
       transform: translate(-50%, -50%) scale(1);
-      filter: drop-shadow(0 0 6px rgba(26, 95, 180, 0.8));
+      filter: drop-shadow(0 0 6px rgba(26, 180, 106, 0.403));
       border: 2px solid rgba(255, 255, 255, 0.7);
       mix-blend-mode: multiply;
       transition: transform 0.3s cubic-bezier(0.18, 0.89, 0.32, 1.28);
@@ -391,12 +391,12 @@
       position: fixed;
       width: 16px;
       height: 16px;
-      background: radial-gradient(circle, #1a5fb4 40%, #0d2e5e 100%);
+      background: radial-gradient(circle,  #1a5fb4be 0%, #15d62bbb 100%);
       border-radius: 50%;
       pointer-events: none;
       z-index: 19998;
       transform: translate(-50%, -50%) scale(1);
-      filter: blur(1px) drop-shadow(0 0 4px rgba(26, 95, 180, 0.6));
+      filter: blur(1px) drop-shadow(0 0 4px rgba(26, 180, 106, 0.403));
       border: 1px solid rgba(255, 255, 255, 0.5);
       mix-blend-mode: multiply;
       transition: all 0.4s cubic-bezier(0.18, 0.89, 0.32, 1.28);
@@ -405,14 +405,14 @@
     /* Link Hover Effects */
     a:hover ~ .custom-cursor,
     a:focus ~ .custom-cursor {
-      filter: drop-shadow(0 0 12px rgba(26, 95, 180, 0.9));
-      background: radial-gradient(circle, #2a6fc9 0%, #123a7a 100%);
+      filter: drop-shadow(0 0 12px rgba(26, 180, 106, 0.403));
+      background: radial-gradient(circle, #1a5fb4be 0%, #15d62b7a 100%);
     }
 
     a:hover ~ .cursor-tail,
     a:focus ~ .cursor-tail {
-      background: radial-gradient(circle, #2a6fc9 40%, #123a7a 100%);
-      filter: blur(1px) drop-shadow(0 0 6px rgba(26, 95, 180, 0.8));
+      background: radial-gradient(circle, #1a5fb4be 0%, #15d62bbb 100%);
+      filter: blur(1px) drop-shadow(0 0 6px rgba(26, 180, 106, 0.403));
     }
 
     * {
@@ -421,7 +421,7 @@
 
     /* Demo link styling (optional) */
     a {
-      color: #1a5fb4;
+      color: #1a5fb470;
       text-decoration: none;
       font-size: 18px;
       padding: 8px 16px;
@@ -432,7 +432,7 @@
     }
 
     a:hover {
-      color: #0d2e5e;
+      color: #0d2d5e7b;
       transform: translateY(-2px);
     }
   </style>
@@ -545,8 +545,8 @@
   <style>
       .time-bubble {
           position: fixed;
-          top: 70px;
-          right: 20px;
+          top: 90px;
+          right: 15px;
           background: linear-gradient(135deg, rgba(63, 181, 181, 0.5) 0%, rgba(103, 9, 158, 0.5) 100%);
           color: white;
           padding: 8px 12px;
