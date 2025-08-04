@@ -4,6 +4,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="google-site-verification" content="google4d5dd1b22c57b918.html">
+
   <!-- Primary Meta Tags -->
   <meta name="title" content="Aditya Kumar | Full Stack Web Developer in Patna">
   <meta name="description" content="I'm Aditya Kumar, a passionate full stack web developer skilled in React, Django, MySQL and more. Explore my projects, skills, and services.">
@@ -365,79 +367,250 @@
   </script>
   </header>
 
+
+  <!-- Neural Network Cursor -->
+  <div class="neural-cursor"></div>
+  <style>
+    /* Dark Blue Gradient Cursor with Hover Scaling */
+    .custom-cursor {
+      position: fixed;
+      width: 28px;
+      height: 28px;
+      background: radial-gradient(circle, #1a5fb4 0%, #0d2e5e 100%);
+      border-radius: 50%;
+      pointer-events: none;
+      z-index: 19999;
+      transform: translate(-50%, -50%) scale(1);
+      filter: drop-shadow(0 0 6px rgba(26, 95, 180, 0.8));
+      border: 2px solid rgba(255, 255, 255, 0.7);
+      mix-blend-mode: multiply;
+      transition: transform 0.3s cubic-bezier(0.18, 0.89, 0.32, 1.28);
+    }
+
+    .cursor-tail {
+      position: fixed;
+      width: 16px;
+      height: 16px;
+      background: radial-gradient(circle, #1a5fb4 40%, #0d2e5e 100%);
+      border-radius: 50%;
+      pointer-events: none;
+      z-index: 19998;
+      transform: translate(-50%, -50%) scale(1);
+      filter: blur(1px) drop-shadow(0 0 4px rgba(26, 95, 180, 0.6));
+      border: 1px solid rgba(255, 255, 255, 0.5);
+      mix-blend-mode: multiply;
+      transition: all 0.4s cubic-bezier(0.18, 0.89, 0.32, 1.28);
+    }
+
+    /* Link Hover Effects */
+    a:hover ~ .custom-cursor,
+    a:focus ~ .custom-cursor {
+      filter: drop-shadow(0 0 12px rgba(26, 95, 180, 0.9));
+      background: radial-gradient(circle, #2a6fc9 0%, #123a7a 100%);
+    }
+
+    a:hover ~ .cursor-tail,
+    a:focus ~ .cursor-tail {
+      background: radial-gradient(circle, #2a6fc9 40%, #123a7a 100%);
+      filter: blur(1px) drop-shadow(0 0 6px rgba(26, 95, 180, 0.8));
+    }
+
+    * {
+      cursor: none !important;
+    }
+
+    /* Demo link styling (optional) */
+    a {
+      color: #1a5fb4;
+      text-decoration: none;
+      font-size: 18px;
+      padding: 8px 16px;
+      margin: 10px;
+      display: inline-block;
+      transition: all 0.3s ease;
+      position: relative;
+    }
+
+    a:hover {
+      color: #0d2e5e;
+      transform: translateY(-2px);
+    }
+  </style>
+  <script>
+    // Enhanced JavaScript with hover detection
+    const cursor = document.createElement('div');
+    cursor.className = 'custom-cursor';
+    document.body.appendChild(cursor);
+
+    // Create 6 tail elements for smoother effect
+    const tails = [];
+    for (let i = 0; i < 6; i++) {
+      const tail = document.createElement('div');
+      tail.className = 'cursor-tail';
+      tail.style.opacity = 1 - (i * 0.15);
+      tail.style.width = `${18 - (i * 2)}px`;
+      tail.style.height = `${18 - (i * 2)}px`;
+      document.body.appendChild(tail);
+      tails.push({
+        element: tail,
+        x: 0,
+        y: 0,
+        delay: (i + 1) * 0.03
+      });
+    }
+
+    // Track mouse and hover state
+    let mouseX = 0, mouseY = 0;
+    let isHoveringLink = false;
+    const links = document.querySelectorAll('a');
+
+    // Mouse movement
+    document.addEventListener('mousemove', (e) => {
+      mouseX = e.clientX;
+      mouseY = e.clientY;
+    });
+
+    // Link hover detection
+    links.forEach(link => {
+      link.addEventListener('mouseenter', () => {
+        isHoveringLink = true;
+        // Boost the cursor immediately
+        cursor.style.transform = `translate(-50%, -50%) scale(2.2)`;
+        tails.forEach(tail => {
+          tail.element.style.transform = `translate(-50%, -50%) scale(1.6)`;
+        });
+      });
+      
+      link.addEventListener('mouseleave', () => {
+        isHoveringLink = false;
+        // Return to normal scale
+        cursor.style.transform = `translate(-50%, -50%) scale(1)`;
+        tails.forEach(tail => {
+          tail.element.style.transform = `translate(-50%, -50%) scale(1)`;
+        });
+      });
+    });
+
+    // Smooth animation with enhanced physics
+    function animate() {
+      // Update cursor position
+      cursor.style.left = `${mouseX}px`;
+      cursor.style.top = `${mouseY}px`;
+      
+      // Update tail positions with spring physics
+      tails.forEach((tail, i) => {
+        const leader = i === 0 ? {x: mouseX, y: mouseY} : tails[i-1];
+        const dx = leader.x - tail.x;
+        const dy = leader.y - tail.y;
+        const distance = Math.sqrt(dx * dx + dy * dy);
+        
+        // Dynamic easing based on distance
+        const ease = isHoveringLink ? 0.3 : Math.min(0.2, distance * 0.01);
+        
+        tail.x += dx * ease;
+        tail.y += dy * ease;
+        
+        tail.element.style.left = `${tail.x}px`;
+        tail.element.style.top = `${tail.y}px`;
+        
+        // Slightly reduce opacity of tails when moving fast
+        tail.element.style.opacity = `${1 - (i * 0.15) - Math.min(0.3, distance * 0.003)}`;
+      });
+      
+      requestAnimationFrame(animate);
+    }
+
+    // Initialize
+    window.addEventListener('load', () => {
+      // Start at center
+      mouseX = window.innerWidth / 2;
+      mouseY = window.innerHeight / 2;
+      cursor.style.left = `${mouseX}px`;
+      cursor.style.top = `${mouseY}px`;
+      
+      tails.forEach(tail => {
+        tail.x = mouseX;
+        tail.y = mouseY;
+        tail.element.style.left = `${mouseX}px`;
+        tail.element.style.top = `${mouseY}px`;
+      });
+      
+      animate();
+    });
+  </script>
+  <!-- Neural Network Cursor -->
+   
   <!-- date and time -->
    <div class="time-bubble" id="datetime"></div>
-<style>
-    .time-bubble {
-        position: fixed;
-        top: 70px;
-        right: 20px;
-        background: linear-gradient(135deg, rgba(63, 181, 181, 0.5) 0%, rgba(103, 9, 158, 0.5) 100%);
-        color: white;
-        padding: 8px 12px;
-        border-radius: 20px;
-        font-family: 'Arial', sans-serif;
-        font-size: 12px;
-        box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
-        z-index: 1000;
-        backdrop-filter: blur(4px);
-        border: 1px solid rgba(255, 255, 255, 0.2);
-        display: inline-block;
-        max-width: 160px;
-        text-align: center;
-        line-height: 1.3;
-    }
-    
-    .time-bubble .date {
-        font-weight: normal;
-        opacity: 0.9;
-    }
-    
-    .time-bubble .time {
-        font-weight: bold;
-        font-size: 13px;
-    }
-</style>
-<script>
-    function updateDateTime() {
-        const now = new Date();
-        const dateOptions = { 
-            weekday: 'short', 
-            month: 'short', 
-            day: 'numeric'
-        };
-        const timeOptions = {
-            hour: '2-digit',
-            minute: '2-digit',
-            second: '2-digit',
-            hour12: true
-        };
-        
-        const dateStr = now.toLocaleDateString('en-US', dateOptions);
-        const timeStr = now.toLocaleTimeString('en-US', timeOptions);
-        
-        document.getElementById('datetime').innerHTML = 
-            `<span class="date">${dateStr}</span><br><span class="time">${timeStr}</span>`;
-    }
-    
-    // Update immediately
-    updateDateTime();
-    
-    // Update every second
-    setInterval(updateDateTime, 1000);
-</script>
+  <style>
+      .time-bubble {
+          position: fixed;
+          top: 70px;
+          right: 20px;
+          background: linear-gradient(135deg, rgba(63, 181, 181, 0.5) 0%, rgba(103, 9, 158, 0.5) 100%);
+          color: white;
+          padding: 8px 12px;
+          border-radius: 20px;
+          font-family: 'Arial', sans-serif;
+          font-size: 12px;
+          box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+          z-index: 1000;
+          backdrop-filter: blur(4px);
+          border: 1px solid rgba(255, 255, 255, 0.2);
+          display: inline-block;
+          max-width: 160px;
+          text-align: center;
+          line-height: 1.3;
+      }
+      
+      .time-bubble .date {
+          font-weight: normal;
+          opacity: 0.9;
+      }
+      
+      .time-bubble .time {
+          font-weight: bold;
+          font-size: 13px;
+      }
+  </style>
+  <script>
+      function updateDateTime() {
+          const now = new Date();
+          const dateOptions = { 
+              weekday: 'short', 
+              month: 'short', 
+              day: 'numeric'
+          };
+          const timeOptions = {
+              hour: '2-digit',
+              minute: '2-digit',
+              second: '2-digit',
+              hour12: true
+          };
+          
+          const dateStr = now.toLocaleDateString('en-US', dateOptions);
+          const timeStr = now.toLocaleTimeString('en-US', timeOptions);
+          
+          document.getElementById('datetime').innerHTML = 
+              `<span class="date">${dateStr}</span><br><span class="time">${timeStr}</span>`;
+      }
+      
+      // Update immediately
+      updateDateTime();
+      
+      // Update every second
+      setInterval(updateDateTime, 1000);
+  </script>
    
   
 
 <!-- Hero Section -->
 <section id="home" class="d-flex align-items-center min-vh-100 position-relative overflow-hidden" style="background: linear-gradient(135deg, #f0f9ff 0%, #e6f4ff 50%, #f0f7ff 100%); padding-top: 80px;">
-  <!-- Advanced Animated Background -->
-  <div class="position-absolute top-0 start-0 w-100 h-100">
-    <div class="position-absolute top-0 start-0 w-100 h-100 animated-pattern" style="background: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiPjxkZWZzPjxwYXR0ZXJuIGlkPSJwYXR0ZXJuIiB3aWR0aD0iNDAiIGhlaWdodD0iNDAiIHBhdHRlcm5Vbml0cz0idXNlclNwYWNlT25Vc2UiIHBhdHRlcm5UcmFuc2Zvcm09InJvdGF0ZSg0NSkiPjxyZWN0IHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgZmlsbD0icmdiYSgyMDQsIDIyOCwgMjU1LCAwLjA1KSIvPjwvcGF0dGVybj48L2RlZnM+PHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgZmlsbD0idXJsKCNwYXR0ZXJuKSIvPjwvc3ZnPg==')"></div>
-    <div class="position-absolute bottom-0 end-0 animated-gradient" style="width: 300px; height: 300px;"></div>
-    <div class="position-absolute top-50 start-20 animated-blob" style="width: 200px; height: 200px;"></div>
-    <!-- Cursor Trail Particles -->
-    <div class="cursor-trail"></div>
+  <!-- Quantum Particle Background with Floating Bubbles -->
+  <div class="position-absolute top-0 start-0 w-100 h-100 quantum-bg">
+    <div class="quantum-particles"></div>
+    <div class="animated-gradient-field"></div>
+    <div class="floating-bubbles"></div>
   </div>
 
   <div class="container position-relative z-index-1">
@@ -470,449 +643,366 @@
         <div class="mt-5">
           <p class="text-muted mb-3 floating-text">✨ Tech I work with:</p>
           <div class="d-flex flex-wrap gap-3 tech-stack">
-            <span class="badge bg-light text-dark p-2 shadow-sm floating-badge" style="animation-delay: 0.1s;">React</span>
-            <span class="badge bg-light text-dark p-2 shadow-sm floating-badge" style="animation-delay: 0.2s;">Django</span>
-            <span class="badge bg-light text-dark p-2 shadow-sm floating-badge" style="animation-delay: 0.3s;">MySQL</span>
-            <span class="badge bg-light text-dark p-2 shadow-sm floating-badge" style="animation-delay: 0.4s;">JavaScript</span>
-            <span class="badge bg-light text-dark p-2 shadow-sm floating-badge" style="animation-delay: 0.5s;">HTML5</span>
-            <span class="badge bg-light text-dark p-2 shadow-sm floating-badge" style="animation-delay: 0.6s;">CSS3</span>
+            <span class="badge bg-light text-dark p-2 shadow-sm floating-badge" style="animation-delay: 0.1s;"><i class="fab fa-react me-1"></i> React</span>
+            <span class="badge bg-light text-dark p-2 shadow-sm floating-badge" style="animation-delay: 0.2s;"><i class="fab fa-python me-1"></i> Django</span>
+            <span class="badge bg-light text-dark p-2 shadow-sm floating-badge" style="animation-delay: 0.3s;"><i class="fas fa-database me-1"></i> MySQL</span>
+            <span class="badge bg-light text-dark p-2 shadow-sm floating-badge" style="animation-delay: 0.4s;"><i class="fab fa-js-square me-1"></i> JavaScript</span>
+            <span class="badge bg-light text-dark p-2 shadow-sm floating-badge" style="animation-delay: 0.5s;"><i class="fab fa-html5 me-1"></i> HTML5</span>
+            <span class="badge bg-light text-dark p-2 shadow-sm floating-badge" style="animation-delay: 0.6s;"><i class="fab fa-css3-alt me-1"></i> CSS3</span>
           </div>
         </div>
       </div>
       
-      <!-- Enhanced 3D Profile Image Container -->
+      <!-- Enhanced Profile Image with Border and Continuous Animation -->
       <div class="col-lg-5 col-md-6 text-center" data-aos="fade-left" data-aos-delay="200">
-        <div class="profile-3d-container">
+        <div class="profile-container">
           <div class="profile-card">
-            <div class="profile-card-inner">
-              <img src="image/Aditya-Kumar-Babhanpura.png" alt="Aditya Kumar Portfolio Picture" class="profile-img-3d">
-              <svg class="profile-border" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
-                <path class="border-path" fill="none" stroke="url(#gradient-border)" stroke-width="4" stroke-dasharray="0 1" />
-                <defs>
-                  <linearGradient id="gradient-border" x1="0%" y1="0%" x2="100%" y2="100%">
-                    <stop offset="0%" stop-color="#3b82f6" />
-                    <stop offset="100%" stop-color="#8b5cf6" />
-                  </linearGradient>
-                </defs>
-              </svg>
-            </div>
-            <div class="particles">
-              <div class="particle" style="--i:1"></div>
-              <div class="particle" style="--i:2"></div>
-              <div class="particle" style="--i:3"></div>
-              <div class="particle" style="--i:4"></div>
+            <div class="profile-border-animation">
+              <div class="profile-img-wrapper">
+                <img src="image/Aditya-Kumar-Babhanpura.png" alt="Aditya Kumar Portfolio Picture" class="profile-img">
+                <div class="profile-reflection"></div>
+                <div class="profile-hologram"></div>
+              </div>
             </div>
             <div class="profile-glow"></div>
-            <div class="profile-light-spot"></div>
+            <div class="profile-particles"></div>
           </div>
         </div>
       </div>
     </div>
   </div>
 
-  <!-- Custom Cursor -->
-  <div class="custom-cursor"></div>
-
   <style>
-    /* ===== BASE ANIMATIONS ===== */
-    @keyframes float {
-      0%, 100% { transform: translateY(0); }
-      50% { transform: translateY(-10px); }
+    /* ===== QUANTUM BACKGROUND ===== */
+    .quantum-bg {
+      overflow: hidden;
+      z-index: 0;
     }
     
-    @keyframes floatHorizontal {
-      0%, 100% { transform: translateX(0); }
-      50% { transform: translateX(10px); }
-    }
-    
-    @keyframes pulse {
-      0%, 100% { opacity: 0.7; transform: scale(1); }
-      50% { opacity: 0.9; transform: scale(1.05); }
-    }
-    
-    @keyframes wave {
-      0% { transform: rotate(0deg); }
-      10% { transform: rotate(14deg); }
-      20% { transform: rotate(-8deg); }
-      30% { transform: rotate(14deg); }
-      40% { transform: rotate(-4deg); }
-      50% { transform: rotate(10deg); }
-      60% { transform: rotate(0deg); }
-      100% { transform: rotate(0deg); }
-    }
-    
-    @keyframes underlineGrow {
-      from { transform: scaleX(0); }
-      to { transform: scaleX(1); }
-    }
-    
-    @keyframes textGradient {
-      0% { background-position: 0% 50%; }
-      50% { background-position: 100% 50%; }
-      100% { background-position: 0% 50%; }
-    }
-    
-    @keyframes rotateSlow {
-      from { transform: rotate(0deg); }
-      to { transform: rotate(360deg); }
-    }
-    
-    @keyframes blob {
-      0% { border-radius: 60% 40% 30% 70%/60% 30% 70% 40%; }
-      50% { border-radius: 30% 60% 70% 40%/50% 60% 30% 60%; }
-      100% { border-radius: 60% 40% 30% 70%/60% 30% 70% 40%; }
-    }
-    
-    @keyframes patternMove {
-      0% { background-position: 0 0; }
-      100% { background-position: 40px 40px; }
-    }
-
-    /* ===== CUSTOM CURSOR ===== */
-    .custom-cursor {
-      position: fixed;
-      width: 20px;
-      height: 20px;
-      border-radius: 50%;
-      background: rgba(59, 130, 246, 0.3);
-      border: 2px solid #3b82f6;
-      pointer-events: none;
-      transform: translate(-50%, -50%);
-      z-index: 9999;
-      mix-blend-mode: difference;
-      transition: transform 0.1s ease, width 0.3s ease, height 0.3s ease;
-    }
-
-    .custom-cursor.active {
-      width: 40px;
-      height: 40px;
-      background: rgba(59, 130, 246, 0.1);
-    }
-
-    /* Cursor Trail Effect */
-    .cursor-trail {
+    .quantum-particles {
       position: absolute;
       width: 100%;
       height: 100%;
-      pointer-events: none;
-      overflow: hidden;
+      background: radial-gradient(circle at center, rgba(59, 130, 246, 0.05) 0%, transparent 70%);
     }
-
-    .cursor-trail::before {
-      content: '';
+    
+    .animated-gradient-field {
       position: absolute;
-      width: 100px;
-      height: 100px;
-      background: radial-gradient(circle, rgba(59, 130, 246, 0.1) 0%, transparent 70%);
-      border-radius: 50%;
-      transform: translate(-50%, -50%);
-      opacity: 0;
-      transition: opacity 0.3s ease;
+      width: 200%;
+      height: 200%;
+      background: radial-gradient(circle at center, 
+                  rgba(139, 92, 246, 0.03) 0%, 
+                  transparent 50%),
+                  radial-gradient(circle at 30% 70%, 
+                  rgba(59, 130, 246, 0.03) 0%, 
+                  transparent 50%);
+      animation: gradientMove 20s infinite alternate;
+      filter: blur(40px);
     }
-
-    /* ===== 3D PROFILE CARD - ENHANCED ===== */
-    .profile-3d-container {
-      perspective: 1200px;
+    
+    /* Enhanced Floating Bubbles */
+    .floating-bubbles {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+      z-index: 0;
+    }
+    
+    .bubble {
+      position: absolute;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.3);
+      filter: blur(10px);
+      animation: floatBubble linear infinite;
+      will-change: transform;
+      box-shadow: 0 0 20px rgba(100, 149, 237, 0.5);
+    }
+    
+    .bubble:nth-child(odd) {
+      background: rgba(173, 216, 230, 0.4);
+    }
+    
+    .bubble:nth-child(3n) {
+      background: rgba(135, 206, 250, 0.4);
+    }
+    
+    @keyframes floatBubble {
+      0% {
+        transform: translateY(100vh) scale(0.5);
+        opacity: 0;
+      }
+      10% {
+        opacity: 0.8;
+      }
+      90% {
+        opacity: 0.7;
+      }
+      100% {
+        transform: translateY(-100px) scale(1.2);
+        opacity: 0;
+      }
+    }
+    
+    @keyframes gradientMove {
+      0% { transform: translate(0, 0); }
+      25% { transform: translate(-25%, -15%); }
+      50% { transform: translate(-15%, -25%); }
+      75% { transform: translate(-25%, -5%); }
+      100% { transform: translate(-5%, -25%); }
+    }
+    
+    /* ===== ENHANCED PROFILE IMAGE ===== */
+    .profile-container {
+      perspective: 1000px;
       max-width: 400px;
       margin: 0 auto;
+      position: relative;
     }
-
+    
     .profile-card {
       position: relative;
       transform-style: preserve-3d;
-      animation: float3D 8s ease-in-out infinite;
       will-change: transform;
+      animation: float 8s ease-in-out infinite;
     }
-
-    .profile-card-inner {
+    
+    .profile-border-animation {
       position: relative;
-      border-radius: 16px;
-      overflow: hidden;
-      transform: rotateY(-10deg) rotateX(5deg);
-      box-shadow: 0 25px 50px -12px rgba(59, 130, 246, 0.3);
-      transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
-      z-index: 2;
+      border-radius: 15px;
+      padding: 12px;
+      background: rgba(255, 255, 255, 0.2);
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(255, 255, 255, 0.3);
+      box-shadow: 0 30px 60px -15px rgba(59, 130, 246, 0.4);
+      animation: borderPulse 6s infinite alternate;
     }
-
-    .profile-img-3d {
+    
+    .profile-img-wrapper {
+      position: relative;
+      border-radius: 10px;
+      overflow: hidden;
+      border: 1px solid rgba(255, 255, 255, 0.2);
+    }
+    
+    .profile-img {
       width: 100%;
       display: block;
-      border-radius: 12px;
-      border: 8px solid white;
-      filter: drop-shadow(0 10px 20px rgba(59, 130, 246, 0.2));
-      transform: translateZ(20px);
       transition: all 0.5s ease;
-    }
-
-    /* Animated SVG Border */
-    .profile-border {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      z-index: 2;
-    }
-
-    .border-path {
-      stroke-dashoffset: 0;
-      animation: dash 5s linear infinite;
-    }
-
-    @keyframes dash {
-      to { stroke-dashoffset: 1000; }
-    }
-
-    /* Floating Particles */
-    .particles {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
+      position: relative;
       z-index: 1;
+      filter: brightness(1.05) contrast(1.1) saturate(1.1);
+      animation: imageGlow 4s infinite alternate;
     }
-
-    .particle {
+    
+    .profile-reflection {
       position: absolute;
-      background: rgba(59, 130, 246, 0.6);
-      border-radius: 50%;
-      filter: blur(5px);
-      animation: floatParticle calc(8s * var(--i)) ease-in-out infinite;
-      will-change: transform;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(135deg, rgba(255,255,255,0.4) 0%, rgba(255,255,255,0) 50%);
+      z-index: 2;
+      pointer-events: none;
+      mix-blend-mode: overlay;
     }
-
-    @keyframes floatParticle {
-      0%, 100% { transform: translate(0, 0) scale(1); opacity: 0.8; }
-      50% { transform: translate(20px, -20px) scale(1.2); opacity: 0.4; }
+    
+    .profile-hologram {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(45deg, 
+                  rgba(59, 130, 246, 0.1) 0%, 
+                  rgba(255, 255, 255, 0.2) 50%, 
+                  rgba(139, 92, 246, 0.1) 100%);
+      z-index: 3;
+      pointer-events: none;
+      opacity: 0;
+      transition: opacity 0.5s ease;
+      mix-blend-mode: overlay;
     }
-
-    /* Dynamic Glow Effects */
+    
     .profile-glow {
       position: absolute;
       top: 50%;
       left: 50%;
-      width: 120%;
-      height: 120%;
+      width: 150%;
+      height: 150%;
       background: radial-gradient(circle, rgba(59, 130, 246, 0.2) 0%, transparent 70%);
       transform: translate(-50%, -50%);
-      filter: blur(30px);
+      filter: blur(60px);
       z-index: -1;
-      animation: glowPulse 6s ease-in-out infinite alternate;
+      opacity: 0.8;
     }
-
-    .profile-light-spot {
+    
+    .profile-particles {
       position: absolute;
+      width: 100%;
+      height: 100%;
       top: 0;
       left: 0;
-      width: 100%;
-      height: 100%;
-      background: radial-gradient(circle at var(--mouse-x) var(--mouse-y), 
-                  rgba(255, 255, 255, 0.4) 0%, 
-                  transparent 60%);
       pointer-events: none;
-      z-index: 3;
-      opacity: 0;
-      transition: opacity 0.3s ease;
-    }
-
-    @keyframes glowPulse {
-      0% { opacity: 0.6; transform: translate(-50%, -50%) scale(0.95); }
-      100% { opacity: 0.9; transform: translate(-50%, -50%) scale(1.1); }
-    }
-
-    /* 3D Floating Animation */
-    @keyframes float3D {
-      0%, 100% { transform: translateY(0) rotateX(5deg) rotateY(-10deg) rotateZ(0.5deg); }
-      50% { transform: translateY(-20px) rotateX(3deg) rotateY(-12deg) rotateZ(-0.5deg); }
-    }
-
-    /* Interactive Effects */
-    .profile-3d-container:hover .profile-card {
-      animation: none;
-    }
-
-    .profile-3d-container:hover .profile-light-spot {
-      opacity: 1;
-    }
-
-    /* ===== TEXT & BUTTON ANIMATIONS ===== */
-    .wave-animation {
-      display: inline-block;
-      animation: wave 2s infinite, float 4s ease-in-out infinite;
-      transform-origin: 70% 70%;
+      z-index: 4;
     }
     
-    .name-animate {
-      display: inline-block;
-      animation: float 6s ease-in-out infinite;
-    }
-    
-    .underline-animate {
-      background: linear-gradient(90deg, #3b82f6, #8b5cf6);
-      animation: underlineGrow 1s ease-out 0.5s forwards, pulse 3s ease-in-out infinite 1.5s;
-    }
-    
-    .text-gradient {
-      background: linear-gradient(90deg, #3b82f6, #8b5cf6, #3b82f6);
-      background-size: 200% auto;
-      -webkit-background-clip: text;
-      background-clip: text;
-      color: transparent;
-      animation: textGradient 3s linear infinite;
-    }
-    
-    .animated-button {
-      transition: all 0.3s ease;
-      animation: float 5s ease-in-out infinite;
-      position: relative;
-      overflow: hidden;
-    }
-    
-    .animated-button::before {
-      content: '';
+    .profile-particle {
       position: absolute;
-      top: 0;
-      left: -100%;
-      width: 100%;
-      height: 100%;
-      background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
-      transition: all 0.6s ease;
+      width: 6px;
+      height: 6px;
+      background: rgba(255, 255, 255, 0.8);
+      border-radius: 50%;
+      filter: blur(1px);
+      animation: particleFloat linear infinite;
     }
     
-    .animated-button:hover::before {
-      left: 100%;
+    @keyframes float {
+      0%, 100% { transform: translateY(0) rotate(0deg); }
+      50% { transform: translateY(-20px) rotate(2deg); }
     }
     
-    .animated-button:hover {
-      transform: translateY(-3px) !important;
-      box-shadow: 0 10px 20px rgba(0,0,0,0.1) !important;
+    @keyframes borderPulse {
+      0% { box-shadow: 0 0 0 0px rgba(59, 130, 246, 0.4), 0 30px 60px -15px rgba(59, 130, 246, 0.4); }
+      100% { box-shadow: 0 0 0 10px rgba(59, 130, 246, 0), 0 30px 60px -15px rgba(59, 130, 246, 0.6); }
     }
     
-    .arrow-animate {
-      display: inline-block;
-      transition: transform 0.3s ease;
-      animation: floatHorizontal 3s ease-in-out infinite;
+    @keyframes imageGlow {
+      0% { filter: brightness(1.05) contrast(1.1) saturate(1.1); }
+      100% { filter: brightness(1.1) contrast(1.15) saturate(1.2) drop-shadow(0 0 10px rgba(59, 130, 246, 0.3)); }
     }
     
-    .floating-text {
-      animation: float 4s ease-in-out infinite;
-      display: inline-block;
+    @keyframes particleFloat {
+      0% { transform: translate(0, 0); opacity: 0; }
+      10% { opacity: 1; }
+      90% { opacity: 1; }
+      100% { transform: translate(var(--tx), var(--ty)); opacity: 0; }
     }
     
-    .floating-badge {
-      animation: float 4s ease-in-out infinite;
-      transition: all 0.3s ease;
-    }
     
-    .floating-badge:hover {
-      transform: translateY(-5px) scale(1.1) !important;
-      box-shadow: 0 8px 20px rgba(0,0,0,0.15) !important;
-    }
+    /* ... (rest of your existing CSS remains the same) ... */
   </style>
 
   <script>
     document.addEventListener('DOMContentLoaded', () => {
-      // ===== CUSTOM CURSOR =====
-      const cursor = document.querySelector('.custom-cursor');
-      const cursorTrail = document.querySelector('.cursor-trail');
+      // ===== ENHANCED FLOATING BUBBLES =====
+      const bubblesContainer = document.querySelector('.floating-bubbles');
+      const bubbleCount = 20; // Increased number of bubbles
       
-      document.addEventListener('mousemove', (e) => {
-        // Main cursor
-        cursor.style.left = e.clientX + 'px';
-        cursor.style.top = e.clientY + 'px';
+      for (let i = 0; i < bubbleCount; i++) {
+        createBubble();
+      }
+      
+      function createBubble() {
+        const bubble = document.createElement('div');
+        bubble.className = 'bubble';
         
-        // Cursor trail effect
-        if (cursorTrail) {
-          const trail = document.createElement('div');
-          trail.className = 'cursor-trail-particle';
-          trail.style.left = e.clientX + 'px';
-          trail.style.top = e.clientY + 'px';
-          cursorTrail.appendChild(trail);
-          
-          setTimeout(() => {
-            trail.remove();
-          }, 1000);
-        }
-      });
+        // Random properties
+        const size = Math.random() * 120 + 30; // Larger size range
+        const duration = Math.random() * 25 + 15; // Longer duration
+        const delay = Math.random() * 20;
+        const left = Math.random() * 100;
+        const opacity = Math.random() * 0.7 + 0.3; // More visible
+        
+        // Apply styles
+        bubble.style.width = `${size}px`;
+        bubble.style.height = `${size}px`;
+        bubble.style.left = `${left}%`;
+        bubble.style.animationDuration = `${duration}s`;
+        bubble.style.animationDelay = `${delay}s`;
+        bubble.style.opacity = opacity;
+        
+        // Random color with more vibrancy
+        const hue = 190 + Math.random() * 70;
+        bubble.style.background = `hsla(${hue}, 80%, 70%, ${opacity})`;
+        bubble.style.boxShadow = `0 0 ${size/3}px hsla(${hue}, 80%, 70%, ${opacity*0.7})`;
+        
+        bubblesContainer.appendChild(bubble);
+        
+        // Remove bubble after animation and create a new one
+        setTimeout(() => {
+          bubble.remove();
+          createBubble();
+        }, duration * 1000);
+      }
       
-      // Cursor active state
-      document.querySelectorAll('a, button, .profile-card').forEach(el => {
-        el.addEventListener('mouseenter', () => {
-          cursor.classList.add('active');
-        });
-        el.addEventListener('mouseleave', () => {
-          cursor.classList.remove('active');
-        });
-      });
-
-      // ===== 3D PROFILE CARD INTERACTION =====
+      // ===== PROFILE IMAGE PARTICLES =====
+      const profileParticles = document.querySelector('.profile-particles');
+      const particleCount = 15;
+      
+      for (let i = 0; i < particleCount; i++) {
+        createProfileParticle();
+      }
+      
+      function createProfileParticle() {
+        const particle = document.createElement('div');
+        particle.className = 'profile-particle';
+        
+        // Random properties
+        const size = Math.random() * 4 + 2;
+        const duration = Math.random() * 10 + 5;
+        const delay = Math.random() * 5;
+        const startX = Math.random() * 100;
+        const startY = Math.random() * 100;
+        const endX = (Math.random() - 0.5) * 40;
+        const endY = (Math.random() - 0.5) * 40;
+        
+        // Apply styles
+        particle.style.width = `${size}px`;
+        particle.style.height = `${size}px`;
+        particle.style.left = `${startX}%`;
+        particle.style.top = `${startY}%`;
+        particle.style.animationDuration = `${duration}s`;
+        particle.style.animationDelay = `${delay}s`;
+        particle.style.setProperty('--tx', `${endX}px`);
+        particle.style.setProperty('--ty', `${endY}px`);
+        
+        // Random color
+        const hue = 200 + Math.random() * 60;
+        particle.style.background = `hsla(${hue}, 80%, 70%, ${Math.random() * 0.5 + 0.3})`;
+        
+        profileParticles.appendChild(particle);
+        
+        // Remove particle after animation and create a new one
+        setTimeout(() => {
+          particle.remove();
+          createProfileParticle();
+        }, duration * 1000);
+      }
+      
+      // ===== NEURAL CURSOR SYSTEM =====
+      const cursor = document.querySelector('.neural-cursor');
+      const cursorTrail = document.querySelector('.neural-trail');
+      let lastPos = { x: 0, y: 0 };
+      let lastTime = 0;
+      
+      // ... (rest of your existing JavaScript remains the same) ...
+      
+      // ===== PROFILE IMAGE INTERACTION =====
       const profileCard = document.querySelector('.profile-card');
-      const container = document.querySelector('.profile-3d-container');
-      const lightSpot = document.querySelector('.profile-light-spot');
+      const profileImg = document.querySelector('.profile-img');
+      const profileHologram = document.querySelector('.profile-hologram');
       
-      if (container && profileCard) {
-        // Mouse Parallax Effect
-        container.addEventListener('mousemove', (e) => {
-          const rect = container.getBoundingClientRect();
-          const x = e.clientX - rect.left;
-          const y = e.clientY - rect.top;
-          const centerX = rect.width / 2;
-          const centerY = rect.height / 2;
-          
-          const tiltX = (y - centerY) / 20;
-          const tiltY = (centerX - x) / 20;
-          
-          profileCard.style.transform = `
-            translateY(0)
-            rotateX(${tiltX}deg)
-            rotateY(${tiltY}deg)
-          `;
-          
-          // Dynamic light spot
-          if (lightSpot) {
-            lightSpot.style.setProperty('--mouse-x', `${x}px`);
-            lightSpot.style.setProperty('--mouse-y', `${y}px`);
-          }
+      if (profileCard) {
+        profileCard.addEventListener('mouseenter', () => {
+          profileHologram.style.opacity = '0.7';
+          profileImg.style.transform = 'scale(1.05)';
         });
         
-        // Reset on mouse leave
-        container.addEventListener('mouseleave', () => {
-          profileCard.style.transform = '';
-          profileCard.style.animation = 'float3D 8s ease-in-out infinite';
-          if (lightSpot) lightSpot.style.opacity = '0';
-        });
-        
-        // Click Animation (Subtle Bounce)
-        profileCard.addEventListener('click', () => {
-          profileCard.style.transform = 'scale(0.98) rotateY(-10deg)';
-          setTimeout(() => {
-            profileCard.style.transform = '';
-            profileCard.style.animation = 'float3D 8s ease-in-out infinite';
-          }, 300);
-        });
-        
-        // Floating Particles Randomizer
-        const particles = document.querySelectorAll('.particle');
-        particles.forEach(particle => {
-          const randomX = Math.random() * 100;
-          const randomY = Math.random() * 100;
-          const randomSize = Math.random() * 10 + 5;
-          
-          particle.style.left = `${randomX}%`;
-          particle.style.top = `${randomY}%`;
-          particle.style.width = `${randomSize}px`;
-          particle.style.height = `${randomSize}px`;
+        profileCard.addEventListener('mouseleave', () => {
+          profileHologram.style.opacity = '0';
+          profileImg.style.transform = 'scale(1)';
         });
       }
-
+      
       // ===== TYPING ANIMATION =====
       const phrases = [
         "creative web experiences",
         "scalable applications",
         "responsive designs",
         "user-friendly interfaces",
-        "innovative solutions"
+        "innovative solutions",
+        "cutting-edge technology"
       ];
       const typingElement = document.querySelector('.typing-text');
       let phraseIndex = 0;
@@ -937,9 +1027,9 @@
         } else if (isDeleting && charIndex === 0) {
           isDeleting = false;
           phraseIndex = (phraseIndex + 1) % phrases.length;
-          setTimeout(typeWriter, 500);
+          setTimeout(typeWriter, 300);
         } else {
-          const speed = isDeleting ? 50 : 100;
+          const speed = isDeleting ? 30 : 80;
           if (isEnd) {
             setTimeout(() => {
               isEnd = false;
@@ -957,7 +1047,7 @@
       // ===== TECH BADGES ANIMATION =====
       const badges = document.querySelectorAll('.floating-badge');
       badges.forEach((badge, index) => {
-        badge.style.animationDelay = `${index * 0.2}s`;
+        badge.style.animationDelay = `${index * 0.15}s`;
       });
     });
   </script>
