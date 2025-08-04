@@ -3229,12 +3229,12 @@
     const btnGlitch = submitBtn.querySelector('.gamer-btn-glitch');
     
     // Initial animation
-    btnText.innerHTML = '<i class="fas fa-spinner fa-pulse me-2"></i>TRANSMISSION IN PROGRESS';
+    btnText.innerHTML = '<i class="fas fa-spinner fa-pulse me-2"></i>SENDING MESSAGE';
     btnGlitch.style.animation = 'glitch-effect 0.5s infinite';
     
     // Simulate loading sequence
     setTimeout(() => {
-      btnText.innerHTML = '<i class="fas fa-check me-2"></i>TRANSMISSION SUCCESS!';
+      btnText.innerHTML = '<i class="fas fa-check me-2"></i>MESSAGE SENDED!';
       btnGlitch.style.animation = 'none';
       btnGlitch.style.opacity = '0';
       
@@ -3244,7 +3244,7 @@
         
         // Reset button after a moment
         setTimeout(() => {
-          btnText.innerHTML = '<i class="fas fa-gamepad me-2"></i>TRANSMISSION INITIATE';
+          btnText.innerHTML = '<i class="fas fa-gamepad me-2"></i>SEND MESSAGE';
           btnGlitch.style.animation = 'glitch-effect 2s infinite';
         }, 2000);
       }, 1000);
