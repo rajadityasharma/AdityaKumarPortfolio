@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="https://www.sitemaps.org/schemas/sitemap/0.9">
+  <url>
+    <loc>https://aditya-kumar-portfolio.onrender.com/</loc>
+    <priority>1.00</priority>
+  </url>
+  <url>
+    <loc>https://aditya-kumar-portfolio.onrender.com/#about</loc>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://aditya-kumar-portfolio.onrender.com/#services</loc>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://aditya-kumar-portfolio.onrender.com/#skills</loc>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://aditya-kumar-portfolio.onrender.com/#projects</loc>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://aditya-kumar-portfolio.onrender.com/#contact</loc>
+    <priority>0.80</priority>
+  </url>
+</urlset>
